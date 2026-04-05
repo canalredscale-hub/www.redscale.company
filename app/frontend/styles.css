@@ -560,31 +560,46 @@ body {
   position: relative;
   z-index: 2;
   margin-top: var(--section-gap);
-  min-height: clamp(18px, 2vw, 26px);
+  min-height: clamp(160px, 15vw, 228px);
 }
 
 .about__echo {
   position: absolute;
   top: 0;
   margin: 0;
-  color: #262626;
+}
+
+.about__echo-title,
+.about__echo-copy {
+  margin: 0;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: clamp(14px, 1.3vw, 18px);
-  font-weight: 500;
   letter-spacing: -0.05em;
+}
+
+.about__echo-title {
+  color: #262626;
+  font-weight: 500;
   line-height: 1.12;
 }
 
+.about__echo-copy {
+  margin-top: 12px;
+  color: #8b9191;
+  font-weight: 400;
+  line-height: 1.34;
+}
+
 .about__echo--left {
-  max-width: 580px;
-  left: 476px;
+  max-width: 504px;
+  left: 438px;
 }
 
 .about__echo--right {
-  max-width: 420px;
+  max-width: 480px;
   left: min(
-    calc(50vw + (var(--header-shell-width) / 2) - var(--page-gutter)),
-    calc(100% - 420px)
+    calc(50vw + (var(--header-shell-width) / 2) - var(--page-gutter) - 38px),
+    calc(100% - 480px)
   );
 }
 

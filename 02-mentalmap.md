@@ -906,6 +906,13 @@
 - Implementacao entregue: `app/frontend/styles.css` reduziu `.about__echo` de `clamp(18px, 1.9vw, 24px)` para `clamp(14px, 1.3vw, 18px)`, ajustou `line-height` para `1.12`, transformou as frases em elementos absolutamente posicionados no mesmo `top: 0` e trocou o deslocamento da segunda de `margin-top` para `left`, preservando seus dois alinhamentos horizontais; `00-user-guide.md` foi sincronizado.
 - Proximo movimento coerente: validar no preview se o novo bloco complementar esta fino o suficiente e se os dois textos ficaram realmente nivelados sem parecer artificiais.
 
+### 2026-04-05T20:15:59.6372836-03:00 - Bloco complementar do Sobre ganhou textos de apoio e foi trazido para a esquerda
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: puxar os dois titulos do bloco complementar do `Sobre` cerca de `1cm` para a esquerda e adicionar abaixo de cada um um texto de apoio em cinza, mantendo a mesma fonte e o mesmo tamanho tipografico.
+- Implementacao entregue: `app/frontend/index.html` transformou cada frase de `.about__echoes` em um mini-bloco com `about__echo-title` e `about__echo-copy`, aplicando as novas copies institucionais; `app/frontend/styles.css` ampliou a altura util de `.about__echoes`, criou a separacao entre titulo em `#262626` e apoio em cinza `#8B9191`, manteve ambos em `IBM Plex Sans` na escala `h6` e deslocou os dois blocos aproximadamente `1cm` para a esquerda; `00-user-guide.md` foi sincronizado com o novo estado.
+- Proximo movimento coerente: validar no preview se a nova densidade de texto continua leve o bastante e se o bloco da direita ainda conversa bem com a referencia horizontal da capsula fixa do header.
+
 ### 2026-04-05T18:10:30.4222465-03:00 - Repositorio privado conectado e fluxo de push habilitado
 
 - Fase impactada: Governanca de projeto e continuidade operacional.
