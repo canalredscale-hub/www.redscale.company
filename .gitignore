@@ -1,0 +1,14 @@
+.venv/
+.python-version
+.uv_cache/
+.edge-headless-profile/
+.tooling/
+.tmp_tests/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+dist/
+build/
+*.egg-info/
+uv.lock

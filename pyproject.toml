@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redscale-site-institucional-vendas-orquestrador-projeto"
+version = "0.1.0"
+description = "Orquestrador local do projeto redscale-site-institucional-vendas."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+orquestrador-projeto = "orquestrador_projeto.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+cache-dir = ".uv_cache"
