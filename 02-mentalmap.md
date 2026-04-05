@@ -905,3 +905,10 @@
 - Decisao aprovada: reduzir as duas frases complementares do `Sobre` para uma escala de `h6` e alinhar ambas na mesma altura.
 - Implementacao entregue: `app/frontend/styles.css` reduziu `.about__echo` de `clamp(18px, 1.9vw, 24px)` para `clamp(14px, 1.3vw, 18px)`, ajustou `line-height` para `1.12`, transformou as frases em elementos absolutamente posicionados no mesmo `top: 0` e trocou o deslocamento da segunda de `margin-top` para `left`, preservando seus dois alinhamentos horizontais; `00-user-guide.md` foi sincronizado.
 - Proximo movimento coerente: validar no preview se o novo bloco complementar esta fino o suficiente e se os dois textos ficaram realmente nivelados sem parecer artificiais.
+
+### 2026-04-05T18:10:30.4222465-03:00 - Repositorio privado conectado e fluxo de push habilitado
+
+- Fase impactada: Governanca de projeto e continuidade operacional.
+- Decisao aprovada: criar um repositorio privado no GitHub para este projeto e passar a trabalhar com `git push` a cada alteracao relevante.
+- Implementacao entregue: o diretorio local foi inicializado em git, recebeu commit inicial na branch `main`, o remoto `origin` foi conectado ao repositorio privado `https://github.com/canalredscale-hub/site-institucional-vendas` e o primeiro push foi concluido; `README.md` tambem foi corrigido de `http://localhost:8000` para `http://127.0.0.1:8000`, e `00-user-guide.md` foi sincronizado com o novo fluxo.
+- Proximo movimento coerente: seguir os proximos ciclos de UI com commits intencionais e push do `main` sempre que um bloco aprovado fechar.

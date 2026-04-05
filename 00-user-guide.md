@@ -79,3 +79,5 @@ Este trecho e a referencia textual da interface atual. Sempre que houver alterac
 ## Processos adicionais informados
 
 - Usar `uv run python app/frontend/dev_server.py` para preview local sem cache manual por query string.
+- O projeto agora esta conectado ao repositorio privado `https://github.com/canalredscale-hub/site-institucional-vendas`, com branch principal `main`.
+- A partir deste ponto, alteracoes relevantes podem seguir o fluxo de commit e `git push` a cada ciclo aprovado.
