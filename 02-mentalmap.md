@@ -934,6 +934,13 @@
 - Implementacao entregue: `app/frontend/styles.css` ampliou novamente o recuo interno de quebra em `.about__echo-copy`, mudando `max-width` de `calc(100% - 95px)` para `calc(100% - 171px)`, levando a quebra total para algo proximo de `4,5cm` antes da largura dos titulos; `00-user-guide.md` foi sincronizado.
 - Proximo movimento coerente: validar no preview se a nova quebra ficou no ponto certo ou se o bloco de apoio ja comecou a perder fluidez de leitura.
 
+### 2026-04-05T23:46:28.9821623-03:00 - Bloco complementar do Sobre recebeu o ultimo ajuste fino de quebra
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: recuar apenas mais aproximadamente `0,5cm` a quebra dos textos de apoio do bloco complementar do `Sobre`, fechando o ajuste fino dessa area antes de seguir para a proxima secao.
+- Implementacao entregue: `app/frontend/styles.css` ampliou mais uma vez o recuo interno de quebra em `.about__echo-copy`, mudando `max-width` de `calc(100% - 171px)` para `calc(100% - 190px)`, levando a quebra total para algo proximo de `5cm` antes da largura dos titulos; `00-user-guide.md` foi sincronizado com o estado aprovado e com a orientacao de seguir para a proxima secao.
+- Proximo movimento coerente: iniciar a definicao da proxima secao da home a partir do estado agora aprovado do bloco `Sobre`.
+
 ### 2026-04-05T18:10:30.4222465-03:00 - Repositorio privado conectado e fluxo de push habilitado
 
 - Fase impactada: Governanca de projeto e continuidade operacional.
