@@ -694,7 +694,7 @@ body {
   position: relative;
   z-index: 2;
   margin-top: 76px;
-  margin-left: max(0px, calc(var(--content-guide-left) - 76px));
+  margin-left: max(0px, calc(var(--content-guide-left) - 228px));
 }
 
 .services__catalog-entry {
