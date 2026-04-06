@@ -99,3 +99,40 @@ document.querySelectorAll(".site-cta").forEach((cta) => {
     raiseClass: "site-cta--raise",
   });
 });
+
+const closeServicesCatalogEntry = (entry) => {
+  const trigger = entry.querySelector(".services__catalog-trigger");
+
+  if (!trigger) {
+    return;
+  }
+
+  entry.classList.remove("services__catalog-entry--open");
+  trigger.setAttribute("aria-expanded", "false");
+};
+
+document.querySelectorAll(".services__catalog-entry").forEach((entry) => {
+  const trigger = entry.querySelector(".services__catalog-trigger");
+
+  if (!trigger) {
+    return;
+  }
+
+  trigger.addEventListener("click", () => {
+    const isOpen = entry.classList.contains("services__catalog-entry--open");
+
+    document.querySelectorAll(".services__catalog-entry").forEach((otherEntry) => {
+      if (otherEntry !== entry) {
+        closeServicesCatalogEntry(otherEntry);
+      }
+    });
+
+    if (isOpen) {
+      closeServicesCatalogEntry(entry);
+      return;
+    }
+
+    entry.classList.add("services__catalog-entry--open");
+    trigger.setAttribute("aria-expanded", "true");
+  });
+});

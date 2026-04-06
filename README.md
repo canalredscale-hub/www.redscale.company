@@ -1,6 +1,6 @@
 # site-institucional-vendas
 
-Projeto iniciado pelo orquestrador global com workflow `web_app`.
+Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
 
 ## Ordem de leitura inicial
 
@@ -14,7 +14,7 @@ Projeto iniciado pelo orquestrador global com workflow `web_app`.
 ## Resumo atual
 
 - Frontend ativo: construcao autoral do site REDSCALE do zero, em HTML e CSS, com evolucao incremental de cima para baixo.
-- Escopo atual do frontend: base global da home e primeiro desenho do header com logo textual e casca arredondada.
+- Escopo atual do frontend: home com header, hero textual, faixa de video, secao `Sobre` expandida e abertura da secao `Nossos Servicos` com lista tipografica interativa de ofertas e miniaturas visuais por item.
 - Estado atual: o projeto nao usa mais espelhos, templates Webflow ou assets de sites terceiros como base ativa.
 
 ## Estrutura atual do frontend
@@ -23,6 +23,12 @@ Projeto iniciado pelo orquestrador global com workflow `web_app`.
 - `app/frontend/styles.css`: estilos globais e componentes visuais iniciais do site.
 - `app/frontend/main.js`: microinteracoes e animacoes do header.
 - `app/frontend/assets/fonts/AspektaVF.woff2`: fonte local usada no logo.
+
+Padrao tipografico atual:
+
+- `Neue Helvetica Georgian 65 Medium`: fonte oficial de escrita de texto do projeto.
+- `Aspekta`: fonte usada em titulos e marcas principais.
+- `IBM Plex Sans`: fonte de apoio para navegacao, labels e CTAs.
 
 Importante:
 
@@ -67,10 +73,12 @@ Para parar o servidor, use `Ctrl + C`.
 |---|----------------|
 | 1 | Background global branco em `#ffffff` |
 | 2 | Header com casca retangular arredondada, centralizada na largura util |
-| 3 | Logo textual `Redscale` em `25px`, com fonte `Aspekta` local, cor `#262626` e tracking negativo |
-| 4 | CSS carregando corretamente a partir de `app/frontend/styles.css` |
-| 5 | JS carregando corretamente a partir de `app/frontend/main.js` |
-| 6 | Proxima area de main ainda vazia, pronta para receber os blocos seguintes da home |
+| 3 | Hero textual com `Cresca melhor.` e `Produza mais.` mais a copy auxiliar a direita |
+| 4 | Faixa de video com CTA sobreposto no canto inferior direito |
+| 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
+| 6 | Nova abertura da secao `Nossos Servicos` abaixo de `Sobre`, respeitando o novo espacamento global e exibindo a lista tipografica interativa de ofertas com miniaturas por item |
+| 7 | CSS carregando corretamente a partir de `app/frontend/styles.css` |
+| 8 | JS carregando corretamente a partir de `app/frontend/main.js` |
 
 ## Validacao local
 
