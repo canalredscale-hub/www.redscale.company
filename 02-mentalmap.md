@@ -913,6 +913,13 @@
 - Implementacao entregue: `app/frontend/index.html` transformou cada frase de `.about__echoes` em um mini-bloco com `about__echo-title` e `about__echo-copy`, aplicando as novas copies institucionais; `app/frontend/styles.css` ampliou a altura util de `.about__echoes`, criou a separacao entre titulo em `#262626` e apoio em cinza `#8B9191`, manteve ambos em `IBM Plex Sans` na escala `h6` e deslocou os dois blocos aproximadamente `1cm` para a esquerda; `00-user-guide.md` foi sincronizado com o novo estado.
 - Proximo movimento coerente: validar no preview se a nova densidade de texto continua leve o bastante e se o bloco da direita ainda conversa bem com a referencia horizontal da capsula fixa do header.
 
+### 2026-04-05T21:09:32.5607618-03:00 - Textos de apoio do Sobre passaram a quebrar antes e o bloco da direita foi equalizado
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: fazer os textos cinza do bloco complementar do `Sobre` quebrarem cerca de `0,5cm` antes da largura do titulo e fazer o bloco da direita respeitar a mesma largura-base do bloco da esquerda.
+- Implementacao entregue: `app/frontend/styles.css` adicionou `max-width: calc(100% - 19px)` em `.about__echo-copy` para antecipar a quebra dos textos de apoio e ampliou `.about__echo--right` de `480px` para `504px`, ajustando tambem o limite de posicionamento para manter a mesma regua do bloco esquerdo; `00-user-guide.md` foi sincronizado.
+- Proximo movimento coerente: validar no preview se as quebras dos textos de apoio ficaram mais elegantes sem apertar demais a leitura no bloco da direita.
+
 ### 2026-04-05T18:10:30.4222465-03:00 - Repositorio privado conectado e fluxo de push habilitado
 
 - Fase impactada: Governanca de projeto e continuidade operacional.
