@@ -927,6 +927,13 @@
 - Implementacao entregue: `app/frontend/styles.css` ampliou o recuo interno de quebra em `.about__echo-copy`, mudando `max-width` de `calc(100% - 19px)` para `calc(100% - 95px)` para antecipar mais a quebra das duas colunas de apoio; `00-user-guide.md` foi sincronizado.
 - Proximo movimento coerente: validar no preview se a quebra mais fechada continua confortavel para leitura e se o balanço entre as duas colunas permaneceu elegante.
 
+### 2026-04-05T23:28:55.4872470-03:00 - Textos de apoio do Sobre passaram a quebrar mais 2cm antes novamente
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: recuar mais aproximadamente `2cm` a quebra dos textos de apoio do bloco complementar do `Sobre`, preservando o alinhamento atual dos titulos.
+- Implementacao entregue: `app/frontend/styles.css` ampliou novamente o recuo interno de quebra em `.about__echo-copy`, mudando `max-width` de `calc(100% - 95px)` para `calc(100% - 171px)`, levando a quebra total para algo proximo de `4,5cm` antes da largura dos titulos; `00-user-guide.md` foi sincronizado.
+- Proximo movimento coerente: validar no preview se a nova quebra ficou no ponto certo ou se o bloco de apoio ja comecou a perder fluidez de leitura.
+
 ### 2026-04-05T18:10:30.4222465-03:00 - Repositorio privado conectado e fluxo de push habilitado
 
 - Fase impactada: Governanca de projeto e continuidade operacional.
