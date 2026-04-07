@@ -14,7 +14,7 @@ Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
 ## Resumo atual
 
 - Frontend ativo: construcao autoral do site REDSCALE do zero, em HTML e CSS, com evolucao incremental de cima para baixo.
-- Escopo atual do frontend: home com header, hero textual, faixa de video, secao `Sobre` expandida e abertura da secao `Nossos Servicos` com lista tipografica interativa de ofertas e miniaturas visuais por item.
+- Escopo atual do frontend: home com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre` expandida e abertura da secao `Nossos Servicos` com lista tipografica interativa de ofertas e miniaturas visuais por item atualizadas.
 - Estado atual: o projeto nao usa mais espelhos, templates Webflow ou assets de sites terceiros como base ativa.
 
 ## Estrutura atual do frontend
