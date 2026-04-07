@@ -1,0 +1,268 @@
+:root {
+  --paint-hold-seconds: 7;
+  --paint-step-seconds: 1;
+  --paint-overflow-bottom: 0.22em;
+}
+
+.paint-cycle {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  white-space: nowrap;
+  overflow: visible;
+  padding-bottom: var(--paint-overflow-bottom);
+  margin-bottom: calc(-1 * var(--paint-overflow-bottom));
+}
+
+.paint-cycle::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: calc(-1 * var(--paint-overflow-bottom));
+  padding-bottom: var(--paint-overflow-bottom);
+  box-sizing: border-box;
+  color: var(--paint-fill, var(--brand-red));
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: clip-path;
+  clip-path: inset(0 100% 0 0);
+}
+
+.paint-cycle--hero-growth {
+  --paint-fill: var(--brand-red);
+  --paint-overflow-bottom: 0.24em;
+}
+
+.paint-cycle--hero-output {
+  --paint-fill: #044040;
+  --paint-overflow-bottom: 0.24em;
+}
+
+.paint-cycle--about,
+.paint-cycle--services,
+.paint-cycle--proof {
+  --paint-fill: var(--brand-red);
+}
+
+.paint-step--hero-1::after {
+  animation: paint-hero-line-1 18s linear infinite;
+}
+
+.paint-step--hero-2::after {
+  animation: paint-hero-line-2 18s linear infinite;
+}
+
+.paint-step--about-1::after {
+  animation: paint-about-step-1 22s linear infinite;
+}
+
+.paint-step--about-2::after {
+  animation: paint-about-step-2 22s linear infinite;
+}
+
+.paint-step--about-3::after {
+  animation: paint-about-step-3 22s linear infinite;
+}
+
+.paint-step--about-4::after {
+  animation: paint-about-step-4 22s linear infinite;
+}
+
+.paint-step--proof-1::after {
+  animation: paint-services-step-1 24s linear infinite;
+}
+
+.paint-step--proof-2::after {
+  animation: paint-services-step-2 24s linear infinite;
+}
+
+.paint-step--proof-3::after {
+  animation: paint-services-step-3 24s linear infinite;
+}
+
+.paint-step--proof-4::after {
+  animation: paint-services-step-4 24s linear infinite;
+}
+
+.paint-step--proof-5::after {
+  animation: paint-services-step-5 24s linear infinite;
+}
+
+.paint-step--services-1::after {
+  animation: paint-services-step-1 24s linear infinite;
+}
+
+.paint-step--services-2::after {
+  animation: paint-services-step-2 24s linear infinite;
+}
+
+.paint-step--services-3::after {
+  animation: paint-services-step-3 24s linear infinite;
+}
+
+.paint-step--services-4::after {
+  animation: paint-services-step-4 24s linear infinite;
+}
+
+.paint-step--services-5::after {
+  animation: paint-services-step-5 24s linear infinite;
+}
+
+@keyframes paint-about-step-1 {
+  0%, 31.818% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  36.364%, 95.455% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-about-step-2 {
+  0%, 36.364% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  40.909%, 90.909% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  95.455%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-about-step-3 {
+  0%, 40.909% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  45.455%, 86.364% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  90.909%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-about-step-4 {
+  0%, 45.455% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50%, 81.818% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  86.364%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-services-step-1 {
+  0%, 29.167% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  33.333%, 95.833% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-services-step-2 {
+  0%, 33.333% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  37.5%, 91.667% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  95.833%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-services-step-3 {
+  0%, 37.5% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  41.667%, 87.5% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  91.667%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-services-step-4 {
+  0%, 41.667% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  45.833%, 83.333% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  87.5%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-services-step-5 {
+  0%, 45.833% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50%, 79.167% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  83.333%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-hero-line-1 {
+  0%, 38.889% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  44.444%, 94.444% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-hero-line-2 {
+  0%, 44.444% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50%, 88.889% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  94.444%, 100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}

@@ -14,13 +14,14 @@ Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
 ## Resumo atual
 
 - Frontend ativo: construcao autoral do site REDSCALE do zero, em HTML e CSS, com evolucao incremental de cima para baixo.
-- Escopo atual do frontend: home com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre` expandida e abertura da secao `Nossos Servicos` com lista tipografica interativa de ofertas e miniaturas visuais por item atualizadas.
+- Escopo atual do frontend: home institucional em pagina unica com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre`, bloco `Nosso Approach`, `Nossos Servicos` com lista tipografica interativa, secao `Produtos`, secao `Redsights` e CTA final em `#contato`.
 - Estado atual: o projeto nao usa mais espelhos, templates Webflow ou assets de sites terceiros como base ativa.
 
 ## Estrutura atual do frontend
 
 - `app/frontend/index.html`: estrutura atual da home em construcao.
 - `app/frontend/styles.css`: estilos globais e componentes visuais iniciais do site.
+- `app/frontend/paint-animations.css`: logica compartilhada das animacoes tipograficas por recorte.
 - `app/frontend/main.js`: microinteracoes e animacoes do header.
 - `app/frontend/assets/fonts/AspektaVF.woff2`: fonte local usada no logo.
 
@@ -76,9 +77,11 @@ Para parar o servidor, use `Ctrl + C`.
 | 3 | Hero textual com `Cresca melhor.` e `Produza mais.` mais a copy auxiliar a direita |
 | 4 | Faixa de video com CTA sobreposto no canto inferior direito |
 | 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
-| 6 | Nova abertura da secao `Nossos Servicos` abaixo de `Sobre`, respeitando o novo espacamento global e exibindo a lista tipografica interativa de ofertas com miniaturas por item |
-| 7 | CSS carregando corretamente a partir de `app/frontend/styles.css` |
-| 8 | JS carregando corretamente a partir de `app/frontend/main.js` |
+| 6 | Bloco `Nosso Approach` entre `Sobre` e `Nossos Servicos`, com infografico `Metodologia CAR` e video local `redscale-f1.mp4` |
+| 7 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
+| 8 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
+| 9 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
+| 10 | JS carregando corretamente a partir de `app/frontend/main.js` |
 
 ## Validacao local
 

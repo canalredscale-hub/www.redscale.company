@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="paint-animations.css" />
   </head>
   <body id="home">
     <header class="site-header" aria-label="Header principal">
@@ -27,7 +28,7 @@
 
       <div class="site-header__shell">
         <nav class="site-header__nav" aria-label="Menu principal">
-          <a class="site-header__nav-link" href="#home">
+          <a class="site-header__nav-link" href="#home" data-nav-home>
             <span class="site-header__nav-track">
               <span class="site-header__nav-label site-header__nav-label--base">Home</span>
               <span
@@ -38,7 +39,7 @@
               </span>
             </span>
           </a>
-          <a class="site-header__nav-link" href="#sobre">
+          <a class="site-header__nav-link" href="#sobre" data-nav-section="sobre">
             <span class="site-header__nav-track">
               <span class="site-header__nav-label site-header__nav-label--base">Sobre</span>
               <span
@@ -126,10 +127,14 @@
         <div class="hero__content">
           <h1 class="hero__title">
             <span class="hero__line hero__line--muted">
-              Cres&ccedil;a melhor.
+              <span class="hero__line-paint paint-cycle paint-cycle--hero-growth paint-step--hero-1" data-text="Cres&ccedil;a melhor.">
+                Cres&ccedil;a melhor.
+              </span>
             </span>
             <span class="hero__line hero__line--accent">
-              Produza mais.
+              <span class="hero__line-paint paint-cycle paint-cycle--hero-output paint-step--hero-2" data-text="Produza mais.">
+                Produza mais.
+              </span>
             </span>
           </h1>
 
@@ -142,10 +147,16 @@
               </svg>
             </span>
             <p class="hero__media-note">
-              Para haver crescimento &eacute; necess&aacute;rio um aumento na
-              produ&ccedil;&atilde;o, ou seja, na produtividade. N&atilde;o
-              necessariamente fazer mais &mdash; fazer melhor. Nossos produtos,
-              servi&ccedil;os, metodologias e insights te ajudam a chegar l&aacute;.
+              Para haver
+              <span class="hero__media-fill">crescimento</span>
+              &eacute; necess&aacute;rio um
+              <span class="hero__media-fill">aumento</span>
+              na produ&ccedil;&atilde;o, ou seja, na
+              <span class="hero__media-fill">produtividade</span>.
+              N&atilde;o necessariamente fazer mais &mdash;
+              <span class="hero__media-fill">fazer melhor</span>.
+              Nossos produtos, servi&ccedil;os, metodologias e insights te
+              ajudam a <span class="hero__media-fill">chegar l&aacute;</span>.
             </p>
           </div>
         </div>
@@ -211,29 +222,36 @@
             <span class="section-intro__mark" aria-hidden="true"></span>
             <span class="section-intro__label">Sobre N&oacute;s</span>
           </div>
-          <h2 class="section-intro__title" id="about-title">
-            Somos especialistas em identificar e resolver problemas
-            relacionados a produtividade.
+          <h2 class="section-intro__title section-intro__title--about" id="about-title">
+            Somos
+            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-1" data-text="especialistas">
+              especialistas
+            </span>
+            em
+            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-2" data-text="identificar">
+              identificar
+            </span>
+            e
+            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-3" data-text="resolver">
+              resolver
+            </span>
+            problemas relacionados a
+            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-4" data-text="produtividade">
+              produtividade
+            </span>.
           </h2>
           <p class="section-intro__support">
-            Empresas menos produtivas &ldquo;made a positive contribution by
-            losing market share and employment to more productive firms or
-            exited altogether&rdquo;. Neste estudo &ldquo;The power of one&rdquo;,
-            a McKinsey&trade; diz que 20% das firmas que aumentaram a
-            produtividade 1,5 vezes mais r&aacute;pido que a m&eacute;dia do mesmo
-            segmento tamb&eacute;m aumentaram sua participa&ccedil;&atilde;o de
-            emprego, ou seja,
-            <span class="section-intro__support-emphasis">
-              produtividade superior e ganho de espa&ccedil;o caminham juntos.
-            </span>
             <a
-              class="section-intro__support-link section-intro__support-link--study"
+              class="section-intro__support-link section-intro__support-link--inline-study"
               href="https://www.mckinsey.com/mgi/our-research/the-power-of-one-how-standout-firms-grow-national-productivity"
               target="_blank"
               rel="noreferrer"
-            >
-              Veja o estudo.
-            </a>
+            >Neste artigo</a>
+            &ldquo;The power of one&rdquo;, a McKinsey&trade; diz que 20% das
+            firmas que aumentaram a produtividade 1,5 vezes mais r&aacute;pido
+            que a m&eacute;dia do mesmo segmento tamb&eacute;m aumentaram sua
+            participa&ccedil;&atilde;o de emprego, ou seja, produtividade
+            superior e ganho de espa&ccedil;o caminham juntos.
           </p>
         </div>
 
@@ -279,14 +297,13 @@
               arrumar a casa &mdash; atualiza&ccedil;&atilde;o dos fluxos de
               trabalho e comunica&ccedil;&atilde;o interna. Trabalhamos com VSM
               para ter uma vis&atilde;o end-to-end e definir o ponto de
-              partida. Melhorar um fluxo de trabalho aprovado cria um efeito em
-              cascata que se espalha e gera novos efeitos.
+              partida.
             </p>
           </div>
           <div class="about__echo about__echo--right">
             <p class="about__echo-title">
               Orienta&ccedil;&atilde;o por princ&iacute;pios, sistemas e
-              metodologia
+              metodologias
             </p>
             <p class="about__echo-copy">
               N&atilde;o reinventar a roda, apenas importe e adapte o que j&aacute;
@@ -298,7 +315,74 @@
           </div>
         </div>
 
+
         <div class="about__shape" aria-hidden="true"></div>
+      </section>
+
+      <section class="proof" aria-labelledby="proof-title">
+        <div class="section-intro">
+          <div class="section-intro__eyebrow">
+            <span class="section-intro__mark" aria-hidden="true"></span>
+            <span class="section-intro__label">Nosso Approach</span>
+          </div>
+          <h2 class="section-intro__title section-intro__title--proof" id="proof-title">
+            N&oacute;s focamos em
+            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-1" data-text="transpar&ecirc;ncia">
+              transpar&ecirc;ncia
+            </span>,
+            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-2" data-text="criatividade">
+              criatividade
+            </span>
+            e
+            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-3" data-text="colabora&ccedil;&atilde;o">
+              colabora&ccedil;&atilde;o
+            </span>
+            para garantir que cada projeto esteja
+            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-4" data-text="alinhado">
+              alinhado
+            </span>
+            ao
+            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-5" data-text="seu objetivo">
+              seu objetivo
+            </span>.
+          </h2>
+        </div>
+        <div class="proof__body">
+          <div class="proof__infographic" aria-labelledby="proof-car-title">
+            <h3 class="proof__car-title" id="proof-car-title">Metodologia CAR</h3>
+            <div class="proof__car-layout">
+              <div class="proof__car-graphic" aria-hidden="true"></div>
+              <div class="proof__car-legend">
+                <div class="proof__car-item">
+                  <span class="proof__car-badge proof__car-badge--context">C</span>
+                  <p class="proof__car-label proof__car-label--context">Contexto</p>
+                </div>
+                <div class="proof__car-item">
+                  <span class="proof__car-badge proof__car-badge--action">A</span>
+                  <p class="proof__car-label proof__car-label--action">A&ccedil;&atilde;o</p>
+                </div>
+                <div class="proof__car-item">
+                  <span class="proof__car-badge proof__car-badge--result">R</span>
+                  <p class="proof__car-label proof__car-label--result">Resultados</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="proof__media-stage">
+            <video
+              class="proof__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Video institucional da REDSCALE"
+            >
+              <source src="./assets/videos/redscale-f1.mp4" type="video/mp4" />
+              Seu navegador n&atilde;o suporta v&iacute;deos HTML5.
+            </video>
+          </div>
+        </div>
       </section>
 
       <section class="services" id="servicos" aria-labelledby="services-title">
@@ -307,12 +391,33 @@
             <span class="section-intro__mark" aria-hidden="true"></span>
             <span class="section-intro__label">Nossos Servi&ccedil;os</span>
           </div>
-          <h2 class="section-intro__title" id="services-title">
-            Produtividade melhora quando a organiza&ccedil;&atilde;o reduz o
-            tempo entre sinal, decis&atilde;o e ajuste. Te ajudamos a
-            cadenciar este trip&eacute; e adapt&aacute;-lo &agrave; sua
-            realidade.
+          <h2 class="section-intro__title section-intro__title--services" id="services-title">
+            A
+            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-1" data-text="produtividade aumenta">
+              produtividade aumenta
+            </span>
+            quando a empresa
+            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-2" data-text="encurta o tempo">
+              encurta o tempo
+            </span>
+            entre
+            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-3" data-text="perceber">
+              perceber
+            </span>
+            um problema,
+            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-4" data-text="decidir">
+              decidir
+            </span>
+            e
+            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-5" data-text="agir">
+              agir
+            </span>.
           </h2>
+          <p class="section-intro__support">
+            Os nomes abaixo traduzem como o ecossistema REDSCALE atua na
+            pr&aacute;tica: entrada consultiva, gest&atilde;o recorrente,
+            estrutura operacional e relacionamento orientado por contexto.
+          </p>
         </div>
         <div class="services__catalog" role="list" aria-label="Formatos de servi&ccedil;o">
           <div class="services__catalog-entry" role="listitem">
@@ -329,7 +434,20 @@
               <span class="services__catalog-text">Consulting-as-a-Service</span>
               <span class="services__catalog-icon" aria-hidden="true"></span>
             </button>
-            <div class="services__catalog-panel" aria-hidden="true"></div>
+            <div class="services__catalog-panel" aria-hidden="true">
+              <div class="services__catalog-panel-inner">
+                <p class="services__catalog-panel-copy">
+                  Porta de entrada consultiva da REDSCALE para diagnosticar,
+                  consolidar contexto, propor uma arquitetura de a&ccedil;&atilde;o
+                  e iniciar a execu&ccedil;&atilde;o com visibilidade real.
+                </p>
+                <ul class="services__catalog-panel-list" aria-label="Frentes do Consulting-as-a-Service">
+                  <li>diagn&oacute;stico estruturado</li>
+                  <li>proposta executiva</li>
+                  <li>plano de a&ccedil;&atilde;o</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="services__catalog-entry" role="listitem">
             <button class="services__catalog-trigger" type="button" aria-expanded="false">
@@ -345,7 +463,20 @@
               <span class="services__catalog-text">Management-as-a-Service</span>
               <span class="services__catalog-icon" aria-hidden="true"></span>
             </button>
-            <div class="services__catalog-panel" aria-hidden="true"></div>
+            <div class="services__catalog-panel" aria-hidden="true">
+              <div class="services__catalog-panel-inner">
+                <p class="services__catalog-panel-copy">
+                  Camada recorrente de acompanhamento, leitura gerencial e
+                  recomenda&ccedil;&atilde;o para encurtar o tempo entre sinal,
+                  decis&atilde;o e ajuste.
+                </p>
+                <ul class="services__catalog-panel-list" aria-label="Frentes do Management-as-a-Service">
+                  <li>an&aacute;lises peri&oacute;dicas</li>
+                  <li>dashboards</li>
+                  <li>apresenta&ccedil;&otilde;es executivas</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="services__catalog-entry" role="listitem">
             <button class="services__catalog-trigger" type="button" aria-expanded="false">
@@ -361,7 +492,20 @@
               <span class="services__catalog-text">Device-as-a-Service</span>
               <span class="services__catalog-icon" aria-hidden="true"></span>
             </button>
-            <div class="services__catalog-panel" aria-hidden="true"></div>
+            <div class="services__catalog-panel" aria-hidden="true">
+              <div class="services__catalog-panel-inner">
+                <p class="services__catalog-panel-copy">
+                  Estrutura f&iacute;sica como parte da opera&ccedil;&atilde;o:
+                  notebooks corporativos, gest&atilde;o de ativos, previsibilidade
+                  de atendimento e redu&ccedil;&atilde;o de fric&ccedil;&atilde;o.
+                </p>
+                <ul class="services__catalog-panel-list" aria-label="Frentes do Device-as-a-Service">
+                  <li>SLA</li>
+                  <li>reposi&ccedil;&atilde;o</li>
+                  <li>relat&oacute;rios de parque</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="services__catalog-entry" role="listitem">
             <button class="services__catalog-trigger" type="button" aria-expanded="false">
@@ -377,10 +521,182 @@
               <span class="services__catalog-text">CRM</span>
               <span class="services__catalog-icon" aria-hidden="true"></span>
             </button>
-            <div class="services__catalog-panel" aria-hidden="true"></div>
+            <div class="services__catalog-panel" aria-hidden="true">
+              <div class="services__catalog-panel-inner">
+                <p class="services__catalog-panel-copy">
+                  Camada de relacionamento, mem&oacute;ria comercial e governan&ccedil;a
+                  de contexto para que cada conversa, proposta e avan&ccedil;o
+                  vire intelig&ecirc;ncia reaproveit&aacute;vel.
+                </p>
+                <ul class="services__catalog-panel-list" aria-label="Frentes do CRM">
+                  <li>pipeline</li>
+                  <li>mem&oacute;ria estrat&eacute;gica</li>
+                  <li>governan&ccedil;a de contexto</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="services__shape" aria-hidden="true"></div>
+      </section>
+
+      <section class="products" id="produtos" aria-labelledby="products-title">
+        <div class="section-intro">
+          <div class="section-intro__eyebrow">
+            <span class="section-intro__mark" aria-hidden="true"></span>
+            <span class="section-intro__label">Produtos</span>
+          </div>
+          <h2 class="section-intro__title" id="products-title">
+            Ativos escal&aacute;veis para estruturar, aprender e operar melhor.
+          </h2>
+          <p class="section-intro__support">
+            Produtos concentram ativos reutiliz&aacute;veis da REDSCALE para
+            acelerar rotina, treino e padroniza&ccedil;&atilde;o sem depender
+            de uma implementa&ccedil;&atilde;o longa.
+          </p>
+        </div>
+        <div class="products__grid" role="list" aria-label="Linhas de produtos REDSCALE">
+          <article class="products__card" role="listitem">
+            <p class="products__card-kicker">Opera&ccedil;&atilde;o</p>
+            <h3 class="products__card-title">Planilhas Excel</h3>
+            <p class="products__card-copy">
+              Rotinas, controles, indicadores e consolida&ccedil;&otilde;es para
+              decis&atilde;o mais r&aacute;pida.
+            </p>
+          </article>
+          <article class="products__card" role="listitem">
+            <p class="products__card-kicker">Organiza&ccedil;&atilde;o</p>
+            <h3 class="products__card-title">Templates</h3>
+            <p class="products__card-copy">
+              Sistemas leves para produtividade, gest&atilde;o de tarefas e
+              small business systems.
+            </p>
+          </article>
+          <article class="products__card" role="listitem">
+            <p class="products__card-kicker">Capacita&ccedil;&atilde;o</p>
+            <h3 class="products__card-title">Cursos</h3>
+            <p class="products__card-copy">
+              Trilhas pr&aacute;ticas para desenvolver autonomia em an&aacute;lise,
+              opera&ccedil;&atilde;o e leitura de dados.
+            </p>
+          </article>
+          <article class="products__card" role="listitem">
+            <p class="products__card-kicker">Times</p>
+            <h3 class="products__card-title">Treinamentos corporativos</h3>
+            <p class="products__card-copy">
+              Forma&ccedil;&atilde;o aplicada para padronizar m&eacute;todo,
+              acelerar ado&ccedil;&atilde;o e ganhar produtividade em equipe.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="redsights" id="redsights" aria-labelledby="redsights-title">
+        <div class="section-intro">
+          <div class="section-intro__eyebrow">
+            <span class="section-intro__mark" aria-hidden="true"></span>
+            <span class="section-intro__label">Redsights</span>
+          </div>
+          <h2 class="section-intro__title" id="redsights-title">
+            Conte&uacute;do que organiza contexto, gera autoridade e abre
+            novas conversas.
+          </h2>
+          <p class="section-intro__support">
+            Redsights &eacute; a camada editorial da REDSCALE: pesquisa
+            aplicada, leitura de mercado e narrativa institucional para
+            converter reputa&ccedil;&atilde;o em demanda qualificada.
+          </p>
+        </div>
+        <div class="redsights__grid" role="list" aria-label="Frentes editoriais do Redsights">
+          <article class="redsights__card" role="listitem">
+            <h3 class="redsights__card-title">Artigos</h3>
+            <p class="redsights__card-copy">
+              Vis&atilde;o de mercado, filosofia do neg&oacute;cio e bastidores
+              inteligentes da REDSCALE.
+            </p>
+          </article>
+          <article class="redsights__card" role="listitem">
+            <h3 class="redsights__card-title">An&aacute;lises</h3>
+            <p class="redsights__card-copy">
+              Leituras sobre produtividade, opera&ccedil;&atilde;o, tecnologia
+              aplicada e intelig&ecirc;ncia de neg&oacute;cio.
+            </p>
+          </article>
+          <article class="redsights__card" role="listitem">
+            <h3 class="redsights__card-title">Estudos</h3>
+            <p class="redsights__card-copy">
+              Pesquisa, aprendizados e recortes de impacto para gerar contexto
+              reaproveit&aacute;vel.
+            </p>
+          </article>
+          <article class="redsights__card" role="listitem">
+            <h3 class="redsights__card-title">M&iacute;dia e networking</h3>
+            <p class="redsights__card-copy">
+              Conte&uacute;do feito para circular, ser citado, abrir conversa e
+              ampliar a presen&ccedil;a da marca.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-cta" id="contato" aria-labelledby="contact-title">
+        <div class="contact-cta__shell">
+          <div class="section-intro__eyebrow contact-cta__eyebrow">
+            <span class="section-intro__mark" aria-hidden="true"></span>
+            <span class="section-intro__label">Pr&oacute;ximo passo</span>
+          </div>
+          <h2 class="contact-cta__title" id="contact-title">
+            Agendar diagn&oacute;stico
+          </h2>
+          <p class="contact-cta__copy">
+            Come&ccedil;amos entendendo onde o contexto trava, qual ecossistema
+            faz mais sentido e o que precisa ser priorizado primeiro.
+          </p>
+          <p class="contact-cta__note">
+            A primeira leitura serve para direcionar a frente certa:
+            Consulting-as-a-Service, Management-as-a-Service,
+            Device-as-a-Service ou CRM.
+          </p>
+          <div class="contact-cta__actions">
+            <a class="site-cta contact-cta__primary" href="#servicos">
+              <span class="site-cta__fill" aria-hidden="true">
+                <span class="site-cta__arrow-track">
+                  <span class="site-cta__arrow site-cta__arrow--base">
+                    <svg
+                      class="site-cta__arrow-icon"
+                      viewBox="0 0 16 16"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
+                    </svg>
+                  </span>
+                  <span class="site-cta__arrow site-cta__arrow--hover">
+                    <svg
+                      class="site-cta__arrow-icon"
+                      viewBox="0 0 16 16"
+                      focusable="false"
+                      aria-hidden="true"
+                    >
+                      <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+              <span class="site-cta__label-track">
+                <span class="site-cta__label site-cta__label--base">
+                  Conhecer ecossistemas
+                </span>
+                <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
+                  Conhecer ecossistemas
+                </span>
+              </span>
+            </a>
+            <a class="contact-cta__secondary" href="#redsights">
+              Explorar Redsights
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
