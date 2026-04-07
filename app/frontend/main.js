@@ -215,6 +215,25 @@ const syncAboutEchoHeight = () => {
   );
 };
 
+const syncAboutIntroEyebrowWidth = () => {
+  const aboutEyebrow = document.querySelector(".about .section-intro__eyebrow");
+
+  if (!aboutEyebrow) {
+    return;
+  }
+
+  const eyebrowWidth = aboutEyebrow.offsetWidth;
+
+  if (eyebrowWidth <= 0) {
+    return;
+  }
+
+  document.documentElement.style.setProperty(
+    "--about-section-intro-eyebrow-width",
+    `${Math.ceil(eyebrowWidth)}px`
+  );
+};
+
 document.querySelectorAll(".site-header__nav-link").forEach((link) => {
   bindOneWayRise({
     triggerElement: link,
@@ -264,6 +283,7 @@ if (aboutNavLink) {
 
 window.addEventListener("load", () => {
   syncAboutEchoHeight();
+  syncAboutIntroEyebrowWidth();
 
   if (!isHomeSurface()) {
     return;
@@ -280,11 +300,15 @@ window.addEventListener("load", () => {
   }
 });
 
-window.addEventListener("resize", syncAboutEchoHeight);
+window.addEventListener("resize", () => {
+  syncAboutEchoHeight();
+  syncAboutIntroEyebrowWidth();
+});
 
 if (document.fonts?.ready) {
   document.fonts.ready.then(() => {
     syncAboutEchoHeight();
+  syncAboutIntroEyebrowWidth();
   });
 }
 
