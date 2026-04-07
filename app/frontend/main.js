@@ -215,22 +215,19 @@ const syncAboutEchoHeight = () => {
   );
 };
 
-const syncAboutIntroEyebrowWidth = () => {
+const syncProofTitleOffset = () => {
   const aboutEyebrow = document.querySelector(".about .section-intro__eyebrow");
+  const proofEyebrow = document.querySelector(".proof .section-intro__eyebrow");
 
-  if (!aboutEyebrow) {
+  if (!aboutEyebrow || !proofEyebrow) {
     return;
   }
 
-  const eyebrowWidth = aboutEyebrow.offsetWidth;
-
-  if (eyebrowWidth <= 0) {
-    return;
-  }
+  const offset = aboutEyebrow.offsetWidth - proofEyebrow.offsetWidth;
 
   document.documentElement.style.setProperty(
-    "--about-section-intro-eyebrow-width",
-    `${Math.ceil(eyebrowWidth)}px`
+    "--proof-title-align-offset",
+    `${Math.round(offset)}px`
   );
 };
 
@@ -283,7 +280,7 @@ if (aboutNavLink) {
 
 window.addEventListener("load", () => {
   syncAboutEchoHeight();
-  syncAboutIntroEyebrowWidth();
+  syncProofTitleOffset();
 
   if (!isHomeSurface()) {
     return;
@@ -302,13 +299,13 @@ window.addEventListener("load", () => {
 
 window.addEventListener("resize", () => {
   syncAboutEchoHeight();
-  syncAboutIntroEyebrowWidth();
+  syncProofTitleOffset();
 });
 
 if (document.fonts?.ready) {
   document.fonts.ready.then(() => {
     syncAboutEchoHeight();
-  syncAboutIntroEyebrowWidth();
+  syncProofTitleOffset();
   });
 }
 
