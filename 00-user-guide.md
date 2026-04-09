@@ -71,10 +71,10 @@ Este trecho e a referencia textual da interface atual. Sempre que houver alterac
 
 6. Secao Metodo.
    Posicao: aproximadamente `5cm` abaixo da ultima linha de `Nossos Servicos`, como uma secao independente da narrativa de `Sobre`.
-   Estrutura atual: label `Metodo` e titulo principal sem texto de apoio nem corpo visual complementar.
-   Papel atual: condensar o approach institucional da REDSCALE em uma declaracao curta de principios aplicados.
-   Conteudo atual: `Nos focamos em transparencia, colaboracao e aplicacao correta de principios para garantir que o projeto esteja alinhado ao seu objetivo.`
-   Estilo atual: o titulo usa a mesma largura util de `502px`, o mesmo line-height `0.98` e a mesma regua horizontal do bloco principal `Somos especialistas...`; o label passa a ser `Metodo` e a pintura tipografica segue com cadencia sequencial dedicada de `26s`, sempre iniciando a palavra seguinte apenas depois que a anterior conclui a entrada, destacando `transparencia`, `colaboracao`, `principios`, `projeto`, `alinhado` e `seu objetivo` em `#8C1F28`. Sem infografico `CAR` e sem video, a secao agora funciona apenas como bloco textual independente entre `Nossos Servicos` e `Produtos`.
+   Estrutura atual: label `Metodo`, titulo principal curto com um unico destaque animado e um subtexto logo abaixo usando a mesma referencia estrutural do bloco de apoio de `Sobre`.
+   Papel atual: condensar o approach institucional da REDSCALE em uma declaracao curta de confianca operacional, seguida por uma explicacao objetiva de como esse metodo se forma na pratica.
+   Conteudo atual: titulo `A confianca nao vem do discurso. Vem do resultado!` e subtexto `Nosso trabalho parte de um objetivo simples: elevar a produtividade. Para isso, combinamos processos e metodos que funcionam conosco e adaptamos ao seu contexto real. O que entregamos nasceu de experiencia, pesquisa, diversos testes, uso recorrente e melhoria continua.`
+   Estilo atual: o titulo usa a mesma largura util de `502px`, o mesmo line-height `0.98` e a mesma regua horizontal do bloco principal `Somos especialistas...`; a expressao `Vem do resultado!` recebe sozinha a pintura tipografica em `#8C1F28`, com um ciclo dedicado de `16s`. Logo abaixo, o subtexto fica no mesmo grid-column e no mesmo alinhamento estrutural usados pelo bloco de apoio de `Sobre`, preservando o cinza institucional e a largura de leitura ja aprovada. A secao continua sem infografico `CAR` e sem video, funcionando apenas como bloco textual independente entre `Nossos Servicos` e `Produtos`.
 
 7. Secao Produtos.
    Posicao: abaixo de `Metodo`, respeitando o mesmo espacamento vertical global aproximado de `5cm`.

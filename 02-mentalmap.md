@@ -961,3 +961,10 @@
 - Decisao aprovada: desacoplar `Metodo` da secao `Sobre`, remover integralmente o bloco visual `CAR` e o video local, e reposicionar a secao logo abaixo de `Nossos Servicos` mantendo o compasso vertical de aproximadamente `5cm` entre blocos principais.
 - Implementacao entregue: `app/frontend/index.html` moveu a secao para depois de `Nossos Servicos`, trocou o label para `Metodo` e removeu todo o corpo visual antes composto por infografico e video; `app/frontend/styles.css` deixou `proof` com espacamento de secao independente e removeu as regras exclusivas do bloco `CAR`/video; `00-user-guide.md` e `README.md` foram sincronizados com a nova ordem da home.
 - Proximo movimento coerente: validar no preview se a respiracao entre `Sobre`, `Nossos Servicos` e `Metodo` ficou consistente com o ritmo geral da pagina.
+
+### 2026-04-09T11:40:00-03:00 - Metodo recebeu nova copy principal e subtexto alinhado ao Sobre
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: trocar a mensagem principal de `Metodo` para `A confianca nao vem do discurso. Vem do resultado!`, aplicar o destaque apenas em `Vem do resultado!` e incluir abaixo um subtexto no mesmo alinhamento estrutural usado pelo apoio da secao `Sobre`.
+- Implementacao entregue: `app/frontend/index.html` substituiu a copy principal, adicionou o novo paragrafo de apoio em `section-intro__support` e manteve a secao enxuta; `app/frontend/paint-animations.css` trocou a antiga sequencia de seis destaques por um unico ciclo de `16s` para `Vem do resultado!`; `00-user-guide.md`, `README.md` e `02-mentalmap.md` foram sincronizados.
+- Proximo movimento coerente: validar no preview se a nova copy segura bem a largura de `502px` e se o subtexto ficou com a mesma ancora visual percebida em `Sobre`.

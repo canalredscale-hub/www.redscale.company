@@ -78,7 +78,7 @@ Para parar o servidor, use `Ctrl + C`.
 | 4 | Faixa de video com CTA sobreposto no canto inferior direito |
 | 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
 | 6 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
-| 7 | Secao `Metodo` abaixo de `Nossos Servicos`, apenas com o bloco tipografico institucional |
+| 7 | Secao `Metodo` abaixo de `Nossos Servicos`, com destaque em `Vem do resultado!` e subtexto institucional de apoio |
 | 8 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
 | 9 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
 | 10 | JS carregando corretamente a partir de `app/frontend/main.js` |

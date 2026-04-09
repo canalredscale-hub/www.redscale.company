@@ -73,28 +73,8 @@
   animation: paint-about-step-4 22s linear infinite;
 }
 
-.paint-step--proof-1::after {
-  animation: paint-proof-step-1 26s linear infinite;
-}
-
-.paint-step--proof-2::after {
-  animation: paint-proof-step-2 26s linear infinite;
-}
-
-.paint-step--proof-3::after {
-  animation: paint-proof-step-3 26s linear infinite;
-}
-
-.paint-step--proof-4::after {
-  animation: paint-proof-step-4 26s linear infinite;
-}
-
-.paint-step--proof-5::after {
-  animation: paint-proof-step-5 26s linear infinite;
-}
-
-.paint-step--proof-6::after {
-  animation: paint-proof-step-6 26s linear infinite;
+.paint-step--proof-highlight::after {
+  animation: paint-proof-highlight 16s linear infinite;
 }
 
 .paint-step--services-1::after {
@@ -243,86 +223,16 @@
   }
 }
 
-@keyframes paint-proof-step-1 {
-  0%, 26.923% {
+@keyframes paint-proof-highlight {
+  0%, 43.75% {
     clip-path: inset(0 100% 0 0);
   }
 
-  30.769%, 96.154% {
+  50%, 93.75% {
     clip-path: inset(0 0 0 0);
   }
 
   100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes paint-proof-step-2 {
-  0%, 30.769% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  34.615%, 92.308% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  96.154%, 100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes paint-proof-step-3 {
-  0%, 34.615% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  38.462%, 88.462% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  92.308%, 100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes paint-proof-step-4 {
-  0%, 38.462% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  42.308%, 84.615% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  88.462%, 100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes paint-proof-step-5 {
-  0%, 42.308% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  46.154%, 80.769% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  84.615%, 100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes paint-proof-step-6 {
-  0%, 46.154% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  50%, 76.923% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  80.769%, 100% {
     clip-path: inset(0 100% 0 0);
   }
 }
