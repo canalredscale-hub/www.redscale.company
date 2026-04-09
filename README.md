@@ -14,7 +14,7 @@ Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
 ## Resumo atual
 
 - Frontend ativo: construcao autoral do site REDSCALE do zero, em HTML e CSS, com evolucao incremental de cima para baixo.
-- Escopo atual do frontend: home institucional em pagina unica com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre`, secao `Nossos Servicos` com lista tipografica interativa, secao `Metodo`, secao `Produtos`, secao `Redsights` e CTA final em `#contato`.
+- Escopo atual do frontend: home institucional em pagina unica com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre`, secao `Nossos Servicos` com lista tipografica interativa, CTA com imagem entre `Nossos Servicos` e `Metodo`, secao `Metodo`, secao `Produtos`, secao `Redsights` e CTA final em `#contato`.
 - Estado atual: o projeto nao usa mais espelhos, templates Webflow ou assets de sites terceiros como base ativa.
 
 ## Estrutura atual do frontend
@@ -78,10 +78,11 @@ Para parar o servidor, use `Ctrl + C`.
 | 4 | Faixa de video com CTA sobreposto no canto inferior direito |
 | 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
 | 6 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
-| 7 | Secao `Metodo` abaixo de `Nossos Servicos`, com destaque em `Vem do resultado!` e subtexto institucional de apoio |
-| 8 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
-| 9 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
-| 10 | JS carregando corretamente a partir de `app/frontend/main.js` |
+| 7 | CTA com imagem entre `Nossos Servicos` e `Metodo`, usando `cta-img.jpg`, titulo empilhado e CTA `Entre em contato conosco` |
+| 8 | Secao `Metodo` abaixo do CTA com imagem, com destaque em `Vem do resultado!` e subtexto institucional de apoio |
+| 9 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
+| 10 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
+| 11 | JS carregando corretamente a partir de `app/frontend/main.js` |
 
 ## Validacao local
 

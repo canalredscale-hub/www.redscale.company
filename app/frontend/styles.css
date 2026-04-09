@@ -24,6 +24,7 @@
     0px,
     calc(50vw - (var(--header-shell-active-width) / 2) - var(--page-gutter))
   );
+  --section-intro-label-width: 106px;
   --about-echo-reference-left: 438px;
   --services-open-space: 321px;
   --services-divider-gap: 38px;
@@ -508,7 +509,7 @@ body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: var(--section-intro-label-width) minmax(0, 1fr);
   column-gap: 302px;
   align-items: start;
 }
@@ -941,6 +942,7 @@ body {
   pointer-events: none;
 }
 
+.image-cta,
 .proof,
 .products,
 .redsights,
@@ -953,6 +955,94 @@ body {
 .products .section-intro__title,
 .redsights .section-intro__title {
   color: #044040;
+}
+
+.image-cta {
+  margin-top: var(--section-gap);
+}
+
+.image-cta__frame {
+  position: relative;
+  width: 100%;
+  min-height: clamp(460px, 48vw, 690px);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+
+.image-cta__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.image-cta__shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      112deg,
+      rgba(255, 255, 255, 0.48) 0%,
+      rgba(255, 255, 255, 0.16) 34%,
+      rgba(4, 64, 64, 0.18) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 64, 64, 0) 0%,
+      rgba(4, 64, 64, 0.16) 100%
+    );
+}
+
+.image-cta__content {
+  position: absolute;
+  top: 42px;
+  left: 42px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: min(360px, 44%);
+}
+
+.image-cta__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--brand-red);
+}
+
+.image-cta__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.image-cta__title {
+  margin: 26px 0 0;
+  color: #262626;
+  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
+  font-size: clamp(46px, 5.6vw, 84px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.image-cta__title span {
+  display: block;
+}
+
+.image-cta__action {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
 }
 
 .proof__grid,
@@ -1056,6 +1146,23 @@ body {
 
 .proof {
   margin-top: var(--section-gap);
+}
+
+@media (max-width: 980px) {
+  .image-cta__content {
+    top: 28px;
+    left: 28px;
+    max-width: calc(100% - 56px);
+  }
+
+  .image-cta__title {
+    font-size: clamp(38px, 8vw, 56px);
+  }
+
+  .image-cta__action {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 .section-intro__title--proof {
