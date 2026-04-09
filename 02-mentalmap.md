@@ -1,4 +1,4 @@
-﻿# 02 Mentalmap
+# 02 Mentalmap
 
 ## Como usar
 
@@ -947,3 +947,10 @@
 - Decisao aprovada: criar um repositorio privado no GitHub para este projeto e passar a trabalhar com `git push` a cada alteracao relevante.
 - Implementacao entregue: o diretorio local foi inicializado em git, recebeu commit inicial na branch `main`, o remoto `origin` foi conectado ao repositorio privado `https://github.com/canalredscale-hub/site-institucional-vendas` e o primeiro push foi concluido; `README.md` tambem foi corrigido de `http://localhost:8000` para `http://127.0.0.1:8000`, e `00-user-guide.md` foi sincronizado com o novo fluxo.
 - Proximo movimento coerente: seguir os proximos ciclos de UI com commits intencionais e push do `main` sempre que um bloco aprovado fechar.
+
+### 2026-04-09T10:55:00-03:00 - Hero e secao Sobre o Metodo receberam ajuste de copy e timing tipografico
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: renomear `Nosso Approach` para `Sobre o Metodo`, simplificar a copy auxiliar do hero e reajustar a sequencia do destaque tipografico na secao para acomodar `principios` e `projeto` sem sobreposicao.
+- Implementacao entregue: `app/frontend/index.html` trocou a copy auxiliar do hero por `Ajudamos empresas a elevar a produtividade com o uso consciente da tecnologia.`, renomeou o label da secao para `Sobre o Metodo`, atualizou o titulo institucional para a nova formulacao e removeu o texto visivel `Metodologia CAR`; `app/frontend/paint-animations.css` deixou a secao com seis etapas dedicadas em `26s`, fazendo cada palavra destacada iniciar apenas apos a anterior concluir; `app/frontend/styles.css` removeu o estilo do subtitulo retirado e aproximou o infografico do titulo; `00-user-guide.md` foi sincronizado com o novo estado.
+- Proximo movimento coerente: validar no preview se a nova cadencia do destaque ficou natural na leitura corrida e se a remocao do subtitulo deixou o infografico com o peso visual certo.
