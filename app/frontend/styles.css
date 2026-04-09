@@ -1059,8 +1059,7 @@ body {
 }
 
 .proof {
-  margin-top: calc(var(--about-inner-gap) - var(--section-gap));
-  padding-bottom: calc(var(--section-gap) - var(--about-inner-gap));
+  margin-top: var(--section-gap);
 }
 
 .section-intro__title--proof {
@@ -1073,131 +1072,6 @@ body {
 
 .proof__title-word {
   color: inherit;
-}
-
-.proof__body {
-  display: block;
-  margin-top: 38px;
-}
-
-.proof__infographic {
-  width: 100%;
-  max-width: none;
-}
-
-
-.proof__car-layout {
-  display: grid;
-  grid-template-columns: minmax(168px, 244px) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 42px);
-  align-items: center;
-  width: 100%;
-  margin-top: 0;
-}
-
-.proof__car-graphic {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1.05 / 0.92;
-  border-radius: 18px;
-  background:
-    linear-gradient(
-      164deg,
-      #044040 0%,
-      #044040 34%,
-      #8c1f28 34%,
-      #8c1f28 66%,
-      #d92525 66%,
-      #d92525 100%
-    );
-  clip-path: polygon(0 100%, 56% 0, 100% 100%);
-  box-shadow: 0 18px 44px rgba(4, 64, 64, 0.08);
-}
-
-.proof__car-legend {
-  display: grid;
-  gap: 14px;
-  justify-self: stretch;
-}
-
-.proof__car-item {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-}
-
-.proof__car-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border: 3px solid currentColor;
-  border-radius: 999px;
-  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.proof__car-badge--context,
-.proof__car-label--context {
-  color: #044040;
-}
-
-.proof__car-badge--action,
-.proof__car-label--action {
-  color: #8c1f28;
-}
-
-.proof__car-badge--result,
-.proof__car-label--result {
-  color: #d92525;
-}
-
-.proof__car-label {
-  margin: 0;
-  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
-  font-size: clamp(22px, 2vw, 28px);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 0.98;
-}
-
-.proof__media-stage {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  margin-top: 19px;
-  min-height: clamp(360px, 37vw, 540px);
-  border-radius: 26px;
-  overflow: hidden;
-  background: #d9d9d9;
-}
-
-.proof__video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  object-fit: cover;
-  object-position: center center;
-}
-
-@media (max-width: 980px) {
-  .proof__car-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .proof__car-graphic {
-    max-width: 244px;
-  }
-
-  .proof__media-stage {
-    min-height: clamp(360px, 68vw, 520px);
-  }
 }
 
 .products {

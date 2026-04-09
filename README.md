@@ -14,7 +14,7 @@ Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
 ## Resumo atual
 
 - Frontend ativo: construcao autoral do site REDSCALE do zero, em HTML e CSS, com evolucao incremental de cima para baixo.
-- Escopo atual do frontend: home institucional em pagina unica com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre`, bloco `Nosso Approach`, `Nossos Servicos` com lista tipografica interativa, secao `Produtos`, secao `Redsights` e CTA final em `#contato`.
+- Escopo atual do frontend: home institucional em pagina unica com header, hero textual, faixa de video com asset local `redscale-1.mp4`, secao `Sobre`, secao `Nossos Servicos` com lista tipografica interativa, secao `Metodo`, secao `Produtos`, secao `Redsights` e CTA final em `#contato`.
 - Estado atual: o projeto nao usa mais espelhos, templates Webflow ou assets de sites terceiros como base ativa.
 
 ## Estrutura atual do frontend
@@ -77,8 +77,8 @@ Para parar o servidor, use `Ctrl + C`.
 | 3 | Hero textual com `Cresca melhor.` e `Produza mais.` mais a copy auxiliar a direita |
 | 4 | Faixa de video com CTA sobreposto no canto inferior direito |
 | 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
-| 6 | Bloco `Nosso Approach` entre `Sobre` e `Nossos Servicos`, com infografico `Metodologia CAR` e video local `redscale-f1.mp4` |
-| 7 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
+| 6 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
+| 7 | Secao `Metodo` abaixo de `Nossos Servicos`, apenas com o bloco tipografico institucional |
 | 8 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
 | 9 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
 | 10 | JS carregando corretamente a partir de `app/frontend/main.js` |
