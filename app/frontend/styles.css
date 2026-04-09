@@ -772,17 +772,13 @@ body {
   position: relative;
   z-index: 3;
   padding-top: 0;
-  padding-bottom: 228px;
+  padding-bottom: 0;
   background: var(--page-bg);
   overflow: visible;
 }
 
 .services__intro {
   padding-left: 0;
-}
-
-.services .section-intro__title {
-  margin-left: 189px;
 }
 
 .section-intro__title--services {
@@ -1065,7 +1061,6 @@ body {
 .section-intro__title--proof {
   width: min(100%, 502px);
   max-width: 502px;
-  margin-left: var(--proof-title-align-offset, 0px);
   color: #044040;
   line-height: 0.98;
 }

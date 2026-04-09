@@ -968,3 +968,10 @@
 - Decisao aprovada: trocar a mensagem principal de `Metodo` para `A confianca nao vem do discurso. Vem do resultado!`, aplicar o destaque apenas em `Vem do resultado!` e incluir abaixo um subtexto no mesmo alinhamento estrutural usado pelo apoio da secao `Sobre`.
 - Implementacao entregue: `app/frontend/index.html` substituiu a copy principal, adicionou o novo paragrafo de apoio em `section-intro__support` e manteve a secao enxuta; `app/frontend/paint-animations.css` trocou a antiga sequencia de seis destaques por um unico ciclo de `16s` para `Vem do resultado!`; `00-user-guide.md`, `README.md` e `02-mentalmap.md` foram sincronizados.
 - Proximo movimento coerente: validar no preview se a nova copy segura bem a largura de `502px` e se o subtexto ficou com a mesma ancora visual percebida em `Sobre`.
+
+### 2026-04-09T12:00:00-03:00 - Servicos e Metodo voltaram para a mesma regua de Sobre
+
+- Fase impactada: Marco 3. Capacidades minimas do workflow `web_app`.
+- Decisao aprovada: alinhar os titulos principais e subtextos dos blocos pela mesma referencia horizontal de `Sobre`, remover o subtexto introdutorio de `Nossos Servicos` e reduzir o espacamento entre o fim do bloco `CRM` e o inicio de `Metodo` para voltar ao compasso de aproximadamente `5cm`.
+- Implementacao entregue: `app/frontend/index.html` removeu o subtexto de `Nossos Servicos`; `app/frontend/styles.css` eliminou o recuo extra do titulo de `Nossos Servicos`, deixou `Metodo` sem offset dedicado no titulo e zerou o `padding-bottom` estrutural de `services` para que o vao ate `Metodo` passe a ser controlado apenas pelo espacamento global de secao; `00-user-guide.md` e `02-mentalmap.md` foram sincronizados.
+- Proximo movimento coerente: validar no preview se a nova regua comum entre `Sobre`, `Nossos Servicos` e `Metodo` ficou visualmente precisa e se o vao real abaixo do `CRM` caiu no intervalo esperado.
