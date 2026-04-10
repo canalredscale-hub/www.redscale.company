@@ -77,6 +77,10 @@
   animation: paint-proof-highlight 16s linear infinite;
 }
 
+.paint-step--proof-support::after {
+  animation: paint-proof-support 16s linear infinite;
+}
+
 .paint-step--services-1::after {
   animation: paint-services-step-1 24s linear infinite;
 }
@@ -233,6 +237,20 @@
   }
 
   100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes paint-proof-support {
+  0%, 31.25% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  37.5%, 87.5% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  93.75%, 100% {
     clip-path: inset(0 100% 0 0);
   }
 }

@@ -72,14 +72,14 @@ Para parar o servidor, use `Ctrl + C`.
 
 | # | O que conferir |
 |---|----------------|
-| 1 | Background global branco em `#ffffff` |
+| 1 | Background global cinza-claro em `#f2f2f2`, com os shapes de `Sobre` e `Nossos Servicos` ligeiramente mais escuros |
 | 2 | Header com casca retangular arredondada, centralizada na largura util |
 | 3 | Hero textual com `Cresca melhor.` e `Produza mais.` mais a copy auxiliar a direita |
 | 4 | Faixa de video com CTA sobreposto no canto inferior direito |
 | 5 | Secao `Sobre` com label `Sobre Nos`, esteira animada e dois blocos complementares abaixo dela |
 | 6 | Secao `Nossos Servicos` exibindo a lista tipografica interativa de ofertas com miniaturas e paines de copy |
-| 7 | CTA com imagem entre `Nossos Servicos` e `Metodo`, usando `cta-img.jpg`, titulo empilhado e CTA `Entre em contato conosco` |
-| 8 | Secao `Metodo` abaixo do CTA com imagem, com destaque em `Vem do resultado!` e subtexto institucional de apoio |
+| 7 | CTA com imagem entre `Nossos Servicos` e `Metodo`, usando `cta-img.jpg`, titulo empilhado em `#F2F2F2`, overlay mais denso e a mesma altura do mosaico de video do hero |
+| 8 | Secao `Metodo` abaixo do CTA com imagem, com destaque em `Vem do resultado!`, destaque em `elevar a produtividade` no subtexto e tres cards de jornada com icones animados |
 | 9 | Secoes `Produtos`, `Redsights` e CTA final em `#contato` presentes na home |
 | 10 | CSS carregando corretamente a partir de `app/frontend/styles.css` e `app/frontend/paint-animations.css` |
 | 11 | JS carregando corretamente a partir de `app/frontend/main.js` |
