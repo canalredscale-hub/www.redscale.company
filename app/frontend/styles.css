@@ -467,6 +467,7 @@ body {
   background: #d9d9d9;
 }
 
+.media-loop__image,
 .media-loop__video {
   display: block;
   width: 100%;
@@ -498,6 +499,48 @@ body {
   position: absolute;
   right: 32px;
   bottom: 32px;
+}
+
+.media-loop__content {
+  position: absolute;
+  top: 42px;
+  left: 42px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: min(360px, 44%);
+}
+
+.media-loop__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: #f2f2f2;
+}
+
+.media-loop__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.media-loop__title {
+  margin: 26px 0 0;
+  color: #f2f2f2;
+  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
+  font-size: clamp(46px, 5.6vw, 84px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  text-shadow: 0 10px 26px rgba(4, 64, 64, 0.22);
+}
+
+.media-loop__title span {
+  display: block;
 }
 
 .about {
@@ -949,7 +992,7 @@ body {
   pointer-events: none;
 }
 
-.image-cta,
+.video-cta,
 .proof,
 .products,
 .redsights,
@@ -964,11 +1007,11 @@ body {
   color: #044040;
 }
 
-.image-cta {
+.video-cta {
   margin-top: var(--section-gap);
 }
 
-.image-cta__frame {
+.video-cta__frame {
   position: relative;
   width: 100%;
   height: var(--showcase-media-height);
@@ -977,7 +1020,8 @@ body {
   background: #d9d9d9;
 }
 
-.image-cta__image {
+.video-cta__image,
+.video-cta__video {
   display: block;
   width: 100%;
   height: 100%;
@@ -985,67 +1029,7 @@ body {
   object-position: center center;
 }
 
-.image-cta__shade {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      112deg,
-      rgba(4, 64, 64, 0.56) 0%,
-      rgba(4, 64, 64, 0.3) 34%,
-      rgba(4, 64, 64, 0.12) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(4, 64, 64, 0.04) 0%,
-      rgba(4, 64, 64, 0.24) 100%
-    );
-}
-
-.image-cta__content {
-  position: absolute;
-  top: 42px;
-  left: 42px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: min(360px, 44%);
-}
-
-.image-cta__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 14px;
-  height: 14px;
-  color: #f2f2f2;
-}
-
-.image-cta__mark svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.image-cta__title {
-  margin: 26px 0 0;
-  color: #f2f2f2;
-  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
-  font-size: clamp(46px, 5.6vw, 84px);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 0.92;
-  text-shadow: 0 10px 26px rgba(4, 64, 64, 0.22);
-}
-
-.image-cta__title span {
-  display: block;
-}
-
-.image-cta__action {
+.video-cta__action {
   position: absolute;
   right: 32px;
   bottom: 32px;
@@ -1078,7 +1062,8 @@ body {
 .proof__card {
   display: flex;
   flex-direction: column;
-  min-height: 472px;
+  min-height: 404px;
+  padding: 26px 26px 0;
   background: var(--shape-muted-bg);
   border-color: transparent;
 }
@@ -1197,10 +1182,12 @@ body {
 }
 
 .proof__card-title {
-  margin-top: 34px;
+  margin-top: 24px;
   max-width: none;
   color: #044040;
-  white-space: nowrap;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 0.94;
+  white-space: normal;
 }
 
 .proof__card-copy,
@@ -1219,9 +1206,10 @@ body {
 }
 
 .proof__card-copy {
+  margin-top: 14px;
   max-width: none;
-  font-size: 17px;
-  line-height: 1.42;
+  font-size: 15px;
+  line-height: 1.34;
 }
 
 .services__catalog-panel-inner {
@@ -1261,17 +1249,17 @@ body {
 }
 
 @media (max-width: 980px) {
-  .image-cta__content {
+  .media-loop__content {
     top: 28px;
     left: 28px;
     max-width: calc(100% - 56px);
   }
 
-  .image-cta__title {
+  .media-loop__title {
     font-size: clamp(38px, 8vw, 56px);
   }
 
-  .image-cta__action {
+  .video-cta__action {
     right: 20px;
     bottom: 20px;
   }
@@ -1282,6 +1270,17 @@ body {
 
   .proof__card {
     min-height: auto;
+  }
+
+  .products__showcase-copy {
+    top: 28px;
+    right: 28px;
+    padding: 0;
+    max-width: calc(100% - 40px);
+  }
+
+  .products__showcase-title {
+    font-size: clamp(18px, 5vw, 28px);
   }
 }
 .section-intro__title--proof {
@@ -1295,14 +1294,96 @@ body {
   color: inherit;
 }
 
+.products__title-word {
+  color: inherit;
+}
+
 .products {
   margin-top: var(--section-gap);
 }
 
+.products__frame {
+  position: relative;
+  width: 100%;
+  min-height: var(--showcase-media-height);
+  margin-top: var(--about-inner-gap);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+
+.products__frame-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.products__showcase,
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  position: relative;
+  z-index: 2;
+  margin-top: 76px;
+}
+
+.products__showcase-copy {
+  position: absolute;
+  top: 42px;
+  right: calc(var(--page-gutter) + 4px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0;
+  max-width: min(360px, 44%);
+  text-align: right;
+}
+
+.products__showcase-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: var(--brand-red);
+}
+
+.products__showcase-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.products__showcase-title {
+  margin: 26px 0 0;
+  color: #044040;
+  font-family: "Aspekta", "IBM Plex Sans", sans-serif;
+  font-size: clamp(46px, 5.6vw, 84px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.products__showcase-title span {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .products__showcase-copy {
+    top: 28px;
+    right: 28px;
+    max-width: calc(100% - 56px);
+  }
+
+  .products__showcase-title {
+    font-size: clamp(38px, 8vw, 56px);
+  }
 }
 
 .redsights {

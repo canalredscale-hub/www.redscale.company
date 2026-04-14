@@ -85,7 +85,7 @@ const bindReversibleRise = ({ triggerElement, raiseClass }) => {
 };
 
 const CM_IN_PX = 96 / 2.54;
-const ABOUT_SECTION_OFFSET = 1.5 * CM_IN_PX;
+const SECTION_SCROLL_OFFSET = 1.5 * CM_IN_PX;
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
@@ -172,9 +172,8 @@ const resolveSectionScrollTarget = (sectionId) => {
   }
 
   const sectionTop = window.scrollY + section.getBoundingClientRect().top;
-  const offset = sectionId === "sobre" ? ABOUT_SECTION_OFFSET : 0;
 
-  return Math.max(0, sectionTop - offset);
+  return Math.max(0, sectionTop - SECTION_SCROLL_OFFSET);
 };
 
 const updateLocationHash = (hash = "") => {
@@ -231,6 +230,31 @@ const syncProofTitleOffset = () => {
   );
 };
 
+const syncHeroMediaAlignment = () => {
+  const heroContent = document.querySelector(".hero__content");
+  const heroTitle = document.querySelector(".hero__title");
+  const heroMedia = document.querySelector(".hero__media");
+
+  if (!heroContent || !heroTitle || !heroMedia) {
+    return;
+  }
+
+  const contentRect = heroContent.getBoundingClientRect();
+  const titleRect = heroTitle.getBoundingClientRect();
+  const mediaRect = heroMedia.getBoundingClientRect();
+
+  if (mediaRect.height <= 0) {
+    return;
+  }
+
+  const alignedTop = Math.max(
+    0,
+    titleRect.bottom - contentRect.top - mediaRect.height
+  );
+
+  heroMedia.style.top = `${Math.round(alignedTop)}px`;
+};
+
 document.querySelectorAll(".site-header__nav-link").forEach((link) => {
   bindOneWayRise({
     triggerElement: link,
@@ -248,7 +272,9 @@ document.querySelectorAll(".site-cta").forEach((cta) => {
 });
 
 const homeNavLink = document.querySelector("[data-nav-home]");
-const aboutNavLink = document.querySelector('[data-nav-section="sobre"]');
+const sectionNavLinks = Array.from(
+  document.querySelectorAll("[data-nav-section]")
+);
 
 if (homeNavLink) {
   homeNavLink.addEventListener("click", (event) => {
@@ -264,21 +290,28 @@ if (homeNavLink) {
   });
 }
 
-if (aboutNavLink) {
-  aboutNavLink.addEventListener("click", (event) => {
+sectionNavLinks.forEach((link) => {
+  const sectionId = link.dataset.navSection?.trim();
+
+  if (!sectionId) {
+    return;
+  }
+
+  link.addEventListener("click", (event) => {
     if (!isHomeSurface()) {
       event.preventDefault();
-      window.location.assign(buildHomeLocation("#sobre"));
+      window.location.assign(buildHomeLocation(`#${sectionId}`));
       return;
     }
 
     event.preventDefault();
-    animateScrollTo(resolveSectionScrollTarget("sobre"));
-    updateLocationHash("#sobre");
+    animateScrollTo(resolveSectionScrollTarget(sectionId));
+    updateLocationHash(`#${sectionId}`);
   });
-}
+});
 
 window.addEventListener("load", () => {
+  syncHeroMediaAlignment();
   syncAboutEchoHeight();
   syncProofTitleOffset();
 
@@ -286,8 +319,16 @@ window.addEventListener("load", () => {
     return;
   }
 
-  if (window.location.hash === "#sobre") {
-    window.scrollTo(0, resolveSectionScrollTarget("sobre"));
+  const sectionIdFromHash = window.location.hash.replace(/^#/, "");
+
+  if (sectionIdFromHash && sectionIdFromHash !== "home") {
+    const targetSection = document.getElementById(sectionIdFromHash);
+
+    if (!targetSection) {
+      return;
+    }
+
+    window.scrollTo(0, resolveSectionScrollTarget(sectionIdFromHash));
     return;
   }
 
@@ -298,17 +339,20 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("resize", () => {
+  syncHeroMediaAlignment();
   syncAboutEchoHeight();
   syncProofTitleOffset();
 });
 
 if (document.fonts?.ready) {
   document.fonts.ready.then(() => {
+    syncHeroMediaAlignment();
     syncAboutEchoHeight();
-  syncProofTitleOffset();
+    syncProofTitleOffset();
   });
 }
 
+syncHeroMediaAlignment();
 syncAboutEchoHeight();
 
 const closeServicesCatalogEntry = (entry) => {
