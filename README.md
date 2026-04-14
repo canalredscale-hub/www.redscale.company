@@ -1,6 +1,12 @@
-# site-institucional-vendas
+# www.redscale.company
 
 Projeto iniciado pelo orquestrador global com fluxo de trabalho `web_app`.
+
+## Repositorio GitHub
+
+- Repositorio atual: [canalredscale-hub/www.redscale.company](https://github.com/canalredscale-hub/www.redscale.company)
+- Branch principal: `main`
+- Remote `origin`: `https://github.com/canalredscale-hub/www.redscale.company.git`
 
 ## Ordem de leitura inicial
 
