@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato | Redscale</title>
+    <meta
+      name="description"
+      content="Página de contato do Redscale com formulário, canais e perguntas frequentes."
+    />
+    <script>
+      document.documentElement.classList.add("has-page-transition");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260424ad" />
+  </head>
+  <body class="page" data-page="contact">
+    <header class="site-header" data-element-name="Header principal Redscale">
+      <a class="brand" href="./index.html" data-element-name="Logo Redscale">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>Redscale</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-toggle
+      >
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-navigation" aria-label="Navegação principal">
+        <a class="site-nav__link" href="./em-construcao.html">Produto</a>
+        <a class="site-nav__link" href="./em-construcao.html">Sobre</a>
+        <a class="site-nav__link" href="./em-construcao.html" aria-current="page">Contato</a>
+      </nav>
+
+      <a class="button button--primary site-header__cta" href="./em-construcao.html">
+        Solicitar demo
+      </a>
+    </header>
+
+    <main>
+      <section class="page-hero" data-element-name="Hero da página contato">
+        <div class="page-hero__copy" data-reveal>
+          <p class="eyebrow">Contato</p>
+          <h1 class="page-hero__title">
+            Se a próxima etapa for apresentação comercial, protótipo navegável ou implantação, esta
+            página já conduz a conversa.
+          </h1>
+          <p class="page-hero__lede">
+            O bloco abaixo foi pensado para funcionar tanto como contato institucional quanto como
+            captação específica para a Redscale.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" data-element-name="Seção principal de contato">
+        <div class="contact-grid">
+          <form class="contact-form" action="#" method="post" data-reveal data-element-name="Formulário de contato">
+            <p class="eyebrow">Fale com a equipe</p>
+            <label class="field">
+              <span>Nome</span>
+              <input type="text" name="name" placeholder="Seu nome" />
+            </label>
+            <label class="field">
+              <span>E-mail</span>
+              <input type="email" name="email" placeholder="voce@empresa.com" />
+            </label>
+            <label class="field">
+              <span>Empresa</span>
+              <input type="text" name="company" placeholder="Nome da empresa" />
+            </label>
+            <label class="field">
+              <span>Contexto</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Conte em poucas linhas o momento da operação, o que precisa organizar e o próximo passo desejado."
+              ></textarea>
+            </label>
+            <button class="button button--primary" type="submit" data-element-name="Botão enviar contato">
+              Enviar mensagem
+            </button>
+          </form>
+
+          <aside class="contact-panel" data-reveal data-element-name="Painel lateral de contato">
+            <p class="eyebrow">Canais diretos</p>
+            <div class="contact-panel__block" data-element-name="Bloco email">
+              <p class="contact-panel__label">E-mail</p>
+              <a href="mailto:fale.comigo@redscale.company">fale.comigo@redscale.company</a>
+            </div>
+            <div class="contact-panel__block" data-element-name="Bloco telefone">
+              <p class="contact-panel__label">Telefone</p>
+              <a href="tel:+5511968368212">+55 11 96836-8212</a>
+            </div>
+            <div class="contact-panel__block" data-element-name="Bloco disponibilidade">
+              <p class="contact-panel__label">Disponibilidade</p>
+              <p class="site-footer__text">
+                Conversas exploratórias, demonstração do conceito, revisão de posicionamento e
+                planejamento da próxima iteração.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--dark" data-element-name="Seção FAQ contato">
+        <div class="section__intro section__intro--narrow" data-reveal>
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2 class="section__title">Algumas respostas para reduzir atrito antes da primeira conversa.</h2>
+        </div>
+
+        <div class="faq-list" data-element-name="Lista de FAQ">
+          <details class="faq-list__item" open data-reveal data-element-name="FAQ 01">
+            <summary>Esta base já está pronta para receber conteúdo real do produto?</summary>
+            <p>
+              Sim. Os blocos estão estruturados para receber texto final, telas do app, links de
+              agenda, integrações de formulário e qualquer aprofundamento comercial.
+            </p>
+          </details>
+
+          <details class="faq-list__item" data-reveal data-element-name="FAQ 02">
+            <summary>O inspetor visual continua funcionando nas quatro páginas?</summary>
+            <p>
+              Continua. O overlay acompanha hover e foco, e também pode ser alternado pelo botão
+              fixo ou pela tecla <strong>I</strong>.
+            </p>
+          </details>
+
+          <details class="faq-list__item" data-reveal data-element-name="FAQ 03">
+            <summary>O layout pode evoluir para versão com telas reais do app?</summary>
+            <p>
+              Sim. A estrutura foi feita para isso: substituir imagens conceituais, refinar copy e
+              aprofundar o percurso comercial sem recomeçar do zero.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-element-name="Rodapé principal">
+      <div class="site-footer__brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>Redscale</span>
+      </div>
+      <div class="site-footer__grid">
+        <nav aria-label="Links do rodapé">
+          <p class="site-footer__label">Explorar</p>
+          <a href="./index.html">Home</a>
+          <a href="./em-construcao.html">Produto</a>
+          <a href="./em-construcao.html">Sobre</a>
+          <a href="./em-construcao.html">Contato</a>
+        </nav>
+        <div>
+          <p class="site-footer__label">Contato</p>
+          <a href="mailto:fale.comigo@redscale.company">fale.comigo@redscale.company</a>
+          <a href="tel:+5511968368212">+55 11 96836-8212</a>
+        </div>
+      </div>
+      <p class="site-footer__legal">© <span data-current-year></span> Redscale.</p>
+    </footer>
+
+    <script src="./main.js?v=20260424i"></script>
+  </body>
+</html>

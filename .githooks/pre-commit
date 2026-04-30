@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+
+blocked_paths='(^|/)assets/|^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+
+staged_files="$(git diff --cached --name-only --diff-filter=ACMRT)"
+
+if [ -n "$staged_files" ] && printf '%s\n' "$staged_files" | grep -Eiq "$blocked_paths"; then
+  echo "Commit bloqueado: ha arquivos proibidos ou sensiveis no stage." >&2
+  printf '%s\n' "$staged_files" | grep -Ei "$blocked_paths" >&2 || true
+  exit 1
+fi
+
+scan_files="$(git diff --cached --name-only --diff-filter=ACM | grep -Ev '^(\.githooks/|\.gitignore$|\.gitattributes$)' || true)"
+secret_hits=""
+
+if [ -n "$scan_files" ]; then
+  secret_hits="$(printf '%s\n' "$scan_files" | xargs -r git grep --cached -I -n -E '(api[_-]?key|client[_-]?secret|private[_-]?key|password|credential|BEGIN (RSA |OPENSSH |EC |DSA )?PRIVATE KEY|senha[[:space:]]*[:=])' -- 2>/dev/null || true)"
+fi
+
+if [ -n "$secret_hits" ]; then
+  echo "Commit bloqueado: possiveis segredos encontrados no conteudo staged." >&2
+  echo "$secret_hits" >&2
+  exit 1
+fi

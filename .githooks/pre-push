@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+blocked_paths='(^|/)assets/|^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+
+tracked_hits="$(git ls-files | grep -Ei "$blocked_paths" || true)"
+
+if [ -n "$tracked_hits" ]; then
+  echo "Push bloqueado: ha arquivos proibidos rastreados pelo Git." >&2
+  echo "$tracked_hits" >&2
+  exit 1
+fi
+
+secret_hits="$(git grep -I -n -E '(api[_-]?key|client[_-]?secret|private[_-]?key|password|credential|BEGIN (RSA |OPENSSH |EC |DSA )?PRIVATE KEY|senha[[:space:]]*[:=])' HEAD -- . ':(exclude).githooks/*' ':(exclude).gitignore' ':(exclude).gitattributes' 2>/dev/null || true)"
+
+if [ -n "$secret_hits" ]; then
+  echo "Push bloqueado: possiveis segredos encontrados no conteudo rastreado." >&2
+  echo "$secret_hits" >&2
+  exit 1
+fi

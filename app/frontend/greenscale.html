@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Greenscale | Redscale</title>
+    <meta
+      name="description"
+      content="Greenscale é a solução editorial da Redscale para leitura de risco, relatórios e gestão orientada por contexto."
+    />
+    <script>
+      document.documentElement.classList.add("has-page-transition");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Playfair+Display:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260424ad" />
+    <link rel="stylesheet" href="./greenscale.css?v=20260424c" />
+  </head>
+  <body id="top" class="page--greenscale" data-page="greenscale">
+    <header class="editorial-header" data-element-name="Cabe&ccedil;alho editorial Redscale">
+      <div class="editorial-header__inner">
+        <a class="editorial-brand" href="./index.html" aria-label="Redscale in&iacute;cio">
+          Redscale
+        </a>
+
+        <div class="editorial-header__actions">
+          <nav class="editorial-nav" aria-label="Navega&ccedil;&atilde;o principal">
+            <a class="editorial-nav__link" href="#posicionamento-titulo">Sobre</a>
+            <a class="editorial-nav__link" href="#recursos-titulo">Solu&ccedil;&otilde;es</a>
+          </nav>
+
+          <a
+            class="editorial-cart site-cta site-cta--raise"
+            href="./em-construcao.html"
+          >
+            <span class="site-cta__fill" aria-hidden="true">
+              <span class="site-cta__arrow-track">
+                <span class="site-cta__arrow site-cta__arrow--base">
+                  <svg
+                    class="site-cta__arrow-icon"
+                    viewBox="0 0 16 16"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
+                  </svg>
+                </span>
+                <span class="site-cta__arrow site-cta__arrow--hover">
+                  <svg
+                    class="site-cta__arrow-icon"
+                    viewBox="0 0 16 16"
+                    focusable="false"
+                    aria-hidden="true"
+                  >
+                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
+                  </svg>
+                </span>
+              </span>
+            </span>
+            <span class="site-cta__label-track">
+              <span class="site-cta__label site-cta__label--base">Fale conosco</span>
+              <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
+                Fale conosco
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="greenscale-main">
+      <section class="greenscale-hero" data-element-name="Hero Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-hero__aura greenscale-hero__aura--left" aria-hidden="true"></div>
+          <div class="greenscale-hero__aura greenscale-hero__aura--right" aria-hidden="true"></div>
+          <svg class="greenscale-hero__line greenscale-hero__line--left" viewBox="0 0 500 500" aria-hidden="true">
+            <path d="M20 352C86 252 154 214 247 210C343 206 380 142 472 42" />
+          </svg>
+          <svg class="greenscale-hero__line greenscale-hero__line--right" viewBox="0 0 500 500" aria-hidden="true">
+            <path d="M24 109C124 143 157 208 247 240C332 270 390 328 478 462" />
+          </svg>
+
+          <div class="greenscale-hero__intro" data-reveal>
+            <span class="greenscale-pill">Greenscale Intelligence</span>
+            <h1 class="greenscale-display">
+              <span class="greenscale-display__muted">Leitura</span>
+              <span class="greenscale-display__emphasis">de risco</span>
+              <span class="greenscale-display__chip" aria-hidden="true"></span>
+              <span class="greenscale-display__line-break">com contexto para</span>
+              <span class="greenscale-display__strong">decidir</span>
+              <span class="greenscale-display__muted">e agir.</span>
+              <svg class="greenscale-display__spark" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M10 33L22 21L28 27L39 12" />
+                <path d="M28 12H39V23" />
+              </svg>
+            </h1>
+            <p class="greenscale-hero__lede">
+              O Greenscale organiza relat&oacute;rios, sinais cr&iacute;ticos e m&eacute;tricas
+              executivas em uma experi&ecirc;ncia clara, silenciosa e acion&aacute;vel.
+            </p>
+
+            <div class="greenscale-toolbar" data-element-name="Barra de busca Greenscale">
+              <label class="visually-hidden" for="greenscale-query">Buscar relat&oacute;rios</label>
+              <input
+                id="greenscale-query"
+                type="text"
+                placeholder="Buscar relat&oacute;rios, alertas ou frentes"
+              />
+              <button class="greenscale-toolbar__sort" type="button">Ordenar</button>
+              <button class="greenscale-toolbar__search" type="button" aria-label="Buscar">
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <circle cx="9" cy="9" r="5.5"></circle>
+                  <path d="M13.3 13.3L18 18"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="greenscale-dashboard" data-reveal data-element-name="Preview do dashboard Greenscale">
+            <article class="greenscale-card greenscale-card--kpi">
+              <span class="greenscale-card__eyebrow">Sinais cr&iacute;ticos</span>
+              <strong class="greenscale-card__metric">128</strong>
+              <span class="greenscale-card__micro">+14,2% na semana</span>
+            </article>
+
+            <article class="greenscale-card greenscale-card--kpi">
+              <span class="greenscale-card__eyebrow">Respostas em atraso</span>
+              <strong class="greenscale-card__metric">19</strong>
+              <span class="greenscale-card__micro">5 frentes sob observa&ccedil;&atilde;o</span>
+            </article>
+
+            <article class="greenscale-card greenscale-card--bars">
+              <div class="greenscale-card__heading">
+                <span class="greenscale-card__eyebrow">Mapa de risco</span>
+                <span class="greenscale-card__pill">Mensal</span>
+              </div>
+              <div class="greenscale-bars" aria-hidden="true">
+                <span style="height: 48%"></span>
+                <span style="height: 66%"></span>
+                <span style="height: 82%"></span>
+                <span style="height: 59%"></span>
+                <span style="height: 74%"></span>
+                <span style="height: 92%"></span>
+              </div>
+            </article>
+
+            <article class="greenscale-card greenscale-card--trend">
+              <div class="greenscale-card__heading">
+                <span class="greenscale-card__eyebrow">Tend&ecirc;ncia operacional</span>
+                <span class="greenscale-card__micro">Atualizado agora</span>
+              </div>
+              <svg class="greenscale-line-chart" viewBox="0 0 260 110" aria-hidden="true">
+                <path d="M8 87C42 78 54 34 86 36C114 38 129 78 155 73C189 66 196 16 252 24" />
+              </svg>
+            </article>
+
+            <article class="greenscale-card greenscale-card--gauge">
+              <span class="greenscale-card__eyebrow">Execu&ccedil;&atilde;o priorizada</span>
+              <div class="greenscale-gauge" aria-hidden="true">
+                <div class="greenscale-gauge__ring"></div>
+                <strong>74%</strong>
+              </div>
+              <span class="greenscale-card__micro">A&ccedil;&otilde;es conclu&iacute;das com contexto</span>
+            </article>
+          </div>
+
+          <div class="greenscale-logos" data-reveal data-element-name="Faixa de logos Greenscale">
+            <span>Northgrid</span>
+            <span>Cascade</span>
+            <span>Harbor One</span>
+            <span>Aster Labs</span>
+            <span>Eastframe</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-values" data-element-name="Se&ccedil;&atilde;o vis&atilde;o e valores">
+        <div class="greenscale-shell">
+          <div class="greenscale-section-intro greenscale-section-intro--center" data-reveal>
+            <span class="greenscale-pill greenscale-pill--soft">Fundamentos</span>
+            <h2 class="greenscale-section-title editorial-scroll-target" id="posicionamento-titulo">
+              Vis&atilde;o, miss&atilde;o e valores centrais para uma gest&atilde;o orientada por contexto.
+            </h2>
+            <p class="greenscale-section-text">
+              O Greenscale foi pensado para reduzir atrito entre percep&ccedil;&atilde;o, leitura e
+              resposta, mantendo a camada executiva leg&iacute;vel mesmo em cen&aacute;rios de
+              risco elevado.
+            </p>
+          </div>
+
+          <div class="greenscale-stack" data-reveal data-element-name="Cards inclinados Greenscale">
+            <article class="greenscale-stack-card greenscale-stack-card--vision">
+              <span class="greenscale-stack-card__paper" aria-hidden="true"></span>
+              <div class="greenscale-stack-card__surface">
+                <span class="greenscale-stack-card__eyebrow">Vis&atilde;o</span>
+                <h3>Ler a empresa com mais nitidez antes que o ru&iacute;do vire custo.</h3>
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M10 26L20 16L26 22L32 12" />
+                </svg>
+              </div>
+            </article>
+
+            <article class="greenscale-stack-card greenscale-stack-card--mission">
+              <span class="greenscale-stack-card__paper" aria-hidden="true"></span>
+              <div class="greenscale-stack-card__surface">
+                <span class="greenscale-stack-card__eyebrow">Miss&atilde;o</span>
+                <h3>Transformar relat&oacute;rios e sinais em dire&ccedil;&atilde;o execut&aacute;vel.</h3>
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M10 12H30M10 20H26M10 28H22" />
+                </svg>
+              </div>
+            </article>
+
+            <article class="greenscale-stack-card greenscale-stack-card--values">
+              <span class="greenscale-stack-card__paper" aria-hidden="true"></span>
+              <div class="greenscale-stack-card__surface">
+                <span class="greenscale-stack-card__eyebrow">Valores</span>
+                <h3>Clareza, confiabilidade, cad&ecirc;ncia e resposta coordenada.</h3>
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                  <path d="M12 20L18 26L30 14" />
+                </svg>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-trust" data-element-name="Se&ccedil;&atilde;o de confian&ccedil;a Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-trust__panel">
+            <article class="greenscale-float-card greenscale-float-card--lt" data-reveal>
+              <span class="greenscale-float-card__icon" aria-hidden="true"></span>
+              <div>
+                <h3>Mapeia sinais cr&iacute;ticos</h3>
+                <p>Prioriza eventos e desvios que exigem leitura imediata da lideran&ccedil;a.</p>
+              </div>
+            </article>
+
+            <article class="greenscale-float-card greenscale-float-card--lb" data-reveal>
+              <span class="greenscale-float-card__icon" aria-hidden="true"></span>
+              <div>
+                <h3>Encurta o tempo de resposta</h3>
+                <p>Conecta diagn&oacute;stico, decis&atilde;o e execu&ccedil;&atilde;o em um mesmo fluxo.</p>
+              </div>
+            </article>
+
+            <div class="greenscale-trust__copy" data-reveal>
+              <span class="greenscale-pill greenscale-pill--soft">Camada de confian&ccedil;a</span>
+              <h2 class="greenscale-section-title greenscale-section-title--compact">
+                Uma solu&ccedil;&atilde;o confi&aacute;vel para relat&oacute;rios, risco e governan&ccedil;a operacional.
+              </h2>
+              <p class="greenscale-section-text">
+                O Greenscale equilibra leitura executiva, densidade anal&iacute;tica e visual limpo
+                para sustentar decis&otilde;es que n&atilde;o podem depender de ru&iacute;do.
+              </p>
+            </div>
+
+            <article class="greenscale-float-card greenscale-float-card--rt" data-reveal>
+              <span class="greenscale-float-card__icon" aria-hidden="true"></span>
+              <div>
+                <h3>Integra frentes dispersas</h3>
+                <p>Mostra interdepend&ecirc;ncias entre opera&ccedil;&atilde;o, risco e governan&ccedil;a.</p>
+              </div>
+            </article>
+
+            <article class="greenscale-float-card greenscale-float-card--rb" data-reveal>
+              <span class="greenscale-float-card__icon" aria-hidden="true"></span>
+              <div>
+                <h3>Cria leitura silenciosa</h3>
+                <p>Deixa a informa&ccedil;&atilde;o respirar para que o essencial apare&ccedil;a primeiro.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-reports" data-element-name="Se&ccedil;&atilde;o de reports Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-section-intro greenscale-section-intro--center" data-reveal>
+            <span class="greenscale-pill">Company Reports</span>
+            <h2 class="greenscale-section-title editorial-scroll-target" id="recursos-titulo">
+              Risk management services em um grid editorial de leitura r&aacute;pida.
+            </h2>
+            <p class="greenscale-section-text">
+              A solu&ccedil;&atilde;o alterna massas claras e escuras para destacar prioridades,
+              narrativas executivas e profundidade anal&iacute;tica sem parecer uma planilha.
+            </p>
+          </div>
+
+          <div class="greenscale-report-grid">
+            <article class="greenscale-report-card greenscale-report-card--dark greenscale-report-card--wide" data-reveal>
+              <span class="greenscale-report-card__eyebrow">Executive Brief</span>
+              <h3>Relat&oacute;rios de risco com narrativa, contexto e pr&oacute;ximo passo.</h3>
+              <p>
+                Resumos executivos sintetizam sinais, impacto e urg&ecirc;ncia para reduzir o
+                tempo entre leitura e alinhamento.
+              </p>
+              <span class="greenscale-report-card__mark" aria-hidden="true"></span>
+            </article>
+
+            <article class="greenscale-report-card greenscale-report-card--light" data-reveal>
+              <span class="greenscale-report-card__eyebrow">Control Room</span>
+              <h3>Quadros de decis&atilde;o compartilhados entre lideran&ccedil;a e opera&ccedil;&atilde;o.</h3>
+              <p>Um espa&ccedil;o calmo para acompanhar o que subiu de prioridade e o que j&aacute; foi acionado.</p>
+              <span class="greenscale-report-card__mark" aria-hidden="true"></span>
+            </article>
+
+            <article class="greenscale-report-card greenscale-report-card--light greenscale-report-card--compact" data-reveal>
+              <span class="greenscale-report-card__eyebrow">Signals</span>
+              <h3>Alertas filtrados por contexto.</h3>
+              <p>Sinais t&aacute;ticos e estrat&eacute;gicos aparecem em camadas diferentes.</p>
+              <span class="greenscale-report-card__mark" aria-hidden="true"></span>
+            </article>
+
+            <article class="greenscale-report-card greenscale-report-card--dark greenscale-report-card--xl" data-reveal>
+              <span class="greenscale-report-card__eyebrow">Risk Architecture</span>
+              <h3>Estrutura de leitura que combina evid&ecirc;ncia, governan&ccedil;a e ritmo de resposta.</h3>
+              <p>
+                A composi&ccedil;&atilde;o editorial do produto foi desenhada para servir times que
+                precisam monitorar cen&aacute;rios densos sem perder clareza.
+              </p>
+              <span class="greenscale-report-card__mark" aria-hidden="true"></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-faq" data-element-name="Se&ccedil;&atilde;o de solu&ccedil;&otilde;es Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-section-intro greenscale-section-intro--center" data-reveal>
+            <span class="greenscale-pill greenscale-pill--soft">Solu&ccedil;&otilde;es</span>
+            <h2 class="greenscale-section-title greenscale-section-title--compact">
+              Como o Greenscale pode ajudar sua equipe?
+            </h2>
+          </div>
+
+          <div class="greenscale-accordion" data-reveal data-element-name="Lista de solu&ccedil;&otilde;es Greenscale">
+            <details open>
+              <summary>
+                <span>Leitura de risco e conting&ecirc;ncia</span>
+                <span class="greenscale-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <p>Organiza sinais cr&iacute;ticos, janelas de escalonamento e prioridades executivas em uma mesma camada visual.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Reports para conselho e diretoria</span>
+                <span class="greenscale-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <p>Entrega sum&aacute;rios com narrativa, contexto, impacto e pr&oacute;xima decis&atilde;o recomendada.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Mapeamento de interdepend&ecirc;ncias</span>
+                <span class="greenscale-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <p>Mostra como uma mudan&ccedil;a em uma frente repercute sobre opera&ccedil;&atilde;o, pessoas e governan&ccedil;a.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Salas de decis&atilde;o orientadas por contexto</span>
+                <span class="greenscale-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <p>Cria uma experi&ecirc;ncia coletiva para ler o problema certo, com o mesmo pano de fundo, no mesmo momento.</p>
+            </details>
+            <details>
+              <summary>
+                <span>Cad&ecirc;ncia de monitoramento executivo</span>
+                <span class="greenscale-accordion__icon" aria-hidden="true"></span>
+              </summary>
+              <p>Estrutura o fluxo semanal e mensal de acompanhamento sem cair em dashboards polu&iacute;dos.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-metrics" data-element-name="Se&ccedil;&atilde;o de m&eacute;tricas Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-metrics__grid">
+            <article class="greenscale-metric" data-reveal>
+              <strong>04</strong>
+              <span>camadas de leitura entre sinal, risco, impacto e resposta</span>
+            </article>
+            <article class="greenscale-metric" data-reveal>
+              <strong>72h</strong>
+              <span>para reorganizar evid&ecirc;ncias e alinhar a tomada de decis&atilde;o</span>
+            </article>
+            <div class="greenscale-metrics__statement" data-reveal>
+              <span class="greenscale-pill greenscale-pill--soft">Corporate Data</span>
+              <h2 class="greenscale-section-title greenscale-section-title--compact">
+                Dados corporativos lidos com mais serenidade, profundidade e dire&ccedil;&atilde;o.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="greenscale-final-cta" id="fale-conosco-bloco" data-element-name="CTA central Greenscale">
+        <div class="greenscale-shell">
+          <div class="greenscale-final-cta__panel" data-reveal>
+            <span class="greenscale-final-cta__icon" aria-hidden="true"></span>
+            <h2>Leve o Greenscale para a sua opera&ccedil;&atilde;o.</h2>
+            <p>
+              Se a sua equipe precisa decidir com menos ru&iacute;do e mais contexto, podemos
+              desenhar a pr&oacute;xima camada juntos.
+            </p>
+            <a class="greenscale-final-cta__button" href="./em-construcao.html">
+              Agendar conversa
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="editorial-footer" data-element-name="Rodap&eacute; editorial">
+      <div class="editorial-shell editorial-footer__inner">
+        <div class="editorial-footer__grid">
+          <div class="editorial-footer__brand-block">
+            <a class="editorial-brand" href="./index.html" aria-label="Redscale in&iacute;cio">Redscale</a>
+            <div class="editorial-footer__powered">Desenvolvido por RedscaleHQ</div>
+          </div>
+
+          <div class="editorial-footer__group">
+            <p class="editorial-footer__label">Menu</p>
+            <div class="editorial-footer__links">
+              <a href="./index.html">In&iacute;cio</a>
+              <a href="./em-construcao.html">Sobre</a>
+              <a href="./em-construcao.html">Solu&ccedil;&otilde;es</a>
+              <a href="./em-construcao.html">Fale conosco</a>
+            </div>
+          </div>
+
+          <div class="editorial-footer__group">
+            <p class="editorial-footer__label">Categorias</p>
+            <div class="editorial-footer__links">
+              <a href="./em-construcao.html">Aplica&ccedil;&otilde;es</a>
+              <a href="./em-construcao.html">Estrat&eacute;gia</a>
+              <a href="./em-construcao.html">Opera&ccedil;&atilde;o</a>
+              <a href="./em-construcao.html">Automa&ccedil;&atilde;o</a>
+            </div>
+          </div>
+
+          <div class="editorial-footer__group">
+            <p class="editorial-footer__label">Ajuda</p>
+            <div class="editorial-footer__links">
+              <a href="./em-construcao.html">Diagn&oacute;stico inicial</a>
+              <a href="./em-construcao.html">Implanta&ccedil;&atilde;o</a>
+              <a href="./em-construcao.html">Integra&ccedil;&otilde;es</a>
+              <a href="./em-construcao.html">Perguntas frequentes</a>
+            </div>
+          </div>
+
+          <div class="editorial-footer__group editorial-footer__group--follow">
+            <p class="editorial-footer__label">Acompanhe</p>
+            <div class="editorial-footer__links">
+              <a href="https://www.instagram.com/redscale.company/" target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/company/redscale-company"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a href="https://www.youtube.com/@tyredscale" target="_blank" rel="noreferrer">
+                YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-footer__utility">
+          <a class="editorial-top-link" href="#top">
+            <span class="editorial-top-link__arrow" aria-hidden="true">&uarr;</span>
+            <span>Ir para o topo</span>
+          </a>
+
+          <form
+            class="editorial-footer__form"
+            action="#"
+            method="post"
+            aria-label="Contato r&aacute;pido por e-mail"
+          >
+            <label class="visually-hidden" for="footer-email-greenscale">Endere&ccedil;o de e-mail</label>
+            <input
+              id="footer-email-greenscale"
+              name="footer-email"
+              type="email"
+              placeholder="Digite seu e-mail"
+              autocomplete="email"
+            />
+            <button type="button">Assinar</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js?v=20260424i"></script>
+  </body>
+</html>

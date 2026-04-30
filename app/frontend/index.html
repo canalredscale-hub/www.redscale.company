@@ -1,840 +1,963 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Redscale</title>
+    <title>Redscale | RedscaleHQ</title>
+    <meta
+      name="description"
+      content="Homepage editorial da RedscaleHQ com layout minimalista, limpo e comercial."
+    />
+    <script>
+      document.documentElement.classList.add("has-page-transition");
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Playfair+Display:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Montserrat:wght@400&family=Playfair+Display:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="paint-animations.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260430f" />
   </head>
-  <body id="home">
-    <header class="site-header" aria-label="Header principal">
-      <a class="site-header__logo" href="/" aria-label="Redscale">
-        <span class="site-header__logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 10 10" focusable="false">
-            <path
-              d="M5 0.5C8.45 0.5 9.5 1.55 9.5 5C9.5 8.45 8.45 9.5 5 9.5C1.55 9.5 0.5 8.45 0.5 5C0.5 1.55 1.55 0.5 5 0.5Z"
-            />
-          </svg>
-        </span>
-        <span class="site-header__logo-text">Redscale</span>
-      </a>
+  <body id="top" class="page--home" data-page="home">
+    <header class="editorial-header" data-element-name="Cabe&ccedil;alho editorial Redscale" data-placeholder-ref="header1">
+      <div class="editorial-header__inner">
+        <a class="editorial-brand" href="./index.html" aria-label="Redscale in&iacute;cio" data-placeholder-ref="logo1">
+          Redscale
+        </a>
 
-      <div class="site-header__shell">
-        <nav class="site-header__nav" aria-label="Menu principal">
-          <a class="site-header__nav-link" href="#home" data-nav-home>
-            <span class="site-header__nav-track">
-              <span class="site-header__nav-label site-header__nav-label--base">Home</span>
-              <span
-                class="site-header__nav-label site-header__nav-label--hover"
-                aria-hidden="true"
-              >
-                Home
-              </span>
-            </span>
-          </a>
-          <a class="site-header__nav-link" href="#sobre" data-nav-section="sobre">
-            <span class="site-header__nav-track">
-              <span class="site-header__nav-label site-header__nav-label--base">Sobre</span>
-              <span
-                class="site-header__nav-label site-header__nav-label--hover"
-                aria-hidden="true"
-              >
-                Sobre
-              </span>
-            </span>
-          </a>
-          <a class="site-header__nav-link" href="#servicos" data-nav-section="servicos">
-            <span class="site-header__nav-track">
-              <span class="site-header__nav-label site-header__nav-label--base">Servi&ccedil;os</span>
-              <span
-                class="site-header__nav-label site-header__nav-label--hover"
-                aria-hidden="true"
-              >
-                Servi&ccedil;os
-              </span>
-            </span>
-          </a>
-          <a class="site-header__nav-link" href="#produtos" data-nav-section="produtos">
-            <span class="site-header__nav-track">
-              <span class="site-header__nav-label site-header__nav-label--base">Produtos</span>
-              <span
-                class="site-header__nav-label site-header__nav-label--hover"
-                aria-hidden="true"
-              >
-                Produtos
-              </span>
-            </span>
-          </a>
-          <a class="site-header__nav-link" href="#redsights" data-nav-section="redsights">
-            <span class="site-header__nav-track">
-              <span class="site-header__nav-label site-header__nav-label--base">Redsights</span>
-              <span
-                class="site-header__nav-label site-header__nav-label--hover"
-                aria-hidden="true"
-              >
-                Redsights
-              </span>
-            </span>
-          </a>
-        </nav>
+        <div class="editorial-header__actions">
+          <nav class="editorial-nav" aria-label="Navega&ccedil;&atilde;o principal">
+            <a class="editorial-nav__link" href="#projetos" data-scroll-center-target="#projetos" data-placeholder-ref="nav1">PROJETOS</a>
+            <a class="editorial-nav__link" href="#solucoes" data-scroll-center-target="#solucoes" data-placeholder-ref="nav2">SOLU&Ccedil;&Otilde;ES</a>
+            <a class="editorial-nav__link" href="#sobre" data-scroll-center-target="#sobre" data-placeholder-ref="nav3">SOBRE</a>
+            <a class="editorial-nav__link" href="#fale-conosco-bloco" data-scroll-center-target="#fale-conosco-bloco" data-placeholder-ref="nav4">REDSIGHTS</a>
+          </nav>
+        </div>
       </div>
-
-      <a class="site-header__cta site-cta" href="#contato">
-        <span class="site-cta__fill" aria-hidden="true">
-          <span class="site-cta__arrow-track">
-            <span class="site-cta__arrow site-cta__arrow--base">
-              <svg
-                class="site-cta__arrow-icon"
-                viewBox="0 0 16 16"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-              </svg>
-            </span>
-            <span class="site-cta__arrow site-cta__arrow--hover">
-              <svg
-                class="site-cta__arrow-icon"
-                viewBox="0 0 16 16"
-                focusable="false"
-                aria-hidden="true"
-              >
-                <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-              </svg>
-            </span>
-          </span>
-        </span>
-        <span class="site-cta__label-track">
-          <span class="site-cta__label site-cta__label--base">
-            Entre em contato
-          </span>
-          <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-            Entre em contato
-          </span>
-        </span>
-      </a>
     </header>
 
-    <main class="site-main" aria-label="Conteudo principal">
-      <section class="hero" aria-label="Hero principal">
-        <div class="hero__content">
-          <h1 class="hero__title">
-            <span class="hero__line hero__line--muted">
-              <span class="hero__line-paint paint-cycle paint-cycle--hero-growth paint-step--hero-1" data-text="Cres&ccedil;a melhor.">
-                Cres&ccedil;a melhor.
-              </span>
-            </span>
-            <span class="hero__line hero__line--accent">
-              <span class="hero__line-paint paint-cycle paint-cycle--hero-output paint-step--hero-2" data-text="Produza mais.">
-                Produza mais.
-              </span>
-            </span>
-          </h1>
-
-          <div class="hero__media">
-            <span class="hero__media-mark" aria-hidden="true">
-              <svg viewBox="0 0 10 10" focusable="false">
-                <path
-                  d="M5 0.5C8.45 0.5 9.5 1.55 9.5 5C9.5 8.45 8.45 9.5 5 9.5C1.55 9.5 0.5 8.45 0.5 5C0.5 1.55 1.55 0.5 5 0.5Z"
-                />
-              </svg>
-            </span>
-            <p class="hero__media-note">
-              Ajudamos pessoas, equipes e empresas a elevar a produtividade com o uso
-              consciente da tecnologia.
-            </p>
+    <main class="editorial-home">
+      <section
+        class="editorial-hero-section"
+        data-element-name="Destaque principal"
+        data-placeholder-ref="hero1"
+      >
+        <div class="editorial-shell">
+          <div
+            class="editorial-hero"
+            data-element-name="Mosaico do v&iacute;deo em loop"
+            data-placeholder-ref="hero2"
+          >
+            <video
+              class="editorial-hero__video"
+              src="./assets/videos/hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-hidden="true"
+            ></video>
+            <div class="editorial-hero__content" data-reveal>
+              <div
+                class="editorial-hero__text"
+                data-element-name="Coluna textual do destaque"
+                data-placeholder-ref="hero7"
+              >
+                <p class="editorial-welcome-badge" data-placeholder-ref="hero3">
+                  <span class="editorial-welcome-badge__mark" aria-hidden="true">+</span>
+                  <span class="editorial-welcome-badge__text">
+                  <span>BOAS VINDAS A</span>
+                  <span class="editorial-welcome-badge__brand">Redscale</span>
+                </span>
+              </p>
+                <h1 class="editorial-hero__title" data-placeholder-ref="hero4">
+                  Desenvolvemos sistemas que modernizam neg&oacute;cios para aumento de produtividade!
+                </h1>
+                <p class="editorial-hero__lede" data-placeholder-ref="hero5">
+                  Redscale desenvolve produtos digitais que solucionam dores de baixa
+                  produtividade no core estrat&eacute;gico e operacional de empresas que
+                  precisam aumentar a competitividade.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="media-loop" aria-label="Video institucional em loop">
-        <div class="media-loop__frame">
-          <img
-            class="media-loop__image"
-            src="./assets/images/cta/cta-img.jpg"
-            alt="Ambiente de trabalho da REDSCALE"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="media-loop__shade" aria-hidden="true"></div>
-          <div class="media-loop__content">
-            <span class="media-loop__mark" aria-hidden="true">
-              <svg viewBox="0 0 10 10" focusable="false">
-                <path
-                  d="M5 0.5C8.45 0.5 9.5 1.55 9.5 5C9.5 8.45 8.45 9.5 5 9.5C1.55 9.5 0.5 8.45 0.5 5C0.5 1.55 1.55 0.5 5 0.5Z"
+      <section
+        class="editorial-clients-band"
+        id="projetos"
+        data-element-name="Faixa de clientes"
+        data-placeholder-ref="section1"
+      >
+        <div class="editorial-shell" data-placeholder-ref="element2">
+          <div class="editorial-clients-band__inner" data-placeholder-ref="element3">
+            <div class="editorial-clients-band__topline" data-placeholder-ref="element4">
+              <p class="editorial-clients-band__label" data-placeholder-ref="text1">
+                <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element41">_</span>
+                <span class="editorial-clients-band__label-text" data-placeholder-ref="text65">NOSSOS CLIENTES</span>
+              </p>
+              <p class="editorial-clients-band__year" data-placeholder-ref="text2">2025 - 2026</p>
+            </div>
+
+            <div
+              class="editorial-clients-cards"
+              data-element-name="Cards de clientes"
+              data-placeholder-ref="element1"
+            >
+              <div class="editorial-clients-card editorial-clients-card--brand" data-placeholder-ref="image3">
+                <img
+                  class="editorial-clients-card__logo"
+                  src="./assets/images/tryangle_logo_full-white-coloredfish.png"
+                  alt="Try Angle"
+                  data-placeholder-ref="image15"
                 />
-              </svg>
-            </span>
-            <h2 class="media-loop__title">
-              <span>Fazemos.</span>
-              <span>Repetimos.</span>
-              <span>Melhoramos.</span>
+              </div>
+              <a
+                class="editorial-clients-card editorial-clients-card--brand editorial-clients-card--link"
+                href="https://www.instagram.com/raquelmiranda_modafeminina/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Abrir Instagram da Raquel Miranda Moda Feminina"
+                data-placeholder-ref="image4"
+              >
+                <img
+                  class="editorial-clients-card__logo"
+                  src="./assets/images/rm-logo-removebg-preview.png"
+                  alt="RM Moda Feminina"
+                  data-placeholder-ref="image16"
+                />
+              </a>
+              <a
+                class="editorial-clients-card editorial-clients-card--brand editorial-clients-card--link"
+                href="https://www.cobrametais.com.br/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Abrir site da Cobra Metais Decorativos"
+                data-placeholder-ref="image5"
+              >
+                <img
+                  class="editorial-clients-card__logo"
+                  src="./assets/images/cobra-metais-logo-removebg-preview.png"
+                  alt="Cobra Metais Decorativos"
+                  data-placeholder-ref="image17"
+                />
+              </a>
+              <a
+                class="editorial-clients-card editorial-clients-card--brand editorial-clients-card--link"
+                href="https://www.instagram.com/mr.belgaa/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Abrir Instagram da Mr. Belga"
+                data-placeholder-ref="image6"
+              >
+                <img
+                  class="editorial-clients-card__logo"
+                  src="./assets/images/mr-belga-2145.png"
+                  alt="Mr. Belga"
+                  data-placeholder-ref="image18"
+                />
+              </a>
+            </div>
+
+            <div class="editorial-clients-band__projects" data-placeholder-ref="element5">
+              <div class="editorial-projects-summary" data-placeholder-ref="element6">
+                <p class="editorial-clients-band__label" data-placeholder-ref="text3">
+                  <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element42">_</span>
+                  <span class="editorial-clients-band__label-text" data-placeholder-ref="text66">PROJETOS</span>
+                </p>
+                <h3 class="editorial-clients-band__project-title" data-placeholder-ref="title2">
+                  Trabalho que entrega resultado real
+                </h3>
+                <p class="editorial-clients-band__project-copy" data-placeholder-ref="text4">
+                  De apps internos at&eacute; sistemas robustos, nossos projetos s&atilde;o
+                  feitos para resolver, escalar e inspirar.
+                </p>
+              </div>
+              <div class="editorial-projects-mosaic-stack" data-placeholder-ref="element35">
+                <div class="editorial-projects-mosaic-item" data-placeholder-ref="element36">
+                  <a
+                    class="editorial-projects-mosaic editorial-projects-mosaic--greenscale"
+                    href="./em-construcao.html"
+                    data-element-name="Mosaico Greenscale"
+                  >
+                    <video
+                      class="editorial-projects-mosaic__video"
+                      src="./assets/videos/9364259-hd_1920_1080_25fps.mp4"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      aria-hidden="true"
+                      data-placeholder-ref="image1"
+                    ></video>
+                    <span class="editorial-projects-mosaic__copy">
+                      <span
+                        class="editorial-projects-mosaic__brand"
+                        data-element-name="Titulo Greenscale do mosaico"
+                        data-placeholder-ref="text5"
+                      >
+                        Greenscale
+                      </span>
+                    </span>
+                  </a>
+                  <span class="editorial-projects-mosaic__description" data-placeholder-ref="text9">
+                    App que analisa seus dados e te gera relat&oacute;rios, apresenta&ccedil;&otilde;es e dashboards.
+                  </span>
+                </div>
+                <div class="editorial-projects-mosaic-item" data-placeholder-ref="element37">
+                  <a
+                    class="editorial-projects-mosaic editorial-projects-mosaic--secondary"
+                    href="./em-construcao.html"
+                    data-element-name="Mosaico dashboard call center"
+                  >
+                    <video
+                      class="editorial-projects-mosaic__video"
+                      src="./assets/videos/greenscale-home.mp4"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      aria-hidden="true"
+                      data-placeholder-ref="image2"
+                    ></video>
+                    <span class="editorial-projects-mosaic__copy">
+                      <span
+                        class="editorial-projects-mosaic__brand editorial-projects-mosaic__brand--secondary"
+                        data-element-name="Titulo do mosaico call center"
+                        data-placeholder-ref="text6"
+                      >
+                        NUMBEAR Smartsheets
+                      </span>
+                    </span>
+                  </a>
+                  <span class="editorial-projects-mosaic__description" data-placeholder-ref="text10">
+                    Excel Dashboard para gerenciar equipes em call center.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="services-showcase"
+        data-element-name="Se&ccedil;&atilde;o o que fazemos"
+        data-placeholder-ref="section2"
+      >
+        <div class="editorial-shell" data-placeholder-ref="element7">
+          <div class="services-showcase__inner" data-placeholder-ref="element8">
+            <p
+              class="editorial-clients-band__label services-showcase__eyebrow"
+              data-placeholder-ref="text7"
+            >
+              <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element38">_</span>
+              <span class="editorial-clients-band__label-text" data-placeholder-ref="text63">SOLU&Ccedil;&Otilde;ES</span>
+            </p>
+            <div class="services-showcase__heading" data-placeholder-ref="element9">
+              <h2 class="editorial-clients-band__project-title" data-placeholder-ref="title3">
+                O que fazemos
+              </h2>
+              <p class="editorial-hero__lede" data-placeholder-ref="text8">
+                N&oacute;s entregamos, ponto-a-ponto, solu&ccedil;&otilde;es digitais que combinam tecnologia,
+                design e estrat&eacute;gia para elevar a produtividade do neg&oacute;cio.
+              </p>
+            </div>
+
+            <div class="services-showcase__cards" aria-label="Servi&ccedil;os Redscale" data-placeholder-ref="element10">
+              <article class="service-card">
+                <span class="service-card__surface" aria-hidden="true" data-placeholder-ref="element11"></span>
+                <span class="service-card__icon" aria-hidden="true" data-placeholder-ref="image9">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M4 6.5H20V17.5H4zM8 20H16M10 17.5V20M14 17.5V20" />
+                  </svg>
+                </span>
+                <h3 data-placeholder-ref="title4">Infraestrutura &amp; Sistemas Web</h3>
+                <p data-placeholder-ref="text11">
+                  Criamos aplica&ccedil;&otilde;es, portais e estruturas digitais para centralizar dados,
+                  reduzir retrabalho e sustentar o crescimento.
+                </p>
+                <div class="service-card__tags" data-placeholder-ref="element12">
+                  <span data-placeholder-ref="text12">Apps internos</span>
+                  <span data-placeholder-ref="text62">Portais</span>
+                  <span data-placeholder-ref="text14">SaaS</span>
+                  <span data-placeholder-ref="text15">CMS</span>
+                  <span data-placeholder-ref="text16">APIs</span>
+                  <span data-placeholder-ref="text17">Performance</span>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <span class="service-card__surface" aria-hidden="true" data-placeholder-ref="element13"></span>
+                <span class="service-card__icon" aria-hidden="true" data-placeholder-ref="image10">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7 5H17M7 19H17M5 7V17M19 7V17M8 8H16V16H8z" />
+                  </svg>
+                </span>
+                <h3 data-placeholder-ref="title5">Produtos &amp; Design de Interface</h3>
+                <p data-placeholder-ref="text18">
+                  Transformamos fluxos complexos em interfaces objetivas, com foco em
+                  decis&atilde;o, usabilidade e ado&ccedil;&atilde;o pela equipe.
+                </p>
+                <div class="service-card__tags" data-placeholder-ref="element14">
+                  <span data-placeholder-ref="text19">UX Strategy</span>
+                  <span data-placeholder-ref="text20">UI Design</span>
+                  <span data-placeholder-ref="text21">Design Systems</span>
+                  <span data-placeholder-ref="text22">Prot&oacute;tipos</span>
+                  <span data-placeholder-ref="text23">Acessibilidade</span>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <span class="service-card__surface" aria-hidden="true" data-placeholder-ref="element15"></span>
+                <span class="service-card__icon" aria-hidden="true" data-placeholder-ref="image11">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 3.5L13.8 9.2L19.5 11L13.8 12.8L12 18.5L10.2 12.8L4.5 11L10.2 9.2zM18 15.5L18.7 17.3L20.5 18L18.7 18.7L18 20.5L17.3 18.7L15.5 18L17.3 17.3z" />
+                  </svg>
+                </span>
+                <h3 data-placeholder-ref="title6">Marca &amp; Identidade Digital</h3>
+                <p data-placeholder-ref="text24">
+                  Organizamos linguagem, componentes e presen&ccedil;a visual para produtos que
+                  precisam parecer t&atilde;o claros quanto funcionam.
+                </p>
+                <div class="service-card__tags" data-placeholder-ref="element16">
+                  <span data-placeholder-ref="text25">Identidade visual</span>
+                  <span data-placeholder-ref="text26">Tipografia</span>
+                  <span data-placeholder-ref="text27">Guidelines</span>
+                  <span data-placeholder-ref="text28">Rebranding</span>
+                  <span data-placeholder-ref="text29">Assets digitais</span>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <span class="service-card__surface" aria-hidden="true" data-placeholder-ref="element17"></span>
+                <span class="service-card__icon" aria-hidden="true" data-placeholder-ref="image12">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M5 7H10L12 5H19M5 17H10L12 19H19M16 5L19 8L16 11M16 13L19 16L16 19" />
+                  </svg>
+                </span>
+                <h3 data-placeholder-ref="title7">Integra&ccedil;&atilde;o entre Sistemas &amp; Automa&ccedil;&otilde;es</h3>
+                <p data-placeholder-ref="text30">
+                  Conectamos ferramentas, CRMs, bases e rotinas para que informa&ccedil;&otilde;es
+                  circulem melhor e tarefas repetitivas saiam do caminho.
+                </p>
+                <div class="service-card__tags" data-placeholder-ref="element18">
+                  <span data-placeholder-ref="text31">CRM</span>
+                  <span data-placeholder-ref="text32">Workflow</span>
+                  <span data-placeholder-ref="text33">Data Sync</span>
+                  <span data-placeholder-ref="text34">Cloud</span>
+                  <span data-placeholder-ref="text35">Analytics</span>
+                  <span data-placeholder-ref="text36">Automa&ccedil;&atilde;o</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="services-showcase__panels" data-placeholder-ref="element19">
+              <article class="services-panel" data-placeholder-ref="element20">
+                <div class="services-panel__header" data-placeholder-ref="element21">
+                  <h3 data-placeholder-ref="title8">Segmentos</h3>
+                  <span aria-hidden="true" data-placeholder-ref="element39">+</span>
+                </div>
+                <div class="services-panel__chips services-panel__chips--capability" data-placeholder-ref="element22">
+                  <span data-placeholder-ref="text37"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 7H19V17H5zM8 20H16M10 17V20M14 17V20" /></svg>Software</span>
+                  <span data-placeholder-ref="text38"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4V20M5 8H19M7 16H17M8 4L5 8L8 12M16 12L19 16L16 20" /></svg>IA e dados</span>
+                  <span data-placeholder-ref="text39"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7H17V17H7zM4 12H7M17 12H20M12 4V7M12 17V20" /></svg>Opera&ccedil;&otilde;es</span>
+                  <span data-placeholder-ref="text40"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 8H18L17 19H7zM9 8C9 5.8 10.2 4 12 4C13.8 4 15 5.8 15 8" /></svg>E-commerce</span>
+                  <span data-placeholder-ref="text41"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5V19M5 12H19M7 7L17 17M17 7L7 17" /></svg>HealthTech</span>
+                  <span data-placeholder-ref="text42"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 9H19M7 5H17V19H7zM9 14H15M9 17H13" /></svg>Fintech</span>
+                  <span data-placeholder-ref="text43"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12A7 7 0 0 1 19 12V16A3 3 0 0 1 16 19H13M5 12V15H8V11H5zM19 12V15H16V11H19z" /></svg>Atendimento</span>
+                  <span data-placeholder-ref="text44"><svg class="services-panel__chip-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 10L7 5H17L19 10M6 10H18V19H6zM9 14H15" /></svg>Varejo</span>
+                </div>
+              </article>
+
+              <article class="services-panel services-panel--tools" data-placeholder-ref="element23">
+                <div class="services-panel__header" data-placeholder-ref="element24">
+                  <h3 data-placeholder-ref="title9">Ferramentas</h3>
+                  <span aria-hidden="true" data-placeholder-ref="element40">+</span>
+                </div>
+                <div class="services-panel__chips" data-placeholder-ref="element25">
+                  <span data-placeholder-ref="text45"><i style="--tool-color: #ff553f"></i>Dev tools</span>
+                  <span data-placeholder-ref="text46"><i style="--tool-color: #8e5cff"></i>Design systems</span>
+                  <span data-placeholder-ref="text47"><i style="--tool-color: #28bdeb"></i>IA aplicada</span>
+                  <span data-placeholder-ref="text48"><i style="--tool-color: #29c777"></i>Cloud</span>
+                  <span data-placeholder-ref="text49"><i style="--tool-color: #e6a91e"></i>APIs</span>
+                  <span data-placeholder-ref="text50"><i style="--tool-color: #7c70ff"></i>Bancos de dados</span>
+                  <span data-placeholder-ref="text51"><i style="--tool-color: #ff553f"></i>CRM</span>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="metrics-section"
+        data-element-name="Se&ccedil;&atilde;o resultados mensur&aacute;veis"
+        data-placeholder-ref="section3"
+      >
+        <div class="editorial-shell" data-placeholder-ref="element26">
+          <p class="editorial-clients-band__label metrics-section__eyebrow" data-placeholder-ref="text52">
+            <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element43">_</span>
+            <span class="editorial-clients-band__label-text" data-placeholder-ref="text67">M&Eacute;TRICAS</span>
+          </p>
+
+          <div class="metrics-section__heading" data-placeholder-ref="element28">
+            <h2 data-placeholder-ref="title10">Resultados para equipes que precisam crescer</h2>
+            <p data-placeholder-ref="text53">
+              A Redscale ajuda empresas a transformar processos, dados e interfaces em
+              experi&ecirc;ncias digitais que reduzem ru&iacute;do e aumentam produtividade.
+            </p>
+          </div>
+
+          <figure
+            class="metrics-section__portrait"
+            aria-label="Equipe trabalhando em ambiente operacional"
+            data-placeholder-ref="image13"
+          >
+            <video
+              class="metrics-section__video"
+              src="./assets/videos/airbus-launch.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-label="Foguete decolando"
+              data-placeholder-ref="image14"
+            ></video>
+          </figure>
+
+          <div class="metrics-section__cluster" aria-label="Indicadores de resultado" data-placeholder-ref="element29">
+            <article class="metric-card metric-card--coral">
+              <span class="metric-card__surface" aria-hidden="true" data-placeholder-ref="element30"></span>
+              <p data-placeholder-ref="text54">
+                Clientes relatam um aumento na efici&ecirc;ncia do core operacional depois da
+                implanta&ccedil;&atilde;o de uma solu&ccedil;&atilde;o Redscale.
+              </p>
+              <div class="metric-card__stat" data-placeholder-ref="element31">
+                <strong data-placeholder-ref="text55">21%</strong>
+                <span data-placeholder-ref="text56">Aumento m&eacute;dio em efici&ecirc;ncia</span>
+              </div>
+            </article>
+
+            <article class="metric-card metric-card--white">
+              <span class="metric-card__surface" aria-hidden="true" data-placeholder-ref="element32"></span>
+              <p data-placeholder-ref="text57">Engajamento da equipe</p>
+              <strong data-placeholder-ref="text58">52%</strong>
+              <a href="./contato.html" data-placeholder-ref="link2">
+                <span data-placeholder-ref="text64">Come&ccedil;ar um projeto</span>
+              </a>
+            </article>
+
+            <article class="metric-card metric-card--black metric-card--black-top">
+              <span class="metric-card__surface" aria-hidden="true" data-placeholder-ref="element33"></span>
+              <strong data-placeholder-ref="text59">35%</strong>
+              <span data-placeholder-ref="text60">Menos retrabalho</span>
+            </article>
+
+            <article class="metric-card metric-card--black metric-card--black-large">
+              <span class="metric-card__surface" aria-hidden="true" data-placeholder-ref="element34"></span>
+              <p data-placeholder-ref="text61">
+                Durante projetos com clientes. Com layouts e ferramentas de apresenta&ccedil;&atilde;o
+                melhores, equipes recebem aprova&ccedil;&otilde;es mais r&aacute;pido.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-studio-section" id="sobre" data-element-name="Se&ccedil;&atilde;o sobre a Redscale" data-placeholder-ref="section4">
+        <div class="about-studio-section__inner" data-placeholder-ref="element44">
+          <p class="editorial-clients-band__label about-studio-section__eyebrow" data-placeholder-ref="text68">
+            <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element55">_</span>
+            <span class="editorial-clients-band__label-text" data-placeholder-ref="text79">SOBRE</span>
+          </p>
+          <div class="about-studio-section__heading">
+            <h2 class="about-studio-section__title" data-placeholder-ref="title11">
+              Constru&iacute;do por estrategistas, tecn&oacute;logos e designers
             </h2>
           </div>
-          <a class="media-loop__cta site-cta" href="#contato">
-            <span class="site-cta__fill" aria-hidden="true">
-              <span class="site-cta__arrow-track">
-                <span class="site-cta__arrow site-cta__arrow--base">
-                  <svg
-                    class="site-cta__arrow-icon"
-                    viewBox="0 0 16 16"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                  </svg>
+
+          <div class="about-studio-section__copy-grid" data-placeholder-ref="element45">
+            <p data-placeholder-ref="text69">
+              A Redscale &eacute; uma empresa de produtos digitais criada para conectar
+              estrat&eacute;gia, tecnologia e design. Ajudamos empresas a transformar ideias
+              complexas em solu&ccedil;&otilde;es claras, escal&aacute;veis e orientadas a resultado.
+            </p>
+            <p data-placeholder-ref="text70">
+              De plataformas internas e servi&ccedil;os de dados a automa&ccedil;&otilde;es e dashboards,
+              trabalhamos com equipes que se importam como as coisas funcionam, como elas
+              s&atilde;o percebidas, e que precisam de direcionamento mais alinhado aos
+              objetivos.
+            </p>
+          </div>
+
+          <div class="about-capability-banner" data-placeholder-ref="element53">
+            <div class="about-capability-banner__track" data-placeholder-ref="element54">
+              <span class="about-capability-chip editorial-capability" data-placeholder-ref="text75">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12H19M12 5V19" /></svg>
                 </span>
-                <span class="site-cta__arrow site-cta__arrow--hover">
-                  <svg
-                    class="site-cta__arrow-icon"
-                    viewBox="0 0 16 16"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                  </svg>
+                <span class="editorial-capability__label">Design de Interface</span>
+              </span>
+              <span class="about-capability-chip editorial-capability" data-placeholder-ref="text76">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 7H10L12 5H19M5 17H10L12 19H19M16 5L19 8L16 11M16 13L19 16L16 19" /></svg>
                 </span>
+                <span class="editorial-capability__label">Integra&ccedil;&atilde;o &amp; Automa&ccedil;&atilde;o</span>
               </span>
-            </span>
-            <span class="site-cta__label-track">
-              <span class="site-cta__label site-cta__label--base">
-                Veja nossos servi&ccedil;os
+              <span class="about-capability-chip editorial-capability" data-placeholder-ref="text77">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6.5H20V17.5H4zM8 20H16M10 17.5V20M14 17.5V20" /></svg>
+                </span>
+                <span class="editorial-capability__label">Infraestrutura</span>
               </span>
-              <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-                Veja nossos servi&ccedil;os
+              <span class="about-capability-chip editorial-capability" aria-hidden="true">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12H19M12 5V19" /></svg>
+                </span>
+                <span class="editorial-capability__label">Design de Interface</span>
               </span>
-            </span>
-          </a>
+              <span class="about-capability-chip editorial-capability" aria-hidden="true">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M5 7H10L12 5H19M5 17H10L12 19H19M16 5L19 8L16 11M16 13L19 16L16 19" /></svg>
+                </span>
+                <span class="editorial-capability__label">Integra&ccedil;&atilde;o &amp; Automa&ccedil;&atilde;o</span>
+              </span>
+              <span class="about-capability-chip editorial-capability" aria-hidden="true">
+                <span class="editorial-capability__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 6.5H20V17.5H4zM8 20H16M10 17.5V20M14 17.5V20" /></svg>
+                </span>
+                <span class="editorial-capability__label">Infraestrutura</span>
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="about" id="sobre" aria-labelledby="about-title">
-        <div class="section-intro">
-          <div class="section-intro__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">Sobre</span>
-          </div>
-          <h2 class="section-intro__title section-intro__title--about" id="about-title">
-            Somos
-            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-1" data-text="especialistas">
-              especialistas
-            </span>
-            em
-            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-2" data-text="identificar">
-              identificar
-            </span>
-            e
-            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-3" data-text="resolver">
-              resolver
-            </span>
-            problemas relacionados a
-            <span class="about__title-word paint-cycle paint-cycle--about paint-step--about-4" data-text="produtividade">
-              produtividade
-            </span>.
-          </h2>
-          <p class="section-intro__support">
-            <a
-              class="section-intro__support-link section-intro__support-link--inline-study"
-              href="https://www.mckinsey.com/mgi/our-research/the-power-of-one-how-standout-firms-grow-national-productivity"
-              target="_blank"
-              rel="noreferrer"
-            >Neste artigo</a>
-            &ldquo;The power of one&rdquo;, a McKinsey&trade; diz que 20% das
-            firmas que aumentaram a produtividade 1,5 vezes mais r&aacute;pido
-            que a m&eacute;dia do mesmo segmento tamb&eacute;m aumentaram sua
-            participa&ccedil;&atilde;o de emprego, ou seja, produtividade
-            superior e ganho de espa&ccedil;o caminham juntos.
+      <section class="process-section" data-element-name="Se&ccedil;&atilde;o processo" data-placeholder-ref="section5">
+        <div class="process-section__inner" data-placeholder-ref="element56">
+          <p class="editorial-clients-band__label process-section__eyebrow" data-placeholder-ref="text80">
+            <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element57">_</span>
+              <span class="editorial-clients-band__label-text" data-placeholder-ref="text81">PROCESSO</span>
           </p>
-        </div>
 
-        <div class="idea-belt" aria-labelledby="idea-belt-title">
-          <h3 class="visually-hidden" id="idea-belt-title">
-            Conceitos que simbolizam o ecossistema Redscale
-          </h3>
-          <div class="idea-belt__viewport" aria-hidden="true">
-            <div class="idea-belt__track">
-              <div class="idea-belt__group">
-                <span class="idea-belt__item">Produtividade</span>
-                <span class="idea-belt__item">Clareza</span>
-                <span class="idea-belt__item">Objetividade</span>
-                <span class="idea-belt__item">Tecnologia</span>
-                <span class="idea-belt__item">M&eacute;todo</span>
-                <span class="idea-belt__item">Simplicidade</span>
-                <span class="idea-belt__item">Efici&ecirc;ncia</span>
-                <span class="idea-belt__item">Estrat&eacute;gia</span>
-                <span class="idea-belt__item">Crescimento</span>
+          <div class="process-section__heading" data-placeholder-ref="element58">
+            <h2 data-placeholder-ref="title12">Para tirar as ideias do papel</h2>
+            <p data-placeholder-ref="text82">
+              Um fluxo claro e colaborativo para levar projetos do diagn&oacute;stico ao lan&ccedil;amento,
+              sem atrito entre estrat&eacute;gia, design e tecnologia.
+            </p>
+          </div>
+
+          <div class="process-section__grid" data-placeholder-ref="element59">
+            <article class="process-card" data-placeholder-ref="element60">
+              <div class="process-card__top" data-placeholder-ref="element61">
+                <span data-placeholder-ref="text83">01</span>
+                <span aria-hidden="true" data-placeholder-ref="element62">+</span>
               </div>
-              <div class="idea-belt__group">
-                <span class="idea-belt__item">Produtividade</span>
-                <span class="idea-belt__item">Clareza</span>
-                <span class="idea-belt__item">Objetividade</span>
-                <span class="idea-belt__item">Tecnologia</span>
-                <span class="idea-belt__item">M&eacute;todo</span>
-                <span class="idea-belt__item">Simplicidade</span>
-                <span class="idea-belt__item">Efici&ecirc;ncia</span>
-                <span class="idea-belt__item">Estrat&eacute;gia</span>
-                <span class="idea-belt__item">Crescimento</span>
+              <span class="process-card__divider" aria-hidden="true" data-placeholder-ref="element63"></span>
+              <div class="process-card__copy" data-placeholder-ref="element64">
+                <h3 data-placeholder-ref="text84">Compreender</h3>
+                <p data-placeholder-ref="text85">Entendemos opera&ccedil;&atilde;o, objetivos, usu&aacute;rios e gargalos t&eacute;cnicos antes de desenhar qualquer solu&ccedil;&atilde;o.</p>
               </div>
-            </div>
-          </div>
-        </div>
+            </article>
 
-        <div class="about__echoes" aria-label="Pilares de atua&ccedil;&atilde;o">
-          <div class="about__echo about__echo--left">
-            <p class="about__echo-title">
-              Uma vis&atilde;o 'end-to-end'
-            </p>
-            <p class="about__echo-copy">
-              Depois de planejar voos estrat&eacute;gicos, precisamos primeiro
-              arrumar a casa &mdash; atualiza&ccedil;&atilde;o dos fluxos de
-              trabalho e comunica&ccedil;&atilde;o interna. Trabalhamos com VSM
-              para ter uma vis&atilde;o end-to-end e definir o ponto de
-              partida.
-            </p>
-          </div>
-          <div class="about__echo about__echo--right">
-            <p class="about__echo-title">
-              Orienta&ccedil;&atilde;o por princ&iacute;pios, sistemas e
-              metodologias
-            </p>
-            <p class="about__echo-copy">
-              N&atilde;o reinventar a roda, apenas importe e adapte o que j&aacute;
-              gerou prova de valor. Norteamos desenvolvimento de
-              context-specific strategies, porque o tipo de mudan&ccedil;a
-              depende do ambiente organizacional e das interdepend&ecirc;ncias
-              envolvidas.
-            </p>
-          </div>
-        </div>
-
-
-        <div class="about__shape" aria-hidden="true"></div>
-      </section>
-
-
-      <section class="services" id="servicos" aria-labelledby="services-title">
-        <div class="section-intro services__intro">
-          <div class="section-intro__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">Servi&ccedil;os</span>
-          </div>
-          <h2 class="section-intro__title section-intro__title--services" id="services-title">
-            A
-            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-1" data-text="produtividade aumenta">
-              produtividade aumenta
-            </span>
-            quando a empresa
-            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-2" data-text="encurta o tempo">
-              encurta o tempo
-            </span>
-            entre
-            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-3" data-text="perceber">
-              perceber
-            </span>
-            um problema,
-            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-4" data-text="decidir">
-              decidir
-            </span>
-            e
-            <span class="services__title-word paint-cycle paint-cycle--services paint-step--services-5" data-text="agir">
-              agir
-            </span>.
-          </h2>
-
-        </div>
-        <div class="services__catalog" role="list" aria-label="Formatos de servi&ccedil;o">
-          <div class="services__catalog-entry" role="listitem">
-            <button class="services__catalog-trigger" type="button" aria-expanded="false">
-              <span class="services__catalog-media" aria-hidden="true">
-                <img
-                  class="services__catalog-image"
-                  src="./assets/images/services/consulting.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span class="services__catalog-text">Consulting-as-a-Service</span>
-              <span class="services__catalog-icon" aria-hidden="true"></span>
-            </button>
-            <div class="services__catalog-panel" aria-hidden="true">
-              <div class="services__catalog-panel-inner">
-                <p class="services__catalog-panel-copy">
-                  Porta de entrada consultiva da REDSCALE para diagnosticar,
-                  consolidar contexto, propor uma arquitetura de a&ccedil;&atilde;o
-                  e iniciar a execu&ccedil;&atilde;o com visibilidade real.
-                </p>
-                <ul class="services__catalog-panel-list" aria-label="Frentes do Consulting-as-a-Service">
-                  <li>diagn&oacute;stico estruturado</li>
-                  <li>proposta executiva</li>
-                  <li>plano de a&ccedil;&atilde;o</li>
-                </ul>
+            <article class="process-card" data-placeholder-ref="element65">
+              <div class="process-card__top" data-placeholder-ref="element66">
+                <span data-placeholder-ref="text86">02</span>
+                <span aria-hidden="true" data-placeholder-ref="element67">+</span>
               </div>
-            </div>
-          </div>
-          <div class="services__catalog-entry" role="listitem">
-            <button class="services__catalog-trigger" type="button" aria-expanded="false">
-              <span class="services__catalog-media" aria-hidden="true">
-                <img
-                  class="services__catalog-image"
-                  src="./assets/images/services/management.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span class="services__catalog-text">Management-as-a-Service</span>
-              <span class="services__catalog-icon" aria-hidden="true"></span>
-            </button>
-            <div class="services__catalog-panel" aria-hidden="true">
-              <div class="services__catalog-panel-inner">
-                <p class="services__catalog-panel-copy">
-                  Camada recorrente de acompanhamento, leitura gerencial e
-                  recomenda&ccedil;&atilde;o para encurtar o tempo entre sinal,
-                  decis&atilde;o e ajuste.
-                </p>
-                <ul class="services__catalog-panel-list" aria-label="Frentes do Management-as-a-Service">
-                  <li>an&aacute;lises peri&oacute;dicas</li>
-                  <li>dashboards</li>
-                  <li>apresenta&ccedil;&otilde;es executivas</li>
-                </ul>
+              <span class="process-card__divider" aria-hidden="true" data-placeholder-ref="element68"></span>
+              <div class="process-card__copy" data-placeholder-ref="element69">
+                <h3 data-placeholder-ref="text87">Desenhar &amp; Estruturar</h3>
+                <p data-placeholder-ref="text88">Mapeamos estrutura, jornadas, integra&ccedil;&otilde;es e dire&ccedil;&atilde;o visual para alinhar decis&otilde;es antes da produ&ccedil;&atilde;o.</p>
               </div>
-            </div>
-          </div>
-          <div class="services__catalog-entry" role="listitem">
-            <button class="services__catalog-trigger" type="button" aria-expanded="false">
-              <span class="services__catalog-media" aria-hidden="true">
-                <img
-                  class="services__catalog-image"
-                  src="./assets/images/services/device.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span class="services__catalog-text">Device-as-a-Service</span>
-              <span class="services__catalog-icon" aria-hidden="true"></span>
-            </button>
-            <div class="services__catalog-panel" aria-hidden="true">
-              <div class="services__catalog-panel-inner">
-                <p class="services__catalog-panel-copy">
-                  Estrutura f&iacute;sica como parte da opera&ccedil;&atilde;o:
-                  notebooks corporativos, gest&atilde;o de ativos, previsibilidade
-                  de atendimento e redu&ccedil;&atilde;o de fric&ccedil;&atilde;o.
-                </p>
-                <ul class="services__catalog-panel-list" aria-label="Frentes do Device-as-a-Service">
-                  <li>SLA</li>
-                  <li>reposi&ccedil;&atilde;o</li>
-                  <li>relat&oacute;rios de parque</li>
-                </ul>
+            </article>
+
+            <article class="process-card" data-placeholder-ref="element70">
+              <div class="process-card__top" data-placeholder-ref="element71">
+                <span data-placeholder-ref="text89">03</span>
+                <span aria-hidden="true" data-placeholder-ref="element72">+</span>
               </div>
-            </div>
-          </div>
-          <div class="services__catalog-entry" role="listitem">
-            <button class="services__catalog-trigger" type="button" aria-expanded="false">
-              <span class="services__catalog-media" aria-hidden="true">
-                <img
-                  class="services__catalog-image"
-                  src="./assets/images/services/crm.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span class="services__catalog-text">CRM</span>
-              <span class="services__catalog-icon" aria-hidden="true"></span>
-            </button>
-            <div class="services__catalog-panel" aria-hidden="true">
-              <div class="services__catalog-panel-inner">
-                <p class="services__catalog-panel-copy">
-                  Camada de relacionamento, mem&oacute;ria comercial e governan&ccedil;a
-                  de contexto para que cada conversa, proposta e avan&ccedil;o
-                  vire intelig&ecirc;ncia reaproveit&aacute;vel.
-                </p>
-                <ul class="services__catalog-panel-list" aria-label="Frentes do CRM">
-                  <li>pipeline</li>
-                  <li>mem&oacute;ria estrat&eacute;gica</li>
-                  <li>governan&ccedil;a de contexto</li>
-                </ul>
+              <span class="process-card__divider" aria-hidden="true" data-placeholder-ref="element73"></span>
+              <div class="process-card__copy" data-placeholder-ref="element74">
+                <h3 data-placeholder-ref="text90">Construir &amp; Integrar</h3>
+                <p data-placeholder-ref="text91">Transformamos o plano em produto com c&oacute;digo limpo, sistemas escal&aacute;veis e ferramentas modernas.</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="services__shape" aria-hidden="true"></div>
-      </section>
+            </article>
 
-      <section class="video-cta" aria-label="Video CTA">
-        <div class="video-cta__frame">
-          <video
-            class="video-cta__video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source
-              src="./assets/videos/redscale-1.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <a class="video-cta__action site-cta" href="#contato">
-            <span class="site-cta__fill" aria-hidden="true">
-              <span class="site-cta__arrow-track">
-                <span class="site-cta__arrow site-cta__arrow--base">
-                  <svg
-                    class="site-cta__arrow-icon"
-                    viewBox="0 0 16 16"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                  </svg>
-                </span>
-                <span class="site-cta__arrow site-cta__arrow--hover">
-                  <svg
-                    class="site-cta__arrow-icon"
-                    viewBox="0 0 16 16"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                  </svg>
-                </span>
-              </span>
-            </span>
-            <span class="site-cta__label-track">
-              <span class="site-cta__label site-cta__label--base">
-                Entre em contato conosco
-              </span>
-              <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-                Entre em contato conosco
-              </span>
-            </span>
-          </a>
-        </div>
-      </section>
+            <article class="process-card" data-placeholder-ref="element75">
+              <div class="process-card__top" data-placeholder-ref="element76">
+                <span data-placeholder-ref="text92">04</span>
+                <span aria-hidden="true" data-placeholder-ref="element77">+</span>
+              </div>
+              <span class="process-card__divider" aria-hidden="true" data-placeholder-ref="element78"></span>
+              <div class="process-card__copy" data-placeholder-ref="element79">
+                <h3 data-placeholder-ref="text93">Melhoria Continuada</h3>
+                <p data-placeholder-ref="text94">Depois do go-live, medimos, refinamos e melhoramos performance, usabilidade e impacto operacional.</p>
+              </div>
+            </article>
+          </div>
 
-      <section class="proof" aria-labelledby="proof-title">
-        <div class="section-intro">
-          <div class="section-intro__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">M&eacute;todo</span>
-          </div>
-          <h2 class="section-intro__title section-intro__title--proof" id="proof-title">
-            A confian&ccedil;a n&atilde;o vem do discurso.
-            <span class="proof__title-word paint-cycle paint-cycle--proof paint-step--proof-highlight" data-text="Vem do resultado!">
-              Vem do resultado!
-            </span>
-          </h2>
-          <p class="section-intro__support">
-            Nosso trabalho parte de um objetivo simples:
-            <span class="section-intro__support-emphasis paint-cycle paint-cycle--proof paint-step--proof-support" data-text="elevar a produtividade">
-              elevar a produtividade
-            </span>.
-            Para isso, combinamos processos e m&eacute;todos que funcionam para
-            n&oacute;s e adaptamos a sua realidade. O que entregamos nasceu de
-            experi&ecirc;ncia, muita pesquisa, muitos testes, uso recorrente e
-            melhoria cont&iacute;nua.
-          </p>
-        </div>
-        <div class="proof__grid" role="list" aria-label="Jornada do her&oacute;i do ecossistema REDSCALE">
-          <article class="proof__card" role="listitem">
-            <div class="proof__card-meta">
-              <span class="section-intro__mark proof__card-mark" aria-hidden="true"></span>
-              <p class="proof__card-index">01</p>
-            </div>
-            <div class="proof__card-icon proof__card-icon--coffee" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <path class="proof__icon-line proof__icon-steam proof__icon-steam--a" d="M24 22V14" />
-                <path class="proof__icon-line proof__icon-steam proof__icon-steam--b" d="M36 22V11" />
-                <path class="proof__icon-line proof__icon-steam proof__icon-steam--c" d="M48 22V14" />
-                <path class="proof__icon-line" d="M20 29H44V42C44 46.418 40.418 50 36 50H28C23.582 50 20 46.418 20 42V29Z" />
-                <path class="proof__icon-line" d="M44 32H48C51.314 32 54 34.686 54 38C54 41.314 51.314 44 48 44H44" />
-                <path class="proof__icon-line" d="M18 56H54" />
-              </svg>
-            </div>
-            <h3 class="proof__card-title">Entender a sua realidade</h3>
-            <p class="proof__card-copy">
-              Queremos fazer uma sess&atilde;o r&aacute;pida de imers&atilde;o e
-              foco para entender entender mais da sua realidade. Desse kick-off
-              sair&atilde;o diversos insights sobre como aumentar a produtividade
-              na sua realidade, e como isso te ajudar&aacute; a alcan&ccedil;ar
-              os objetivos e metas do neg&oacute;cio.
-            </p>
-          </article>
-          <article class="proof__card" role="listitem">
-            <div class="proof__card-meta">
-              <span class="section-intro__mark proof__card-mark" aria-hidden="true"></span>
-              <p class="proof__card-index">02</p>
-            </div>
-            <div class="proof__card-icon proof__card-icon--route" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <path class="proof__icon-line" d="M22 20L47 30L28 50" />
-                <circle class="proof__icon-node proof__icon-node--a" cx="22" cy="20" r="4" />
-                <circle class="proof__icon-node proof__icon-node--b" cx="47" cy="30" r="4" />
-                <circle class="proof__icon-node proof__icon-node--c" cx="28" cy="50" r="4" />
-              </svg>
-            </div>
-            <h3 class="proof__card-title">Aplicar a estrat&eacute;gia adequada</h3>
-            <p class="proof__card-copy">
-              &Eacute; imprescind&iacute;vel que para alcan&ccedil;ar o resultado
-              desejado o processo comece de forma adequada. Depois do kick-off
-              faremos uma an&aacute;lise profunda do caso para entender qual ou
-              quais estrat&eacute;gias melhor ajudar&aacute; a elevar a
-              produtividade da equipe. Dessa forma o plano de a&ccedil;&atilde;o
-              muito mais simples e pr&aacute;tico, e cada equipe ou
-              departamento saber&aacute; exatamente o que deve entregar.
-            </p>
-          </article>
-          <article class="proof__card" role="listitem">
-            <div class="proof__card-meta">
-              <span class="section-intro__mark proof__card-mark" aria-hidden="true"></span>
-              <p class="proof__card-index">03</p>
-            </div>
-            <div class="proof__card-icon proof__card-icon--cycle" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <path class="proof__icon-line" d="M18 31C21.314 24.373 28.059 20 36 20C45.941 20 54 28.059 54 38" />
-                <path class="proof__icon-line" d="M54 38L54 26L44 31" />
-                <path class="proof__icon-line" d="M54 41C50.686 47.627 43.941 52 36 52C26.059 52 18 43.941 18 34" />
-                <path class="proof__icon-line" d="M18 34L18 46L28 41" />
-              </svg>
-            </div>
-            <h3 class="proof__card-title">Colaborar para o seu sucesso</h3>
-            <p class="proof__card-copy">
-              A REDSCALE entende que n&oacute;s crescemos quando os clientes
-              crescem, ent&atilde;o o nosso sucesso &eacute; o seu sucesso.
-              Sabendo disso, o nosso interesse &eacute; fazer os nossos
-              servi&ccedil;os e produtos terem efeito positivo para as pessoas,
-              e as pessoas gerarem um efeito positivo para o neg&oacute;cio. A
-              base de tudo s&atilde;o pessoas, e os processos nossas
-              ferramentas.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="products" id="produtos" aria-labelledby="products-title">
-        <div class="section-intro">
-          <div class="section-intro__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">Produtos</span>
-          </div>
-          <h2 class="section-intro__title" id="products-title">
-            Arquivos
-            <span
-              class="products__title-word paint-cycle paint-cycle--proof paint-step--proof-support"
-              data-text="'one-size-fits-all'"
-            >
-              'one-size-fits-all'
-            </span>
-            para gerenciar, operar e produzir melhor.
-          </h2>
-          <p class="section-intro__support">
-            Nosso acervo contempla diversos arquivos que foram constru&iacute;dos
-            com aplica&ccedil;&atilde;o de metodologias para aumento de
-            produtividade e resolu&ccedil;&atilde;o de problemas variados.
-            Todos est&atilde;o prontos e s&atilde;o 'ready-to-use' ou seja
-            &eacute; baixar e usar.
-          </p>
-        </div>
-        <div class="products__frame" aria-label="Destaque visual de produtos REDSCALE">
-          <img
-            class="products__frame-image"
-            src="./assets/images/products/produtos-banner.jpg"
-            alt="Interfaces e dashboards do acervo de produtos REDSCALE"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="products__showcase-copy">
-            <span class="products__showcase-mark" aria-hidden="true">
-              <svg viewBox="0 0 10 10" focusable="false">
-                <path
-                  d="M5 0.5C8.45 0.5 9.5 1.55 9.5 5C9.5 8.45 8.45 9.5 5 9.5C1.55 9.5 0.5 8.45 0.5 5C0.5 1.55 1.55 0.5 5 0.5Z"
-                />
-              </svg>
-            </span>
-            <h3 class="products__showcase-title">
-              <span>Relat&oacute;rios.</span>
-              <span>Dashboards.</span>
-              <span>Templates.</span>
-            </h3>
-            <div class="products__showcase-actions">
-              <a class="site-cta products__showcase-cta" href="#contato">
-                <span class="site-cta__fill" aria-hidden="true">
-                  <span class="site-cta__arrow-track">
-                    <span class="site-cta__arrow site-cta__arrow--base">
-                      <svg
-                        class="site-cta__arrow-icon"
-                        viewBox="0 0 16 16"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                      </svg>
-                    </span>
-                    <span class="site-cta__arrow site-cta__arrow--hover">
-                      <svg
-                        class="site-cta__arrow-icon"
-                        viewBox="0 0 16 16"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-                <span class="site-cta__label-track">
-                  <span class="site-cta__label site-cta__label--base">
-                    Ver mais de Excel
-                  </span>
-                  <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-                    Ver mais de Excel
-                  </span>
-                </span>
-              </a>
-              <a class="site-cta products__showcase-cta" href="#contato">
-                <span class="site-cta__fill" aria-hidden="true">
-                  <span class="site-cta__arrow-track">
-                    <span class="site-cta__arrow site-cta__arrow--base">
-                      <svg
-                        class="site-cta__arrow-icon"
-                        viewBox="0 0 16 16"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                      </svg>
-                    </span>
-                    <span class="site-cta__arrow site-cta__arrow--hover">
-                      <svg
-                        class="site-cta__arrow-icon"
-                        viewBox="0 0 16 16"
-                        focusable="false"
-                        aria-hidden="true"
-                      >
-                        <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                      </svg>
-                    </span>
-                  </span>
-                </span>
-                <span class="site-cta__label-track">
-                  <span class="site-cta__label site-cta__label--base">
-                    Ver mais de Notion
-                  </span>
-                  <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-                    Ver mais de Notion
-                  </span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="redsights" id="redsights" aria-labelledby="redsights-title">
-        <div class="section-intro">
-          <div class="section-intro__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">Redsights</span>
-          </div>
-          <h2 class="section-intro__title" id="redsights-title">
-            Acompanhe os nossos estudos, artigos, an&aacute;lises, blogs e
-            tend&ecirc;ncias.
-          </h2>
-          <p class="section-intro__support">
-            Elaboramos esta sess&atilde;o editorial para expormos ao
-            p&uacute;blico e m&iacute;dia algumas an&aacute;lises que nosso time
-            de consultoria faz.
-          </p>
-        </div>
-        <div class="redsights__frame" aria-label="Destaque editorial Redsights">
-          <img
-            class="redsights__frame-image"
-            src="./assets/images/redsights/cup-coffee-newspaper.jpg"
-            alt="Jornal, caf&eacute; e leitura editorial da REDSCALE"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="redsights__overlay">
-            <p class="redsights__overlay-title">
-              <span>GOOD COFFEE</span>
-              <span>CONNECT PEOPLE</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-cta" id="contato" aria-labelledby="contact-title">
-        <div class="contact-cta__shell">
-          <div class="section-intro__eyebrow contact-cta__eyebrow">
-            <span class="section-intro__mark" aria-hidden="true"></span>
-            <span class="section-intro__label">Pr&oacute;ximo passo</span>
-          </div>
-          <h2 class="contact-cta__title" id="contact-title">
-            Agendar diagn&oacute;stico
-          </h2>
-          <p class="contact-cta__copy">
-            Come&ccedil;amos entendendo onde o contexto trava, qual ecossistema
-            faz mais sentido e o que precisa ser priorizado primeiro.
-          </p>
-          <p class="contact-cta__note">
-            A primeira leitura serve para direcionar a frente certa:
-            Consulting-as-a-Service, Management-as-a-Service,
-            Device-as-a-Service ou CRM.
-          </p>
-          <div class="contact-cta__actions">
-            <a class="site-cta contact-cta__primary" href="#servicos">
-              <span class="site-cta__fill" aria-hidden="true">
-                <span class="site-cta__arrow-track">
-                  <span class="site-cta__arrow site-cta__arrow--base">
-                    <svg
-                      class="site-cta__arrow-icon"
-                      viewBox="0 0 16 16"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                    </svg>
-                  </span>
-                  <span class="site-cta__arrow site-cta__arrow--hover">
-                    <svg
-                      class="site-cta__arrow-icon"
-                      viewBox="0 0 16 16"
-                      focusable="false"
-                      aria-hidden="true"
-                    >
-                      <path d="M1 8H14M9.25 3L14.25 8L9.25 13" />
-                    </svg>
-                  </span>
-                </span>
+          <div class="process-showreel" data-placeholder-ref="element80">
+            <video
+              src="./assets/videos/hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-hidden="true"
+              data-placeholder-ref="image21"
+            ></video>
+            <a class="process-showreel__cta" href="#fale-conosco-bloco" data-placeholder-ref="link3">
+              <span class="process-showreel__button" aria-hidden="true" data-placeholder-ref="element81">
+                <span data-placeholder-ref="element82"></span>
               </span>
-              <span class="site-cta__label-track">
-                <span class="site-cta__label site-cta__label--base">
-                  Conhecer ecossistemas
-                </span>
-                <span class="site-cta__label site-cta__label--hover" aria-hidden="true">
-                  Conhecer ecossistemas
-                </span>
-              </span>
+              <span data-placeholder-ref="text95">Ver processo</span>
             </a>
-            <a class="contact-cta__secondary" href="#redsights">
-              Explorar Redsights
-            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-section pricing-panel" id="solucoes" data-element-name="Se&ccedil;&atilde;o solu&ccedil;&otilde;es" data-placeholder-ref="section6">
+          <div class="pricing-panel__header" data-placeholder-ref="element84">
+            <div data-placeholder-ref="element85">
+              <p class="editorial-clients-band__label pricing-panel__eyebrow" data-placeholder-ref="text96">
+                <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element98">_</span>
+                <span class="editorial-clients-band__label-text" data-placeholder-ref="text123">PRICING</span>
+              </p>
+              <h2 class="pricing-panel__title" data-placeholder-ref="title13">Planos simples para equipes que precisam crescer</h2>
+            </div>
+            <p class="pricing-panel__helper" data-placeholder-ref="text97">
+              Escolha o formato ideal para iniciar, construir e melhorar um projeto para elevar a produtividade.
+            </p>
+          </div>
+
+          <div class="pricing-panel__grid" data-placeholder-ref="element86">
+            <article class="pricing-card" data-placeholder-ref="element87">
+              <div class="pricing-card__header" data-placeholder-ref="element88">
+                <span data-placeholder-ref="text98">STARTER</span>
+                <span data-placeholder-ref="text99">2-3 SEMANAS</span>
+              </div>
+              <span class="pricing-card__divider" aria-hidden="true" data-placeholder-ref="element89"></span>
+              <p class="pricing-card__price" data-placeholder-ref="text100">
+                R$ 2.000 <span class="pricing-card__price-unit">/projeto</span>
+              </p>
+              <p class="pricing-card__description" data-placeholder-ref="text101">
+                Ideal para times que precisam clarear problemas e priorizar o que gera resultado.
+              </p>
+              <div class="pricing-card__features" data-placeholder-ref="element90">
+                <span data-placeholder-ref="text102"><b>+</b>Diagn&oacute;stico por evid&ecirc;ncias</span>
+                <span data-placeholder-ref="text103"><b>+</b>Mapa de gargalos</span>
+                <span data-placeholder-ref="text104"><b>+</b>Prot&oacute;tipo naveg&aacute;vel</span>
+                <span data-placeholder-ref="text105"><b>+</b>Roadmap t&eacute;cnico</span>
+                <span data-placeholder-ref="text106"><b>+</b>Plano de implementa&ccedil;&atilde;o</span>
+              </div>
+              <a class="pricing-card__button pricing-card__button--primary" href="#fale-conosco-bloco" data-placeholder-ref="link4">
+                <span data-placeholder-ref="text107">Come&ccedil;ar agora</span>
+              </a>
+            </article>
+
+            <article class="pricing-card pricing-card--professional" data-placeholder-ref="element91">
+              <div class="pricing-card__header" data-placeholder-ref="element92">
+                <span data-placeholder-ref="text108">BUSINESS</span>
+                <span data-placeholder-ref="text109">4-8 SEMANAS</span>
+              </div>
+              <span class="pricing-card__divider" aria-hidden="true" data-placeholder-ref="element93"></span>
+              <p class="pricing-card__price" data-placeholder-ref="text110">
+                R$ 5.000 <span class="pricing-card__price-unit">/projeto</span>
+              </p>
+              <p class="pricing-card__description" data-placeholder-ref="text111">
+                Para empresas em crescimento que precisam transformar opera&ccedil;&atilde;o em produto digital.
+              </p>
+              <div class="pricing-card__features" data-placeholder-ref="element94">
+                <span data-placeholder-ref="text112"><b>+</b>Design de produto</span>
+                <span data-placeholder-ref="text113"><b>+</b>Sistema visual completo</span>
+                <span data-placeholder-ref="text114"><b>+</b>Automa&ccedil;&otilde;es e integra&ccedil;&otilde;es</span>
+                <span data-placeholder-ref="text115"><b>+</b>Dashboard de intelig&ecirc;ncia</span>
+                <span data-placeholder-ref="text116"><b>+</b>SEO e performance</span>
+                <span data-placeholder-ref="text117"><b>+</b>Suporte p&oacute;s-lan&ccedil;amento</span>
+              </div>
+              <a class="pricing-card__button pricing-card__button--secondary" href="#fale-conosco-bloco" data-placeholder-ref="link5">
+                <span data-placeholder-ref="text118">Come&ccedil;ar agora</span>
+              </a>
+            </article>
+
+            <article class="pricing-card pricing-card--support" data-placeholder-ref="element95">
+              <div class="pricing-card__header" data-placeholder-ref="element96">
+                <span data-placeholder-ref="text119">CORPORATE</span>
+                <span data-placeholder-ref="text120">CONT&Iacute;NUO</span>
+              </div>
+              <span class="pricing-card__divider" aria-hidden="true" data-placeholder-ref="element97"></span>
+              <p class="pricing-card__price" data-placeholder-ref="text121">
+                R$ 1.000 <span class="pricing-card__price-unit pricing-card__price-unit--monthly">/m&ecirc;s</span>
+              </p>
+              <p class="pricing-card__description" data-placeholder-ref="text122">
+                Para equipes que precisam de melhorias, manuten&ccedil;&atilde;o e intelig&ecirc;ncia cont&iacute;nua.
+              </p>
+            </article>
+          </div>
+      </section>
+
+      <section
+        class="blog-section editorial-scroll-target"
+        id="fale-conosco-bloco"
+        data-element-name="Se&ccedil;&atilde;o blog"
+        data-placeholder-ref="section8"
+      >
+        <div class="blog-section__inner">
+          <div class="blog-section__header">
+            <p class="editorial-clients-band__label blog-section__eyebrow" data-placeholder-ref="text163">
+              <span class="editorial-clients-band__label-mark" aria-hidden="true">_</span>
+              <span class="editorial-clients-band__label-text">REDSIGHTS</span>
+            </p>
+            <h2 class="blog-section__title" data-placeholder-ref="title14">Insights &amp; Recursos</h2>
+            <p class="blog-section__support" data-placeholder-ref="text164">Ideias, insights e estrat&eacute;gias para equipes modernas</p>
+          </div>
+          <div class="blog-section__grid" aria-label="Artigos em destaque">
+            <article class="blog-card">
+              <div class="blog-card__top" data-placeholder-ref="element123">
+                <img
+                  class="blog-card__image"
+                  src="./assets/images/blog-raven.jpg"
+                  alt=""
+                  loading="lazy"
+                  data-placeholder-ref="image22"
+                />
+                <span class="blog-card__category" data-placeholder-ref="text168">ESTRAT&Eacute;GIA DE TI</span>
+              </div>
+              <div class="blog-card__body">
+                <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text165">19 de janeiro de 2026</time>
+                <h3 class="blog-card__title" data-placeholder-ref="title18">Como empresas de TI podem conquistar mais clientes com melhores experi&ecirc;ncias digitais</h3>
+                <p class="blog-card__excerpt">Veja como empresas de alta performance usam design, mensagem e estrutura...</p>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card__top" data-placeholder-ref="element124">
+                <img
+                  class="blog-card__image"
+                  src="./assets/images/blog-fox.jpg"
+                  alt=""
+                  loading="lazy"
+                  data-placeholder-ref="image23"
+                />
+                <span class="blog-card__category" data-placeholder-ref="text169">ESTRAT&Eacute;GIA DE TI</span>
+              </div>
+              <div class="blog-card__body">
+                <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text166">19 de janeiro de 2026</time>
+                <h3 class="blog-card__title" data-placeholder-ref="title19">Como empresas de TI podem conquistar mais clientes com melhores experi&ecirc;ncias digitais</h3>
+                <p class="blog-card__excerpt">Veja como empresas de alta performance usam design, mensagem e estrutura...</p>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card__top" data-placeholder-ref="element125">
+                <img
+                  class="blog-card__image"
+                  src="./assets/images/blog-lion.jpg"
+                  alt=""
+                  loading="lazy"
+                  data-placeholder-ref="image24"
+                />
+                <span class="blog-card__category" data-placeholder-ref="text170">GEST&Atilde;O</span>
+              </div>
+              <div class="blog-card__body">
+                <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text167">19 de janeiro de 2026</time>
+                <h3 class="blog-card__title" data-placeholder-ref="title20">Um framework comprovado para entregar projetos melhores</h3>
+                <p class="blog-card__excerpt">Descubra como fluxos estruturados, comunica&ccedil;&atilde;o clara e ferramentas modernas ajudam equipes...</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-section"
+        id="contato-section9"
+        data-element-name="Se&ccedil;&atilde;o contato"
+        data-placeholder-ref="section9"
+      >
+        <div class="contact-section__inner">
+          <div class="contact-section__panel contact-section__panel--dark">
+            <video
+              class="contact-section__panel-video"
+              src="./assets/videos/hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              aria-hidden="true"
+              data-placeholder-ref="image30"
+            ></video>
+            <p class="editorial-clients-band__label contact-section__eyebrow" data-placeholder-ref="text146">
+              <span class="editorial-clients-band__label-mark" aria-hidden="true">_</span>
+              <span class="editorial-clients-band__label-text">CONTATO</span>
+            </p>
+            <h2 class="contact-section__title" data-placeholder-ref="title17">Vamos conversar</h2>
+            <p class="contact-section__lede">
+              Conte sobre o seu projeto &mdash; seja um site, produto digital, solu&ccedil;&atilde;o de TI ou campanha criativa.
+            </p>
+
+            <div class="contact-section__features">
+              <div class="contact-feature">
+                <span class="contact-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M8 8V6A4 4 0 0 1 16 6V8M7 8H17V17A5 5 0 0 1 12 22A5 5 0 0 1 7 17zM4 13H7M17 13H20" /></svg>
+                </span>
+                <strong data-placeholder-ref="text148">Resposta r&aacute;pida</strong>
+                <p data-placeholder-ref="text149">Nossa equipe analisa cada solicita&ccedil;&atilde;o e responde em at&eacute; 24 horas</p>
+              </div>
+              <div class="contact-feature">
+                <span class="contact-feature__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M4 10L20 4L14 20L11 13zM11 13L20 4" /></svg>
+                </span>
+                <strong data-placeholder-ref="text150">Pr&oacute;ximos passos claros</strong>
+                <p data-placeholder-ref="text151">Depois do seu contato, voc&ecirc; recebe um plano sob medida com cronograma, escopo e investimento</p>
+              </div>
+            </div>
+
+            <div class="contact-person" data-placeholder-ref="element117">
+              <span class="contact-person__surface" aria-hidden="true" data-placeholder-ref="element131"></span>
+              <div class="contact-person__avatar" aria-hidden="true" data-placeholder-ref="element118"></div>
+              <div class="contact-person__copy" data-placeholder-ref="element119">
+                <span data-placeholder-ref="text125">Founder da Redscale</span>
+                <strong data-placeholder-ref="text126">Raul Corr&ecirc;a Veiga</strong>
+              </div>
+              <a class="contact-person__button" href="./contato.html" data-placeholder-ref="cta7">Conversar</a>
+            </div>
+          </div>
+
+          <div class="contact-section__panel contact-section__panel--form" id="contact-form-section9">
+            <form class="contact-form-card" action="#" method="post">
+              <span class="contact-form-card__surface" aria-hidden="true" data-placeholder-ref="element132"></span>
+              <div class="contact-form-card__brand-wrap">
+                <a class="editorial-brand" href="./index.html" aria-label="Redscale in&iacute;cio" data-placeholder-ref="form1">
+                  Redscale
+                </a>
+              </div>
+              <h2 data-placeholder-ref="title16">Tem um projeto em mente?</h2>
+              <label>
+                <span>Nome</span>
+                <input type="text" name="first-name" autocomplete="given-name" placeholder=" " data-placeholder-ref="field1" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder=" " data-placeholder-ref="field2" />
+              </label>
+              <label>
+                <span>Detalhes do projeto</span>
+                <textarea name="project-details" placeholder=" " data-placeholder-ref="field3"></textarea>
+              </label>
+              <button type="submit"><span data-placeholder-ref="cta8">Enviar solicita&ccedil;&atilde;o</span></button>
+              <p class="contact-form-card__legal">Ao enviar este formul&aacute;rio, voc&ecirc; concorda com nossos Termos e Pol&iacute;tica de Privacidade</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="faq-section10"
+        class="faq-section"
+        data-element-name="Se&ccedil;&atilde;o perguntas frequentes"
+        data-placeholder-ref="section10"
+      >
+        <div class="faq-section__inner">
+          <div class="faq-section__header">
+            <p class="editorial-clients-band__label faq-section__eyebrow" data-placeholder-ref="faq1">
+              <span class="editorial-clients-band__label-mark" aria-hidden="true">_</span>
+              <span class="editorial-clients-band__label-text">FAQ</span>
+            </p>
+            <h2 class="faq-section__title" data-placeholder-ref="faq2">Tudo que voc&ecirc; precisa saber</h2>
+            <p class="faq-section__support" data-placeholder-ref="faq3">
+              Respostas r&aacute;pidas para perguntas comuns sobre a Redscale, de recursos e personaliza&ccedil;&atilde;o a suporte e licen&ccedil;as.
+            </p>
+          </div>
+
+          <div class="faq-section__tabs" aria-label="Categorias do FAQ">
+            <button class="faq-tab faq-tab--active" type="button" data-faq-category="product" data-placeholder-ref="cta4" aria-pressed="true">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M5 6H19V16H5zM9 20H15M11 16V20M13 16V20" /></svg>
+              </span>
+              Produto
+            </button>
+            <button class="faq-tab" type="button" data-faq-category="support" data-placeholder-ref="cta5" aria-pressed="false">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12A7 7 0 0 1 19 12V16A3 3 0 0 1 16 19H13M5 12V15H8V11H5zM19 12V15H16V11H19z" /></svg>
+              </span>
+              Suporte
+            </button>
+            <button class="faq-tab" type="button" data-faq-category="payments" data-placeholder-ref="cta6" aria-pressed="false">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M4 7H20V17H4zM4 10H20M8 14H10" /></svg>
+              </span>
+              Pagamentos
+            </button>
+          </div>
+
+          <div class="faq-section__list">
+            <details class="faq-item">
+              <summary>
+                <span data-faq-question data-placeholder-ref="text136">O que &eacute; a Redscale e como ela ajuda empresas de TI e ag&ecirc;ncias criativas?</span>
+                <i aria-hidden="true"></i>
+              </summary>
+              <p data-faq-answer data-placeholder-ref="text140">Resposta placeholder sobre produto. Vamos substituir este texto pela resposta final depois.</p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <span data-faq-question data-placeholder-ref="text137">Para quais tipos de empresa a Redscale &eacute; mais indicada?</span>
+                <i aria-hidden="true"></i>
+              </summary>
+              <p data-faq-answer data-placeholder-ref="text141">Resposta placeholder sobre perfil de empresa. Vamos ajustar o conte&uacute;do final depois.</p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <span data-faq-question data-placeholder-ref="text138">A Redscale pode ser personalizada para combinar com a nossa marca?</span>
+                <i aria-hidden="true"></i>
+              </summary>
+              <p data-faq-answer data-placeholder-ref="text142">Resposta placeholder sobre personaliza&ccedil;&atilde;o. Este texto ser&aacute; editado na etapa final.</p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <span data-faq-question data-placeholder-ref="text139">A Redscale suporta m&uacute;ltiplos servi&ccedil;os e projetos?</span>
+                <i aria-hidden="true"></i>
+              </summary>
+              <p data-faq-answer data-placeholder-ref="text143">Resposta placeholder sobre servi&ccedil;os e projetos. Vamos trocar pela vers&atilde;o correta depois.</p>
+            </details>
           </div>
         </div>
       </section>
     </main>
 
-    <script src="main.js"></script>
+    <footer class="editorial-footer" id="footer1" data-element-name="Rodap&eacute; editorial" data-placeholder-ref="footer1">
+      <div class="editorial-shell editorial-footer__inner">
+        <div class="editorial-footer__top" data-placeholder-ref="footer2">
+          <p data-placeholder-ref="text162">&copy; Copyright 2026 Redscale. Design e desenvolvimento por ADGency</p>
+          <nav class="editorial-footer__social" aria-label="Redes sociais">
+            <a href="https://www.linkedin.com/company/redscale-company" target="_blank" rel="noreferrer" aria-label="LinkedIn" data-placeholder-ref="link7">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.34 8h4.32v14H.34zM8.02 8h4.14v1.92h.06c.58-1.1 1.99-2.26 4.1-2.26 4.38 0 5.19 2.88 5.19 6.62V22h-4.32v-6.84c0-1.63-.03-3.73-2.27-3.73-2.28 0-2.63 1.78-2.63 3.61V22H8.02z" /></svg>
+            </a>
+            <a href="https://www.instagram.com/redscale.company/" target="_blank" rel="noreferrer" aria-label="Instagram" data-placeholder-ref="link8">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4zm8.75 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" /></svg>
+            </a>
+            <a href="https://www.youtube.com/@tyredscale" target="_blank" rel="noreferrer" aria-label="YouTube" data-placeholder-ref="link9">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3.03 3.03 0 0 0-2.13-2.14C19.48 3.56 12 3.56 12 3.56s-7.48 0-9.37.5A3.03 3.03 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.03 3.03 0 0 0 2.13 2.14c1.89.5 9.37.5 9.37.5s7.48 0 9.37-.5a3.03 3.03 0 0 0 2.13-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12z" /></svg>
+            </a>
+          </nav>
+        </div>
+
+        <p class="editorial-footer__legal" data-placeholder-ref="text154">
+          Este rodap&eacute; inclui um aviso legal para comunica&ccedil;&otilde;es institucionais. A Redscale atua com estrat&eacute;gia, tecnologia e design para criar produtos digitais, automa&ccedil;&otilde;es e experi&ecirc;ncias operacionais. As informa&ccedil;&otilde;es deste site podem ser ajustadas conforme escopo, contrato, disponibilidade t&eacute;cnica e necessidades espec&iacute;ficas de cada projeto.
+        </p>
+
+        <div class="editorial-footer__hero">
+          <a class="editorial-brand editorial-footer__mega-brand" href="#top" aria-label="Redscale in&iacute;cio" data-placeholder-ref="logo2" data-scroll-top>Redscale</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js?v=20260430f"></script>
   </body>
 </html>

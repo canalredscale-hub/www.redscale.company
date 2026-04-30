@@ -12,3 +12,48 @@ dist/
 build/
 *.egg-info/
 uv.lock
+
+# Local workspace helpers and source snapshot
+/frontend/
+/open-lp.cmd
+/open-lp.ps1
+
+# Redscale assets intentionally kept out of GitHub
+assets/
+**/assets/
+
+# Local backups, tests, screenshots, and machine-specific artifacts
+backups/
+**/backups/
+test-results/
+**/test-results/
+.codex-*.png
+**/.codex-*.png
+.hero-update-shot*.png
+**/.hero-update-shot*.png
+*-INFORITUWKS210.*
+
+# Secrets and private operational data
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*.secrets
+*secret*
+*credential*
+*credentials*
+*token*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+*.kdbx
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.dump
+*.bak
