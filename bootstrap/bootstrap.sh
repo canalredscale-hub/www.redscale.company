@@ -16,25 +16,30 @@ done
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
-cd "$ROOT"
+FRONTEND_ROOT="$ROOT/app/frontend"
 
-if ! command -v uv >/dev/null 2>&1; then
-    echo "O comando 'uv' nao foi encontrado." >&2
-    echo "Instale o uv em macOS/Linux com a instrucao oficial da Astral:" >&2
-    echo "curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
+if [ ! -f "$FRONTEND_ROOT/home.html" ]; then
+    echo "O arquivo app/frontend/home.html nao foi encontrado." >&2
     exit 1
 fi
 
-echo "Sincronizando o ambiente local do projeto"
-uv sync
+show_next_steps() {
+    echo "Projeto atual: frontend estatico em app/frontend."
+    echo "Preview local: python app/frontend/dev_server.py --port 8000"
+    echo "URL: http://127.0.0.1:8000/"
+    echo "Arquivos principais: app/frontend/home.html, app/frontend/contato.html, app/frontend/styles.css, app/frontend/main.js."
+}
 
-if [ "$SKIP_LAUNCH" -eq 0 ]; then
-    echo "Iniciando o orquestrador do projeto"
-    uv run orquestrador-projeto start
-else
-    echo "Proximos passos canonicos:"
-    echo "1. Leia \`00-user-guide.md\` para retomar a interface atual em construcao."
-    echo "2. Leia \`04-solution-research.md\` antes de avancar para \`01-roadmap.md\`."
-    echo "3. Use \`README.md\` para setup e preview local do frontend."
-    echo "4. Continue a construcao com \`orquestrador-projeto/workflows/04-site-construction.md\` e \`orquestrador-projeto/skills/04-web-design-motion-build.md\`."
+if [ "$SKIP_LAUNCH" -eq 1 ]; then
+    show_next_steps
+    exit 0
 fi
+
+if ! command -v python >/dev/null 2>&1; then
+    echo "O comando 'python' nao foi encontrado no PATH." >&2
+    exit 1
+fi
+
+cd "$FRONTEND_ROOT"
+echo "Iniciando preview do frontend atual em http://127.0.0.1:8000/"
+python ./dev_server.py --port 8000
