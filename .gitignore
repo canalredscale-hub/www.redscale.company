@@ -15,6 +15,7 @@ uv.lock
 
 # Local workspace helpers and source snapshot
 /frontend/
+/.local-archive/
 /open-lp.cmd
 /open-lp.ps1
 
