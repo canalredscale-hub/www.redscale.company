@@ -995,7 +995,7 @@ body.page--home {
   font-size: clamp(29px, 2.35vw, 34px);
   line-height: 1.04;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 [data-placeholder-ref="text154"],
@@ -3731,7 +3731,7 @@ body.page--home {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: #1d0806;
+  background: #070707;
 }
 
 .contact-section__panel--form .contact-section__panel-video {
@@ -3744,14 +3744,14 @@ body.page--home {
   object-fit: cover;
   object-position: center;
   opacity: 1;
-  filter: saturate(0.95) contrast(1.04);
+  filter: saturate(1) contrast(1.03);
 }
 
 .contact-section__panel--form::after {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(130deg, rgba(7, 7, 7, 0.18), rgba(162, 25, 14, 0.18) 44%, rgba(6, 6, 6, 0.24));
+  background: linear-gradient(130deg, rgba(7, 7, 7, 0.1), rgba(162, 25, 14, 0.08) 44%, rgba(6, 6, 6, 0.12));
   content: "";
   pointer-events: none;
 }
@@ -3793,10 +3793,10 @@ body.page--home {
   margin: 0 0 18px;
   color: #030303;
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: clamp(35px, 3vw, 40px);
+  font-size: clamp(29px, 2.35vw, 34px);
   line-height: 1.04;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .contact-form-card label {
@@ -5423,7 +5423,7 @@ body.page--home {
   }
 
   .contact-section__panel--dark::after,
-  .contact-section__panel-video {
+  .contact-section__panel--dark .contact-section__panel-video {
     top: 14px;
     right: 14px;
     bottom: 14px;
@@ -5455,6 +5455,13 @@ body.page--home {
 
   .contact-section__panel--form {
     padding: 26px 18px;
+  }
+
+  .contact-section__panel--form .contact-section__panel-video {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
   }
 
   .contact-form-card {
