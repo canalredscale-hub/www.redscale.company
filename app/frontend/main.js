@@ -18,7 +18,7 @@ const normalizePathname = (value) => {
   return normalized || "/";
 };
 
-const HOME_PAGE_PATHS = new Set(["/", "/index.html"].map(normalizePathname));
+const HOME_PAGE_PATHS = new Set(["/", "/home.html"].map(normalizePathname));
 const isModifiedNavigationEvent = (event) =>
   event.defaultPrevented ||
   event.button !== 0 ||

@@ -1017,8 +1017,8 @@ body.page--home {
 }
 
 [data-placeholder-ref="text6"] {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 700;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 700 !important;
 }
 
 [data-placeholder-ref="text8"],
@@ -3509,6 +3509,10 @@ body.page--home {
   padding: 0 var(--editorial-edge-space);
   background: #f2f2f2;
   color: #f7f7f5;
+}
+
+.page--contact .contact-section {
+  margin-top: 0;
 }
 
 .contact-section__inner {
