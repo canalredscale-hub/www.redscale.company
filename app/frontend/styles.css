@@ -965,6 +965,32 @@ body.page--home {
   font-weight: 400 !important;
 }
 
+[data-placeholder-ref="text10"] {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+[data-placeholder-ref="text55"],
+[data-placeholder-ref="text56"],
+[data-placeholder-ref="text58"],
+[data-placeholder-ref="text59"],
+[data-placeholder-ref="text60"],
+[data-placeholder-ref="text64"] {
+  font-weight: 700 !important;
+}
+
+[data-placeholder-ref="text10"] {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+[data-placeholder-ref="text55"],
+[data-placeholder-ref="text56"],
+[data-placeholder-ref="text58"],
+[data-placeholder-ref="text59"],
+[data-placeholder-ref="text60"],
+[data-placeholder-ref="text64"] {
+  font-weight: 700 !important;
+}
+
 [data-placeholder-ref="text8"],
 [data-placeholder-ref="text54"] {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
@@ -3512,7 +3538,7 @@ body.page--home {
 }
 
 .page--contact .contact-section {
-  margin-top: 0;
+  margin-top: 30px;
 }
 
 .contact-section__inner {
@@ -6022,4 +6048,17 @@ body.page--home {
 [data-placeholder-ref="text30"] {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
   font-weight: 400 !important;
+}
+
+[data-placeholder-ref="text10"] {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+[data-placeholder-ref="text55"],
+[data-placeholder-ref="text56"],
+[data-placeholder-ref="text58"],
+[data-placeholder-ref="text59"],
+[data-placeholder-ref="text60"],
+[data-placeholder-ref="text64"] {
+  font-weight: 700 !important;
 }
