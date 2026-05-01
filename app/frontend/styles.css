@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: "Playfair Display";
+  src: url("./fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "IBM Plex Sans";
   src: url("./assets/fonts/IBMPlexSans-400.ttf") format("truetype");
   font-style: normal;
@@ -1008,6 +1016,11 @@ body.page--home {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
 }
 
+[data-placeholder-ref="text6"] {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+}
+
 [data-placeholder-ref="text8"],
 [data-placeholder-ref="text54"] {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
@@ -1712,7 +1725,7 @@ body.page--home {
   min-width: clamp(176px, 18vw, 236px);
   max-width: none;
   font-size: clamp(24px, 2.2vw, 30px);
-  line-height: 1;
+  line-height: 1.02;
   white-space: nowrap;
 }
 
