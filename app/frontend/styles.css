@@ -965,10 +965,6 @@ body.page--home {
   font-weight: 400 !important;
 }
 
-[data-placeholder-ref="text10"] {
-  font-family: "Times New Roman", Times, serif !important;
-}
-
 [data-placeholder-ref="text55"],
 [data-placeholder-ref="text56"],
 [data-placeholder-ref="text58"],
@@ -976,10 +972,6 @@ body.page--home {
 [data-placeholder-ref="text60"],
 [data-placeholder-ref="text64"] {
   font-weight: 700 !important;
-}
-
-[data-placeholder-ref="text10"] {
-  font-family: "Times New Roman", Times, serif !important;
 }
 
 [data-placeholder-ref="text55"],
@@ -6048,10 +6040,6 @@ body.page--home {
 [data-placeholder-ref="text30"] {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
   font-weight: 400 !important;
-}
-
-[data-placeholder-ref="text10"] {
-  font-family: "Times New Roman", Times, serif !important;
 }
 
 [data-placeholder-ref="text55"],
