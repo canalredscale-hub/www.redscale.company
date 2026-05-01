@@ -1004,6 +1004,10 @@ body.page--home {
   font-weight: 400 !important;
 }
 
+[data-placeholder-ref="text152"] {
+  font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
+}
+
 [data-placeholder-ref="text8"],
 [data-placeholder-ref="text54"] {
   font-family: "Montserrat", "IBM Plex Sans", sans-serif !important;
@@ -3671,7 +3675,7 @@ body.page--home {
 }
 
 .contact-person__copy {
-  transform: translateX(0.2cm);
+  transform: translateX(-0.8cm);
 }
 
 .contact-person__copy strong {
