@@ -3726,14 +3726,39 @@ body.page--home {
 }
 
 .contact-section__panel--form {
+  isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background:
-    linear-gradient(120deg, rgba(9, 9, 9, 0.58), rgba(246, 52, 33, 0.1) 35%, rgba(246, 50, 31, 0.65)),
-    repeating-linear-gradient(128deg, rgba(60, 0, 0, 0.48) 0 9px, rgba(255, 74, 55, 0.28) 9px 21px),
-    linear-gradient(145deg, #220604 0%, #c91d0f 50%, #ff4b32 100%);
+  background: #1d0806;
+}
+
+.contact-section__panel--form .contact-section__panel-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  filter: saturate(0.95) contrast(1.04);
+}
+
+.contact-section__panel--form::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(130deg, rgba(7, 7, 7, 0.18), rgba(162, 25, 14, 0.18) 44%, rgba(6, 6, 6, 0.24));
+  content: "";
+  pointer-events: none;
+}
+
+.contact-section__panel--form > :not(.contact-section__panel-video) {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form-card {
