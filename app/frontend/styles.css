@@ -1082,6 +1082,15 @@ body.page--home {
   font-weight: 400 !important;
 }
 
+[data-placeholder-ref="text55"],
+[data-placeholder-ref="text56"],
+[data-placeholder-ref="text58"],
+[data-placeholder-ref="text59"],
+[data-placeholder-ref="text60"],
+[data-placeholder-ref="text64"] {
+  font-weight: 700 !important;
+}
+
 [data-placeholder-ref="title14"],
 [data-placeholder-ref="faq2"] {
   font-family: "Aspekta", "IBM Plex Sans", sans-serif;
@@ -4069,6 +4078,7 @@ body.page--home {
   color: rgba(0, 0, 0, 0.62);
   font-size: 14px;
   line-height: 1.55;
+  overflow: hidden;
 }
 
 .page--construction .editorial-home {

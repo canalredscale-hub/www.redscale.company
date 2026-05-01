@@ -256,10 +256,10 @@ const syncHomeHero = () => {
 
 syncHomeHero();
 
-const faqTabs = body?.dataset.page === "home" ? document.querySelectorAll("[data-faq-category]") : [];
-const faqQuestions = body?.dataset.page === "home" ? document.querySelectorAll("[data-faq-question]") : [];
-const faqAnswers = body?.dataset.page === "home" ? document.querySelectorAll("[data-faq-answer]") : [];
-const faqItems = body?.dataset.page === "home" ? document.querySelectorAll(".faq-item") : [];
+const faqTabs = document.querySelectorAll("[data-faq-category]");
+const faqQuestions = document.querySelectorAll("[data-faq-question]");
+const faqAnswers = document.querySelectorAll("[data-faq-answer]");
+const faqItems = document.querySelectorAll(".faq-item");
 
 const FAQ_CONTENT = {
   product: [
@@ -364,6 +364,78 @@ faqTabs.forEach((tab) => {
 if (faqTabs.length && faqQuestions.length) {
   setActiveFaqCategory("product");
 }
+
+const setupFaqMotion = () => {
+  const animatedFaqItems = document.querySelectorAll(".faq-item");
+
+  animatedFaqItems.forEach((item) => {
+    const summary = item.querySelector("summary");
+    const answer = item.querySelector("p");
+
+    if (!summary || !answer) {
+      return;
+    }
+
+    answer.style.overflow = "hidden";
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (item.dataset.faqAnimating === "true") {
+        return;
+      }
+
+      item.dataset.faqAnimating = "true";
+
+      if (item.open) {
+        const startHeight = answer.scrollHeight;
+
+        answer.style.height = `${startHeight}px`;
+        answer.style.opacity = "1";
+
+        requestAnimationFrame(() => {
+          answer.style.transition = "height 220ms ease, opacity 180ms ease, transform 220ms ease";
+          answer.style.height = "0px";
+          answer.style.opacity = "0";
+          answer.style.transform = "translateY(-6px)";
+        });
+
+        window.setTimeout(() => {
+          item.removeAttribute("open");
+          answer.style.height = "";
+          answer.style.opacity = "";
+          answer.style.transform = "";
+          answer.style.transition = "";
+          delete item.dataset.faqAnimating;
+        }, 230);
+
+        return;
+      }
+
+      item.setAttribute("open", "");
+      answer.style.height = "0px";
+      answer.style.opacity = "0";
+      answer.style.transform = "translateY(-6px)";
+
+      requestAnimationFrame(() => {
+        answer.style.transition = "height 220ms ease, opacity 180ms ease, transform 220ms ease";
+        answer.style.height = `${answer.scrollHeight}px`;
+        answer.style.opacity = "1";
+        answer.style.transform = "translateY(0)";
+      });
+
+      window.setTimeout(() => {
+        answer.style.height = "";
+        answer.style.opacity = "";
+        answer.style.transform = "";
+        answer.style.transition = "";
+        delete item.dataset.faqAnimating;
+      }, 230);
+    });
+  });
+};
+
+setupFaqMotion();
 
 centeredScrollTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
