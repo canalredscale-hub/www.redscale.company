@@ -61,3 +61,7 @@ test-results/
 *.sql
 *.dump
 *.bak
+
+# Playwright output (local checks)
+output/playwright/
+
