@@ -54,9 +54,9 @@
                 data-placeholder-ref="element118"
               />
             </div>
-            <h2 class="contact-section__title" data-placeholder-ref="title17">Entre em Contato</h2>
+            <h2 class="contact-section__title" data-placeholder-ref="title17">Conte o que precisa organizar</h2>
             <p class="contact-section__lede" data-placeholder-ref="text152">
-              Um fluxo de trabalho colaborativo e claro, projetado para conduzir, sem atritos, projetos do conceito ao lan&ccedil;amento.
+              Preencha o formul&aacute;rio com o contexto da sua demanda. A partir disso, indicamos o melhor caminho: produto pronto, ferramenta sob medida, sprint operacional ou parceria cont&iacute;nua.
             </p>
 
             <div class="contact-section__features" data-placeholder-ref="element126">
@@ -93,21 +93,71 @@
                   Redscale
                 </a>
               </div>
-              <h2 data-placeholder-ref="title16">Tem um projeto em mente?</h2>
+              <h2 data-placeholder-ref="title16">Conte o que precisa organizar</h2>
+              <p class="contact-form-card__intro">Responderemos com o melhor caminho: produto pronto, ferramenta sob medida, sprint operacional ou parceria cont&iacute;nua.</p>
+              <input type="hidden" name="origem" value="contato" data-utm-field="origem" />
+              <input type="hidden" name="interesse" value="mapeamento" data-utm-field="interesse" />
+              <input type="hidden" name="pagina_atual" value="/contato" data-page-field />
+              <input type="hidden" name="utm_source" data-utm-field="utm_source" />
+              <input type="hidden" name="utm_medium" data-utm-field="utm_medium" />
+              <input type="hidden" name="utm_campaign" data-utm-field="utm_campaign" />
+              <input type="hidden" name="utm_content" data-utm-field="utm_content" />
               <label data-placeholder-ref="element134">
                 <span data-placeholder-ref="text127">Nome</span>
-                <input type="text" name="first-name" autocomplete="given-name" placeholder=" " data-placeholder-ref="field1" />
+                <input type="text" name="nome" autocomplete="name" placeholder=" " required data-placeholder-ref="field1" />
+              </label>
+              <label>
+                <span>WhatsApp</span>
+                <input type="tel" name="whatsapp" autocomplete="tel" placeholder=" " required />
               </label>
               <label data-placeholder-ref="element135">
                 <span data-placeholder-ref="text128">Email</span>
-                <input type="email" name="email" autocomplete="email" placeholder=" " data-placeholder-ref="field2" />
+                <input type="email" name="email" autocomplete="email" placeholder=" " required data-placeholder-ref="field2" />
+              </label>
+              <label>
+                <span>Empresa</span>
+                <input type="text" name="empresa" autocomplete="organization" placeholder=" " />
+              </label>
+              <label class="contact-form-card__select-label">
+                <span>O que voc&ecirc; precisa?</span>
+                <select name="tipo_demanda" required>
+                  <option value="" selected disabled>Selecione uma op&ccedil;&atilde;o</option>
+                  <option value="planilha-personalizada">Planilha personalizada</option>
+                  <option value="dashboard">Dashboard</option>
+                  <option value="automacao">Automa&ccedil;&atilde;o</option>
+                  <option value="financeiro">Financeiro</option>
+                  <option value="estoque">Estoque</option>
+                  <option value="processos">Processos</option>
+                  <option value="nao-sei">Ainda n&atilde;o sei</option>
+                </select>
+              </label>
+              <label class="contact-form-card__select-label">
+                <span>Urg&ecirc;ncia</span>
+                <select name="urgencia" required>
+                  <option value="" selected disabled>Selecione uma op&ccedil;&atilde;o</option>
+                  <option value="esta-semana">Esta semana</option>
+                  <option value="este-mes">Este m&ecirc;s</option>
+                  <option value="sem-urgencia">Sem urg&ecirc;ncia</option>
+                </select>
+              </label>
+              <label class="contact-form-card__select-label">
+                <span>Faixa de investimento</span>
+                <select name="faixa_investimento" required>
+                  <option value="" selected disabled>Selecione uma op&ccedil;&atilde;o</option>
+                  <option value="ate-500">At&eacute; R$ 500</option>
+                  <option value="500-1500">R$ 500 - R$ 1.500</option>
+                  <option value="1500-5000">R$ 1.500 - R$ 5.000</option>
+                  <option value="acima-5000">Acima de R$ 5.000</option>
+                  <option value="nao-sei">Ainda n&atilde;o sei</option>
+                </select>
               </label>
               <label data-placeholder-ref="element136">
-                <span data-placeholder-ref="text129">Detalhes do projeto</span>
-                <textarea name="project-details" placeholder=" " data-placeholder-ref="field3"></textarea>
+                <span data-placeholder-ref="text129">Detalhes da demanda</span>
+                <textarea name="detalhes_demanda" placeholder=" " required data-placeholder-ref="field3"></textarea>
               </label>
-              <button type="submit" data-placeholder-ref="element137"><span data-placeholder-ref="cta8">Enviar solicita&ccedil;&atilde;o</span></button>
-              <p class="contact-form-card__legal" data-placeholder-ref="text153">Ao enviar este formul&aacute;rio, voc&ecirc; concorda com nossos Termos e Pol&iacute;tica de Privacidade</p>
+              <button type="submit" data-placeholder-ref="element137"><span data-placeholder-ref="cta8">Enviar demanda para an&aacute;lise</span></button>
+              <p class="contact-form-card__legal" data-form-success hidden tabindex="-1">Solicita&ccedil;&atilde;o enviada. Vamos analisar sua demanda e retornar com o melhor caminho.</p>
+              <p class="contact-form-card__legal" data-placeholder-ref="text153">Ao enviar este formul&aacute;rio, voc&ecirc; concorda com nossos Termos e Pol&iacute;tica de Privacidade.</p>
             </form>
           </div>
         </div>
@@ -125,9 +175,9 @@
               <span class="editorial-clients-band__label-text">CONTATO</span>
             </p>
             <div class="contact-direct-section__copy" data-placeholder-ref="element124">
-              <h2 class="blog-section__title contact-direct-section__title" data-placeholder-ref="title14">Contate-nos diretamente</h2>
+              <h2 class="blog-section__title contact-direct-section__title" data-placeholder-ref="title14">O que acontece depois do envio</h2>
               <p class="blog-section__support contact-direct-section__support" data-placeholder-ref="text164">
-                Queremos te ouvir! Preencha o formul&aacute;rio e responderemos em at&eacute; 24h
+                Analisamos sua demanda, entendemos urg&ecirc;ncia e investimento, e retornamos com o caminho mais adequado para mapeamento, or&ccedil;amento ou parceria.
               </p>
             </div>
           </div>
@@ -206,9 +256,9 @@
               <span class="editorial-clients-band__label-mark" aria-hidden="true">_</span>
               <span class="editorial-clients-band__label-text">FAQ</span>
             </p>
-            <h2 class="faq-section__title" data-placeholder-ref="faq2">Tudo que voc&ecirc; precisa saber</h2>
+            <h2 class="faq-section__title" data-placeholder-ref="faq2">D&uacute;vidas antes do mapeamento</h2>
             <p class="faq-section__support" data-placeholder-ref="faq3">
-              Respostas r&aacute;pidas para perguntas comuns sobre a Redscale, de recursos e personaliza&ccedil;&atilde;o a suporte e licen&ccedil;as.
+              Perguntas comuns sobre pre&ccedil;o, prazo, manuten&ccedil;&atilde;o, confidencialidade e diferen&ccedil;a entre produto pronto e entrega sob medida.
             </p>
           </div>
 
