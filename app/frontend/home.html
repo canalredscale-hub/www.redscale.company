@@ -1,23 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
     <title>Redscale | RedscaleHQ</title>
     <meta
       name="description"
       content="Homepage editorial da RedscaleHQ com layout minimalista, limpo e comercial."
     />
     <script>
-      document.documentElement.classList.add("has-page-transition");
+      document.documentElement.classList.add("has-page-transition", "has-section-reveal");
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Montserrat:wght@400&family=Playfair+Display:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260430f" />
+    <link rel="preload" href="./fonts/PlayfairDisplay-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/AspektaVF.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/IBMPlexSans-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="./styles.css?v=20260505b" />
   </head>
   <body id="top" class="page--home" data-page="home">
     <header class="editorial-header" data-element-name="Cabe&ccedil;alho editorial Redscale" data-placeholder-ref="header1">
@@ -28,10 +26,10 @@
 
         <div class="editorial-header__actions">
           <nav class="editorial-nav" aria-label="Navega&ccedil;&atilde;o principal">
-            <a class="editorial-nav__link" href="#projetos" data-scroll-center-target="#projetos" data-placeholder-ref="nav1">PROJETOS</a>
-            <a class="editorial-nav__link" href="#solucoes" data-scroll-center-target="#solucoes" data-placeholder-ref="nav2">SOLU&Ccedil;&Otilde;ES</a>
-            <a class="editorial-nav__link" href="#sobre" data-scroll-center-target="#sobre" data-placeholder-ref="nav3">SOBRE</a>
-            <a class="editorial-nav__link" href="#fale-conosco-bloco" data-scroll-center-target="#fale-conosco-bloco" data-placeholder-ref="nav4">REDSIGHTS</a>
+            <a class="editorial-nav__link" href="#projetos" data-scroll-offset-target="#projetos" data-placeholder-ref="nav1">PROJETOS</a>
+            <a class="editorial-nav__link" href="#solucoes" data-scroll-offset-target="#solucoes" data-placeholder-ref="nav2">SOLU&Ccedil;&Otilde;ES</a>
+            <a class="editorial-nav__link" href="#sobre" data-scroll-offset-target="#sobre" data-placeholder-ref="nav3">SOBRE</a>
+            <a class="editorial-nav__link" href="#fale-conosco-bloco" data-scroll-offset-target="#fale-conosco-bloco" data-placeholder-ref="nav4">REDSIGHTS</a>
           </nav>
         </div>
       </div>
@@ -58,27 +56,110 @@
               playsinline
               aria-hidden="true"
             ></video>
-            <div class="editorial-hero__content" data-reveal>
+            <div class="editorial-hero__content">
               <div
                 class="editorial-hero__text"
                 data-element-name="Coluna textual do destaque"
                 data-placeholder-ref="hero7"
               >
                 <p class="editorial-welcome-badge" data-placeholder-ref="hero3">
-                  <span class="editorial-welcome-badge__mark" aria-hidden="true">+</span>
+                  <span class="editorial-welcome-badge__mark" aria-hidden="true">_</span>
                   <span class="editorial-welcome-badge__text">
-                  <span>BOAS VINDAS A</span>
-                  <span class="editorial-welcome-badge__brand">Redscale</span>
-                </span>
-              </p>
+                    <span>BOAS VINDAS A</span>
+                    <span class="editorial-welcome-badge__brand">Redscale</span>
+                  </span>
+                </p>
                 <h1 class="editorial-hero__title" data-placeholder-ref="hero4">
-                  Desenvolvemos sistemas que modernizam neg&oacute;cios para aumento de produtividade!
+                  Desenvolvemos ferramentas que modernizam processos para ganho real de produtividade!
                 </h1>
                 <p class="editorial-hero__lede" data-placeholder-ref="hero5">
-                  Redscale desenvolve produtos digitais que solucionam dores de baixa
-                  produtividade no core estrat&eacute;gico e operacional de empresas que
-                  precisam aumentar a competitividade.
+                  O Grupo Redscale cria sistemas objetivos que solucionam dores de baixa produtividade
+                  no core estrat&eacute;gico e operacional de empresas que precisam aumentar a
+                  competitividade. Como? Aplicando o sistema &agrave; opera&ccedil;&atilde;o.
                 </p>
+                <div class="editorial-hero__actions">
+                  <a
+                    class="editorial-hero__action editorial-hero__action--primary"
+                    href="./contato.html"
+                    data-placeholder-ref="cta1"
+                  >
+                    Iniciar um Projeto
+                  </a>
+                  <a
+                    class="editorial-hero__action editorial-hero__action--secondary"
+                    href="#projetos"
+                    data-scroll-offset-target="#projetos"
+                    data-placeholder-ref="cta2"
+                  >
+                    Veja nosso case
+                  </a>
+                </div>
+                <div
+                  class="editorial-hero__capabilities"
+                  data-element-name="Especialidades do destaque"
+                  data-placeholder-ref="hero6"
+                >
+                  <div class="editorial-capability">
+                    <span class="editorial-capability__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path
+                          d="M4.5 6.5H19.5V15.5H4.5zM9 18.5H15M10.5 15.5V18.5M13.5 15.5V18.5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.8"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="editorial-capability__label">Infraestrutura &amp; Plataformas Web</span>
+                  </div>
+                  <div class="editorial-capability">
+                    <span class="editorial-capability__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path
+                          d="M9 7.5V5.5M15 7.5V5.5M8 10.5H16M8.5 18.5H15.5C17.43 18.5 19 16.93 19 15V11C19 9.07 17.43 7.5 15.5 7.5H8.5C6.57 7.5 5 9.07 5 11V15C5 16.93 6.57 18.5 8.5 18.5ZM10 13.25H10.01M14 13.25H14.01"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.8"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="editorial-capability__label">Produto &amp; Design de Interface</span>
+                  </div>
+                  <div class="editorial-capability">
+                    <span class="editorial-capability__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path
+                          d="M12 4.5L13.4 8.2L17.5 8.5L14.35 11.1L15.35 15.1L12 13L8.65 15.1L9.65 11.1L6.5 8.5L10.6 8.2L12 4.5ZM6 17.5H18"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.8"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="editorial-capability__label">Marca e Identidade Digital</span>
+                  </div>
+                  <div class="editorial-capability">
+                    <span class="editorial-capability__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" focusable="false">
+                        <path
+                          d="M7 6.5H13M11 4.5L13 6.5L11 8.5M17 17.5H11M13 15.5L11 17.5L13 19.5M8.5 9.5C10.43 9.5 12 11.07 12 13S10.43 16.5 8.5 16.5S5 14.93 5 13S6.57 9.5 8.5 9.5ZM15.5 7.5C17.43 7.5 19 9.07 19 11S17.43 14.5 15.5 14.5S12 12.93 12 11S13.57 7.5 15.5 7.5Z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.8"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="editorial-capability__label">Integra&ccedil;&atilde;o e Automa&ccedil;&atilde;o</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -91,7 +172,7 @@
         data-element-name="Faixa de clientes"
         data-placeholder-ref="section1"
       >
-        <div class="editorial-shell" data-placeholder-ref="element2">
+        <div class="editorial-shell">
           <div class="editorial-clients-band__inner" data-placeholder-ref="element3">
             <div class="editorial-clients-band__topline" data-placeholder-ref="element4">
               <p class="editorial-clients-band__label" data-placeholder-ref="text1">
@@ -212,8 +293,9 @@
                 <div class="editorial-projects-mosaic-item" data-placeholder-ref="element37">
                   <a
                     class="editorial-projects-mosaic editorial-projects-mosaic--secondary"
-                    href="./contato.html"
+                    href="./greenscale.html"
                     data-element-name="Mosaico dashboard call center"
+                    data-placeholder-ref="card5"
                   >
                     <video
                       class="editorial-projects-mosaic__video"
@@ -231,13 +313,62 @@
                         data-element-name="Titulo do mosaico call center"
                         data-placeholder-ref="text6"
                       >
-                        NUMBEAR
+                        Greenscale
                       </span>
                     </span>
                   </a>
-                  <span class="editorial-projects-mosaic__description" data-placeholder-ref="text10">
-                    Planilhas inteligentes para p&uacute;blicos, neg&oacute;cios e necessidades diversas. Conhe&ccedil;a nossas solu&ccedil;&otilde;es prontas para uso, ou pe&ccedil;a uma sob medida!
-                  </span>
+                </div>
+                <div class="editorial-projects-mosaic-item" data-placeholder-ref="element200">
+                  <a
+                    class="editorial-projects-mosaic editorial-projects-mosaic--numbear"
+                    href="./numbear.html"
+                    data-element-name="Mosaico Numbear"
+                    data-placeholder-ref="card6"
+                  >
+                    <video
+                      class="editorial-projects-mosaic__video"
+                      src="./assets/videos/18069237-uhd_2160_2160_24fps.mp4"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      aria-hidden="true"
+                      data-placeholder-ref="image49"
+                    ></video>
+                    <span class="editorial-projects-mosaic__copy">
+                      <span
+                        class="editorial-projects-mosaic__brand editorial-projects-mosaic__brand--secondary"
+                        data-element-name="Titulo Numbear do mosaico"
+                        data-placeholder-ref="text202"
+                      >
+                        Numbear
+                      </span>
+                    </span>
+                  </a>
+                </div>
+                <div class="editorial-projects-mosaic-item" data-placeholder-ref="element201">
+                  <a
+                    class="editorial-projects-mosaic editorial-projects-mosaic--stockhandle"
+                    href="./stockhandle.html"
+                    data-element-name="Mosaico Stockhandle"
+                    data-placeholder-ref="card7"
+                  >
+                    <img
+                      src="./assets/images/pexels-endura-tiles-370085044-14554082.jpg"
+                      alt=""
+                      loading="lazy"
+                      data-placeholder-ref="image50"
+                    />
+                    <span class="editorial-projects-mosaic__copy">
+                      <span
+                        class="editorial-projects-mosaic__brand editorial-projects-mosaic__brand--stockhandle"
+                        data-element-name="Titulo Stockhandle do mosaico"
+                        data-placeholder-ref="text203"
+                      >
+                        Stockhandle
+                      </span>
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -287,7 +418,7 @@
                   <span data-placeholder-ref="text12">Apps internos</span>
                   <span data-placeholder-ref="text62">Portais</span>
                   <span data-placeholder-ref="text14">SaaS</span>
-                  <span data-placeholder-ref="text15">CMS</span>
+                  <span data-placeholder-ref="text15">Sites</span>
                   <span data-placeholder-ref="text16">APIs</span>
                   <span data-placeholder-ref="text17">Performance</span>
                 </div>
@@ -616,12 +747,6 @@
               aria-hidden="true"
               data-placeholder-ref="image21"
             ></video>
-            <a class="process-showreel__cta" href="#fale-conosco-bloco" data-placeholder-ref="link3">
-              <span class="process-showreel__button" aria-hidden="true" data-placeholder-ref="element81">
-                <span data-placeholder-ref="element82"></span>
-              </span>
-              <span data-placeholder-ref="text95">Ver processo</span>
-            </a>
           </div>
         </div>
       </section>
@@ -654,13 +779,13 @@
                 Ideal para times que precisam clarear problemas e priorizar o que gera resultado.
               </p>
               <div class="pricing-card__features" data-placeholder-ref="element90">
-                <span data-placeholder-ref="text102"><b>+</b>Diagn&oacute;stico por evid&ecirc;ncias</span>
+                <span data-placeholder-ref="text102">Entendimento por evid&ecirc;ncia</span>
                 <span data-placeholder-ref="text103"><b>+</b>Mapa de gargalos</span>
                 <span data-placeholder-ref="text104"><b>+</b>Prot&oacute;tipo naveg&aacute;vel</span>
                 <span data-placeholder-ref="text105"><b>+</b>Roadmap t&eacute;cnico</span>
                 <span data-placeholder-ref="text106"><b>+</b>Plano de implementa&ccedil;&atilde;o</span>
               </div>
-              <a class="pricing-card__button pricing-card__button--primary" href="#fale-conosco-bloco" data-placeholder-ref="link4">
+              <a class="pricing-card__button pricing-card__button--primary" href="./contato.html" data-placeholder-ref="link4">
                 <span data-placeholder-ref="text107">Come&ccedil;ar agora</span>
               </a>
             </article>
@@ -685,7 +810,7 @@
                 <span data-placeholder-ref="text116"><b>+</b>SEO e performance</span>
                 <span data-placeholder-ref="text117"><b>+</b>Suporte p&oacute;s-lan&ccedil;amento</span>
               </div>
-              <a class="pricing-card__button pricing-card__button--secondary" href="#fale-conosco-bloco" data-placeholder-ref="link5">
+              <a class="pricing-card__button pricing-card__button--secondary" href="./contato.html" data-placeholder-ref="link5">
                 <span data-placeholder-ref="text118">Come&ccedil;ar agora</span>
               </a>
             </article>
@@ -707,6 +832,99 @@
       </section>
 
       <section
+        class="results-wall projects-testimonials-section home-testimonials-section"
+        data-element-name="Se&ccedil;&atilde;o de depoimentos"
+        data-placeholder-ref="section12"
+      >
+        <p class="editorial-clients-band__label metrics-section__eyebrow" data-placeholder-ref="text168">
+          <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element152">_</span>
+          <span class="editorial-clients-band__label-text" data-placeholder-ref="text169">FEEDBACKS</span>
+        </p>
+        <h2 class="metrics-section__title" data-placeholder-ref="title21">Resultados mensur&aacute;veis para o crescimento do neg&oacute;cio</h2>
+        <p class="metrics-section__copy" data-placeholder-ref="text170">
+          A Redscale conecta entendimento, ferramenta e rotina para transformar gargalos em decis&otilde;es pr&aacute;ticas.
+        </p>
+
+        <div class="results-wall__grid" data-placeholder-ref="element153">
+          <article class="results-card results-card--reference-quote results-card--quote-left" data-placeholder-ref="element154">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element184"></span>
+            <p class="results-card__quote" data-placeholder-ref="text173">
+              &ldquo;Gostaria de elogiar o excelente trabalho na elabora&ccedil;&atilde;o da planilha de Excel.<br />
+              Ficou organizada, pr&aacute;tica e extremamente &uacute;til para o nosso dia a dia. Parab&eacute;ns pela qualidade e aten&ccedil;&atilde;o aos detalhes!&rdquo;
+            </p>
+            <div class="results-card__stars" aria-label="5 estrelas" data-placeholder-ref="element156">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </article>
+
+          <article class="results-card results-card--reference-profile results-card--profile-left" data-placeholder-ref="element158">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element185"></span>
+            <span class="results-card__avatar results-card__avatar--compact results-card__avatar--james" aria-hidden="true" data-placeholder-ref="image39"></span>
+            <span class="results-card__person-copy">
+              <strong data-placeholder-ref="text178">Raquel Miranda</strong>
+              <span data-placeholder-ref="text179">RM Moda Feminina</span>
+            </span>
+          </article>
+
+          <article class="results-card results-card--reference-profile results-card--profile-top" data-placeholder-ref="element159">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element186"></span>
+            <span class="results-card__avatar results-card__avatar--compact results-card__avatar--daniel" aria-hidden="true" data-placeholder-ref="image40"></span>
+            <span class="results-card__person-copy">
+              <strong data-placeholder-ref="text180">Elaine M.C. Veiga</strong>
+              <span data-placeholder-ref="text181">Cobra Metais</span>
+            </span>
+          </article>
+
+          <article class="results-card results-card--reference-quote results-card--quote-center" data-placeholder-ref="element165">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element187"></span>
+            <p class="results-card__quote" data-placeholder-ref="text182">
+              &ldquo;O grupo Redscale nos ajudou com um dashboard desenhado para atender as necessidades de visualiza&ccedil;&atilde;o dos nossos dados sobre ESG. Isso nos gerou mais credibilidade: obtivemos concis&atilde;o na apresenta&ccedil;&atilde;o e aprova&ccedil;&atilde;o da diretoria.&rdquo;
+            </p>
+            <div class="results-card__stars" aria-label="5 estrelas" data-placeholder-ref="element164">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </article>
+
+          <article class="results-card results-card--reference-quote results-card--quote-right" data-placeholder-ref="element167">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element188"></span>
+            <p class="results-card__quote" data-placeholder-ref="text183">
+              &ldquo;A Redscale transformou o Mr. Belga. Hoje tenho clareza total sobre vendas, financeiro e fluxo de caixa, com dashboards completos que me permitem tomar decis&otilde;es r&aacute;pidas e seguras. O neg&oacute;cio ficou estruturado, previs&iacute;vel e pronto para crescer com consist&ecirc;ncia e clareza sobre as opera&ccedil;&otilde;es.&rdquo;
+            </p>
+            <div class="results-card__stars" aria-label="5 estrelas" data-placeholder-ref="element166">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </article>
+
+          <article class="results-card results-card--reference-profile results-card--profile-right" data-placeholder-ref="element168">
+            <span class="results-card__surface" aria-hidden="true" data-placeholder-ref="element189"></span>
+            <span class="results-card__avatar results-card__avatar--compact results-card__avatar--emily" aria-hidden="true" data-placeholder-ref="image41"></span>
+            <span class="results-card__person-copy">
+              <strong data-placeholder-ref="text184">Matheus Santos</strong>
+              <span data-placeholder-ref="text185">Mr Belga</span>
+            </span>
+          </article>
+
+          <article class="results-card results-card--rating" data-placeholder-ref="element190">
+            <span class="results-card__surface results-card__surface--dark" aria-hidden="true" data-placeholder-ref="element191"></span>
+            <div class="results-card__rating-line" data-placeholder-ref="element192">
+              <strong data-placeholder-ref="text186">4.9</strong>
+              <span data-placeholder-ref="text187">/5</span>
+              <span class="results-card__stars" aria-label="5 estrelas" data-placeholder-ref="element193">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+          </article>
+
+          <article class="results-card results-card--proof" data-placeholder-ref="element194">
+            <span class="results-card__surface results-card__surface--dark" aria-hidden="true" data-placeholder-ref="element195"></span>
+            <p class="results-card__proof-copy" data-placeholder-ref="text188">
+              N&oacute;s j&aacute; entregamos 7+ projetos digitais que ajudaram pequenos neg&oacute;cios e empresas a crescerem com rapidez.
+            </p>
+            <div class="results-card__review-row" data-placeholder-ref="element196">
+              <span class="results-card__review-avatars" data-placeholder-ref="element197">
+                <span class="results-card__review-avatar results-card__review-avatar--one" aria-hidden="true" data-placeholder-ref="image42"></span>
+                <span class="results-card__review-avatar results-card__review-avatar--two" aria-hidden="true" data-placeholder-ref="image43"></span>
+                <span class="results-card__review-avatar results-card__review-avatar--three" aria-hidden="true" data-placeholder-ref="image44"></span>
+              </span>
+              <strong data-placeholder-ref="text189">7+ Feedbacks</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
         class="blog-section editorial-scroll-target"
         id="fale-conosco-bloco"
         data-element-name="Se&ccedil;&atilde;o blog"
@@ -719,43 +937,47 @@
               <span class="editorial-clients-band__label-text">REDSIGHTS</span>
             </p>
             <h2 class="blog-section__title" data-placeholder-ref="title14">Insights &amp; Recursos</h2>
-            <p class="blog-section__support" data-placeholder-ref="text164">[Artigos, relat&oacute;rios e an&aacute;lises para acompanhar as mudan&ccedil;as do mercado]</p>
+            <p class="blog-section__support" data-placeholder-ref="text164">Estudo &eacute; necess&aacute;rio para continuar navegando!</p>
           </div>
           <div class="blog-section__grid" aria-label="Artigos em destaque">
-            <article class="blog-card">
-              <div class="blog-card__top" data-placeholder-ref="element123">
-                <img
-                  class="blog-card__image"
-                  src="./assets/images/blog-raven.jpg"
-                  alt=""
-                  loading="lazy"
-                  data-placeholder-ref="image22"
-                />
-                <span class="blog-card__category" data-placeholder-ref="text168">ESTRAT&Eacute;GIA DE TI</span>
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text165">19 de janeiro de 2026</time>
-                <h3 class="blog-card__title" data-placeholder-ref="title18">Como empresas de TI podem conquistar mais clientes com melhores experi&ecirc;ncias digitais</h3>
-                <p class="blog-card__excerpt">Veja como empresas de alta performance usam design, mensagem e estrutura...</p>
-              </div>
+            <article class="blog-card blog-card--linked" data-placeholder-ref="card4">
+              <a class="blog-card__link" href="./greenscale.html" aria-label="Abrir projeto Greenscale">
+                <div class="blog-card__top" data-placeholder-ref="element123">
+                  <img
+                    class="blog-card__image"
+                    src="./assets/images/blog-raven.jpg"
+                    alt=""
+                    loading="lazy"
+                    data-placeholder-ref="image22"
+                  />
+                  <span class="blog-card__category" data-placeholder-ref="text168">ESTRAT&Eacute;GIA DE TI</span>
+                </div>
+                <div class="blog-card__body">
+                  <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text165">19 de janeiro de 2026</time>
+                  <h3 class="blog-card__title" data-placeholder-ref="title18">Como empresas de TI podem conquistar mais clientes com melhores experi&ecirc;ncias digitais</h3>
+                  <p class="blog-card__excerpt">Veja como empresas de alta performance usam design, mensagem e estrutura...</p>
+                </div>
+              </a>
             </article>
 
-            <article class="blog-card">
-              <div class="blog-card__top" data-placeholder-ref="element124">
-                <img
-                  class="blog-card__image"
-                  src="./assets/images/blog-fox.jpg"
-                  alt=""
-                  loading="lazy"
-                  data-placeholder-ref="image23"
-                />
-                <span class="blog-card__category" data-placeholder-ref="text169">ESTRAT&Eacute;GIA DE TI</span>
-              </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2026-01-19" data-placeholder-ref="text166">19 de janeiro de 2026</time>
-                <h3 class="blog-card__title" data-placeholder-ref="title19">Como empresas de TI podem conquistar mais clientes com melhores experi&ecirc;ncias digitais</h3>
-                <p class="blog-card__excerpt">Veja como empresas de alta performance usam design, mensagem e estrutura...</p>
-              </div>
+            <article class="blog-card blog-card--linked" data-placeholder-ref="element124">
+              <a class="blog-card__link" href="./redsights.html" aria-label="Abrir Redsights" data-placeholder-ref="link10">
+                <div class="blog-card__top" data-placeholder-ref="element141">
+                  <img
+                    class="blog-card__image"
+                    src="./assets/images/businessmen-working-strategic-planning.jpg"
+                    alt=""
+                    loading="lazy"
+                    data-placeholder-ref="image23"
+                  />
+                  <span class="blog-card__category" data-placeholder-ref="text169">RADAR</span>
+                </div>
+                <div class="blog-card__body">
+                  <time class="blog-card__date" datetime="2026-05-01" data-placeholder-ref="text166">01 de Maio de 2026</time>
+                  <h3 class="blog-card__title" data-placeholder-ref="title19">O Estado da Gest&atilde;o nas Pequenas Empresas Brasileiras</h3>
+                  <p class="blog-card__excerpt" data-placeholder-ref="card3">Veja como as tend&ecirc;ncias globais antecipam o pr&oacute;ximo ciclo da gest&atilde;o no Brasil</p>
+                </div>
+              </a>
             </article>
 
             <article class="blog-card">
@@ -813,8 +1035,8 @@
               </div>
             </div>
 
-            <div class="contact-person" data-placeholder-ref="element117">
-              <span class="contact-person__surface" aria-hidden="true" data-placeholder-ref="element140"></span>
+            <div class="contact-person" data-placeholder-ref="element140">
+              <span class="contact-person__surface" aria-hidden="true"></span>
               <div class="contact-person__avatar" aria-hidden="true" data-placeholder-ref="element118"></div>
               <div class="contact-person__copy" data-placeholder-ref="element119">
                 <span data-placeholder-ref="text125">Founder da Redscale</span>
@@ -824,7 +1046,7 @@
             </div>
           </div>
 
-          <div class="contact-section__panel contact-section__panel--form" id="contact-form-section9" data-placeholder-ref="element129">
+          <div class="contact-section__panel contact-section__panel--form" id="contact-form-section9">
             <video
               class="contact-section__panel-video"
               src="./assets/videos/hero.mp4"
@@ -835,7 +1057,7 @@
               aria-hidden="true"
               data-placeholder-ref="image30"
             ></video>
-            <form class="contact-form-card" action="#" method="post" data-placeholder-ref="element130">
+            <form class="contact-form-card" action="https://formspree.io/f/mreyyorn" method="post" data-placeholder-ref="element130" data-contact-form>
               <span class="contact-form-card__surface" aria-hidden="true" data-placeholder-ref="element132"></span>
               <div class="contact-form-card__brand-wrap" data-placeholder-ref="element133">
                 <a class="editorial-brand" href="./home.html" aria-label="Redscale in&iacute;cio" data-placeholder-ref="form1">
@@ -844,8 +1066,8 @@
               </div>
               <h2 data-placeholder-ref="title16">Tem um projeto em mente?</h2>
               <label data-placeholder-ref="element134">
-                <span data-placeholder-ref="text127">[COMECE AGORA]</span>
-                <input type="text" name="first-name" autocomplete="given-name" placeholder="Nome" data-placeholder-ref="field1" />
+                <span data-placeholder-ref="text127">Nome</span>
+                <input type="text" name="first-name" autocomplete="given-name" placeholder=" " data-placeholder-ref="field1" />
               </label>
               <label data-placeholder-ref="element135">
                 <span data-placeholder-ref="text128">Email</span>
@@ -904,31 +1126,31 @@
           <div class="faq-section__list">
             <details class="faq-item">
               <summary>
-                <span data-faq-question data-placeholder-ref="text136">O que &eacute; a Redscale e como ela ajuda empresas de TI e ag&ecirc;ncias criativas?</span>
+                <span data-faq-question data-placeholder-ref="text136">O que &eacute; o grupo Redscale e como voc&ecirc;s ajudam empresas e ag&ecirc;ncias a crescer?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text140">Resposta placeholder sobre produto. Vamos substituir este texto pela resposta final depois.</p>
+              <p data-faq-answer data-placeholder-ref="text140">O grupo Redscale nasceu de um objetivo simples: auxiliar no crescimento utilizando tecnologia de ponta. Oferecemos uma parceria por projeto ou de forma continuada. Atrav&eacute;s de um framework desenvolvido internamente, faremos diversas perguntas (estrat&eacute;gicas e operacionais) sobre o neg&oacute;cio, e os resultados v&atilde;o nos indicar quais as solu&ccedil;&otilde;es s&atilde;o mais adequadas para atingirmos o objetivo. O simples funciona.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text137">Para quais tipos de empresa a Redscale &eacute; mais indicada?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text141">Resposta placeholder sobre perfil de empresa. Vamos ajustar o conte&uacute;do final depois.</p>
+              <p data-faq-answer data-placeholder-ref="text141">No geral, o processo de ganho de produtividade acontece antes da an&aacute;lise de segmento, porque tem a ver com o direcionamento correto e objetivo das atividades da gest&atilde;o e da equipe. Produtividade &eacute; uma m&eacute;trica de {qualidade do trabalho entregue vs tempo que ele foi feito}; se encurtarmos o tempo e aumentar a qualidade, o seu neg&oacute;cio sentir&aacute; o impacto independente da &aacute;rea. Entretanto existem fatores de impacto, como quantidade de pessoas na equipe, e o n&iacute;vel de imers&atilde;o digital do neg&oacute;cio.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text138">A Redscale pode ser personalizada para combinar com a nossa marca?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text142">Resposta placeholder sobre personaliza&ccedil;&atilde;o. Este texto ser&aacute; editado na etapa final.</p>
+              <p data-faq-answer data-placeholder-ref="text142">Apenas personalizamos a entrega com o seu logo, seu branding, etc. se houver a ado&ccedil;&atilde;o no plano de melhoria continuada.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text139">A Redscale suporta m&uacute;ltiplos servi&ccedil;os e projetos?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text143">Resposta placeholder sobre servi&ccedil;os e projetos. Vamos trocar pela vers&atilde;o correta depois.</p>
+              <p data-faq-answer data-placeholder-ref="text143">Nos sentimos a vontade com desafios. Quanto mais, melhor. Dependendo do seu contexto, muitas vezes pode acontecer de uma solu&ccedil;&atilde;o resolver diversos problemas menores. No geral, grandes complexidades s&atilde;o bolas de neve que come&ccedil;aram com um gargalo simples de ser resolvido. O gargalo muitas vezes fica na opera&ccedil;&atilde;o como legado e n&atilde;o chega a diretoria. A identifica&ccedil;&atilde;o desse gargalo e a aplica&ccedil;&atilde;o da nossa solu&ccedil;&atilde;o pode, gradualmente, ir resolvendo muitos problemas ao longo do tempo.</p>
             </details>
           </div>
         </div>
@@ -962,6 +1184,6 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20260430f"></script>
+    <script src="./main.js?v=20260505b"></script>
   </body>
 </html>

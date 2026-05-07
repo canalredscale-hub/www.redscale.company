@@ -20,9 +20,11 @@ uv.lock
 /open-lp.cmd
 /open-lp.ps1
 
-# Redscale assets intentionally kept out of GitHub
+# Redscale assets intentionally kept out of GitHub outside the deployable frontend
 assets/
 **/assets/
+!app/frontend/assets/
+!app/frontend/assets/**
 
 # Local backups, tests, screenshots, and machine-specific artifacts
 backups/

@@ -1,13 +1,18 @@
 #!/bin/sh
 set -eu
 
-blocked_paths='(^|/)assets/|^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+blocked_paths='^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+allowed_frontend_assets='^app/frontend/assets/'
 
 staged_files="$(git diff --cached --name-only --diff-filter=ACMRT)"
 
-if [ -n "$staged_files" ] && printf '%s\n' "$staged_files" | grep -Eiq "$blocked_paths"; then
+blocked_asset_hits="$(printf '%s\n' "$staged_files" | grep -Ei '(^|/)assets/' | grep -Eiv "$allowed_frontend_assets" || true)"
+blocked_other_hits="$(printf '%s\n' "$staged_files" | grep -Ei "$blocked_paths" || true)"
+blocked_hits="$(printf '%s\n%s\n' "$blocked_asset_hits" "$blocked_other_hits" | sed '/^$/d')"
+
+if [ -n "$blocked_hits" ]; then
   echo "Commit bloqueado: ha arquivos proibidos ou sensiveis no stage." >&2
-  printf '%s\n' "$staged_files" | grep -Ei "$blocked_paths" >&2 || true
+  echo "$blocked_hits" >&2
   exit 1
 fi
 

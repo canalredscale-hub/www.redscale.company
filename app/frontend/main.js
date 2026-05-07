@@ -1,12 +1,15 @@
 const body = document.body;
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const currentYearTargets = document.querySelectorAll("[data-current-year]");
-const revealItems = document.querySelectorAll("[data-reveal]");
+const sectionRevealTargets = document.querySelectorAll(
+  "main > section, .split-article-copy__section"
+);
 const centeredScrollTriggers = document.querySelectorAll("[data-scroll-center-target]");
 const scrollTopTriggers = document.querySelectorAll("[data-scroll-top]");
 const PAGE_TRANSITION_DURATION_MS = 320;
-const CONSTRUCTION_PAGE_HREF = "./em-construcao.html";
-const CONTACT_PAGE_HREF = "./contato.html";
+const NAV_SECTION_SCROLL_OFFSET_PX = 0.5 * (96 / 2.54);
+const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/mreyyorn";
+const NEWSLETTER_FORM_ENDPOINT = "https://formspree.io/f/xykopqqj";
 const INSPECTOR_STORAGE_KEY = "redscale-inspector";
 const LEGACY_INSPECTOR_STORAGE_KEY = "greenscale-inspector";
 const INSPECTABLE_SELECTOR =
@@ -45,13 +48,8 @@ const getNavigableUrlFromLink = (link) => {
 };
 
 if (body) {
-  window.requestAnimationFrame(() => {
-    body.classList.add("is-page-visible");
-  });
-
   window.addEventListener("pageshow", () => {
     body.classList.remove("is-page-leaving");
-    body.classList.add("is-page-visible");
   });
 
   document.addEventListener("click", (event) => {
@@ -89,7 +87,6 @@ if (body) {
     }
 
     event.preventDefault();
-    body.classList.remove("is-page-visible");
     body.classList.add("is-page-leaving");
 
     window.setTimeout(() => {
@@ -109,152 +106,244 @@ currentYearTargets.forEach((target) => {
   target.textContent = new Date().getFullYear();
 });
 
-const syncHomeHero = () => {
-  if (body?.dataset.page !== "home") {
+const initRedsightsFilters = () => {
+  const filterButtons = document.querySelectorAll("[data-redsights-filter]");
+  const redsightsCards = document.querySelectorAll(
+    ".redsights-index .blog-card"
+  );
+  const emptyMessage = document.querySelector("[data-redsights-empty]");
+
+  if (!filterButtons.length || !redsightsCards.length) {
     return;
   }
 
-  const heroSection = document.querySelector(".editorial-hero-section");
-  const heroPanel = heroSection?.querySelector(".editorial-hero");
-  const heroText = heroSection?.querySelector(".editorial-hero__text");
-  const heroBadge = heroText?.querySelector(".editorial-welcome-badge");
-  const heroTitle = heroText?.querySelector(".editorial-hero__title");
-  const heroLede = heroText?.querySelector(".editorial-hero__lede");
+  const normalizeFilterValue = (value) => (value || "").trim().toUpperCase();
+  const getCardCategories = (card) => {
+    const explicitCategories = card.dataset.redsightsCategory || "";
+    const visibleCategories = Array.from(
+      card.querySelectorAll(".blog-card__category")
+    )
+      .map((category) => category.textContent)
+      .join("|");
 
-  if (!heroSection || !heroPanel || !heroText || !heroBadge || !heroTitle || !heroLede) {
-    return;
-  }
+    return Array.from(
+      new Set(
+        `${explicitCategories}|${visibleCategories}`
+          .split("|")
+          .map(normalizeFilterValue)
+          .filter(Boolean)
+      )
+    );
+  };
 
-  heroSection.dataset.elementName = "Destaque principal";
-  heroSection.dataset.placeholderRef = "hero1";
+  redsightsCards.forEach((card) => {
+    card.dataset.redsightsCategory = getCardCategories(card).join("|");
+  });
 
-  heroPanel.dataset.elementName = "Mosaico do video em loop";
-  heroPanel.dataset.placeholderRef = "hero2";
+  const applyFilter = (value) => {
+    const activeValue = normalizeFilterValue(value);
 
-  heroText.dataset.elementName = "Coluna textual do destaque";
-  heroText.dataset.placeholderRef = "hero7";
+    filterButtons.forEach((button) => {
+      const matchesActiveFilter =
+        normalizeFilterValue(button.dataset.redsightsFilter) === activeValue;
 
-  heroBadge.dataset.placeholderRef = "hero3";
-  heroBadge.innerHTML = `
-    <span class="editorial-welcome-badge__mark" aria-hidden="true">_</span>
-    <span class="editorial-welcome-badge__text">
-      <span>BOAS VINDAS A</span>
-      <span class="editorial-welcome-badge__brand">Redscale</span>
-    </span>
-  `;
+      button.classList.toggle("redsights-filter--active", matchesActiveFilter);
+      button.setAttribute("aria-pressed", matchesActiveFilter ? "true" : "false");
+    });
 
-  heroTitle.dataset.placeholderRef = "hero4";
-  heroTitle.textContent =
-    "Desenvolvemos ferramentas que modernizam processos para ganho real de produtividade!";
+    let visibleCardCount = 0;
 
-  heroLede.dataset.placeholderRef = "hero5";
-  heroLede.innerHTML = `
-    O Grupo Redscale cria sistemas objetivos que solucionam dores de baixa produtividade
-    no core estrat&eacute;gico e operacional de empresas que precisam aumentar a
-    competitividade. Como? Aplicando o sistema &agrave; opera&ccedil;&atilde;o.
-  `;
+    redsightsCards.forEach((card) => {
+      const cardCategories = getCardCategories(card);
+      const isHidden =
+        activeValue !== "TODOS" && !cardCategories.includes(activeValue);
 
-  let heroActionRail = heroText.querySelector(".editorial-hero__actions");
+      card.hidden = isHidden;
 
-  if (!heroActionRail) {
-    heroActionRail = document.createElement("div");
-    heroActionRail.className = "editorial-hero__actions";
-  }
+      if (!isHidden) {
+        visibleCardCount += 1;
+      }
+    });
 
-  heroActionRail.innerHTML = `
-    <a
-      class="editorial-hero__action editorial-hero__action--primary"
-      href="${CONTACT_PAGE_HREF}"
-      data-placeholder-ref="cta1"
-    >
-      Iniciar um Projeto
-    </a>
-    <a
-      class="editorial-hero__action editorial-hero__action--secondary"
-      href="${CONSTRUCTION_PAGE_HREF}"
-      data-placeholder-ref="cta2"
-    >
-      Veja nosso case
-    </a>
-  `;
-  heroLede.insertAdjacentElement("afterend", heroActionRail);
+    if (emptyMessage) {
+      emptyMessage.hidden = visibleCardCount > 0;
+    }
+  };
 
-  let capabilityRail = heroText.querySelector(".editorial-hero__capabilities");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyFilter(button.dataset.redsightsFilter);
+    });
+  });
 
-  if (!capabilityRail) {
-    capabilityRail = document.createElement("div");
-    capabilityRail.className = "editorial-hero__capabilities";
-  }
+  const initiallyActiveButton =
+    Array.from(filterButtons).find((button) =>
+      button.classList.contains("redsights-filter--active")
+    ) || filterButtons[0];
 
-  heroActionRail.insertAdjacentElement("afterend", capabilityRail);
-
-  capabilityRail.dataset.elementName = "Especialidades do destaque";
-  capabilityRail.dataset.placeholderRef = "hero6";
-  capabilityRail.innerHTML = `
-    <div class="editorial-capability">
-      <span class="editorial-capability__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false">
-          <path
-            d="M4.5 6.5H19.5V15.5H4.5zM9 18.5H15M10.5 15.5V18.5M13.5 15.5V18.5"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-          ></path>
-        </svg>
-      </span>
-      <span class="editorial-capability__label">Infraestrutura &amp; Plataformas Web</span>
-    </div>
-    <div class="editorial-capability">
-      <span class="editorial-capability__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false">
-          <path
-            d="M9 7.5V5.5M15 7.5V5.5M8 10.5H16M8.5 18.5H15.5C17.43 18.5 19 16.93 19 15V11C19 9.07 17.43 7.5 15.5 7.5H8.5C6.57 7.5 5 9.07 5 11V15C5 16.93 6.57 18.5 8.5 18.5ZM10 13.25H10.01M14 13.25H14.01"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-          ></path>
-        </svg>
-      </span>
-      <span class="editorial-capability__label">Produto &amp; Design de Interface</span>
-    </div>
-    <div class="editorial-capability">
-      <span class="editorial-capability__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false">
-          <path
-            d="M12 4.5L13.4 8.2L17.5 8.5L14.35 11.1L15.35 15.1L12 13L8.65 15.1L9.65 11.1L6.5 8.5L10.6 8.2L12 4.5ZM6 17.5H18"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-          ></path>
-        </svg>
-      </span>
-      <span class="editorial-capability__label">Marca e Identidade Digital</span>
-    </div>
-    <div class="editorial-capability">
-      <span class="editorial-capability__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false">
-          <path
-            d="M7 6.5H13M11 4.5L13 6.5L11 8.5M17 17.5H11M13 15.5L11 17.5L13 19.5M8.5 9.5C10.43 9.5 12 11.07 12 13S10.43 16.5 8.5 16.5S5 14.93 5 13S6.57 9.5 8.5 9.5ZM15.5 7.5C17.43 7.5 19 9.07 19 11S17.43 14.5 15.5 14.5S12 12.93 12 11S13.57 7.5 15.5 7.5Z"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-          ></path>
-        </svg>
-      </span>
-      <span class="editorial-capability__label">Integra&ccedil;&atilde;o e Automa&ccedil;&atilde;o</span>
-    </div>
-  `;
+  applyFilter(initiallyActiveButton?.dataset.redsightsFilter || "Todos");
 };
 
-syncHomeHero();
+initRedsightsFilters();
+
+const initRedsightsNewsletter = () => {
+  const newsletterForms = document.querySelectorAll("[data-redsights-newsletter-form]");
+
+  newsletterForms.forEach((form) => {
+    form.action = NEWSLETTER_FORM_ENDPOINT;
+
+    const emailInput = form.querySelector("[data-redsights-newsletter-email]");
+    const submitButton = form.querySelector("[data-redsights-newsletter-submit]");
+    const successMessage = form.querySelector("[data-redsights-newsletter-success]");
+
+    if (!emailInput || !submitButton || !successMessage) {
+      return;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        emailInput.focus();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Processando";
+
+      try {
+        const response = await fetch(NEWSLETTER_FORM_ENDPOINT, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Newsletter submit failed");
+        }
+
+        form.classList.add("redsights-newsletter--submitted");
+        successMessage.hidden = false;
+        successMessage.focus();
+        form.reset();
+      } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Tentar novamente";
+      }
+    });
+  });
+};
+
+initRedsightsNewsletter();
+
+const initContactForms = () => {
+  const contactForms = document.querySelectorAll("[data-contact-form]");
+
+  contactForms.forEach((form) => {
+    form.action = CONTACT_FORM_ENDPOINT;
+
+    const submitButton = form.querySelector('[data-placeholder-ref="element137"]');
+    const submitLabel = form.querySelector('[data-placeholder-ref="cta8"]');
+
+    if (!submitButton || !submitLabel) {
+      return;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitLabel.textContent = "Enviando...";
+
+      try {
+        const response = await fetch(CONTACT_FORM_ENDPOINT, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Contact submit failed");
+        }
+
+        form.reset();
+        submitLabel.textContent = "Obrigado! Em breve te responderemos!";
+      } catch (error) {
+        submitButton.disabled = false;
+        submitLabel.textContent = "Tentar novamente";
+      }
+    });
+  });
+};
+
+initContactForms();
+
+const initArticlePage = () => {
+  const progressBar = document.querySelector("[data-reading-progress]");
+  const shareButtons = document.querySelectorAll("[data-share-action]");
+
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0
+          ? Math.min(window.scrollY / scrollableHeight, 1)
+          : 0;
+
+      progressBar.style.transform = `scaleX(${progress})`;
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  }
+
+  shareButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const action = button.dataset.shareAction;
+      const shareUrl = window.location.href;
+      const shareTitle = document.title;
+      const encodedUrl = encodeURIComponent(shareUrl);
+      const encodedTitle = encodeURIComponent(shareTitle);
+      const shareTargets = {
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+        x: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+        whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+      };
+
+      if (action === "copy") {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          button.textContent = "Link copiado";
+        } catch (_error) {
+          button.textContent = "Copie pela barra";
+        }
+
+        window.setTimeout(() => {
+          button.textContent = "Copiar link";
+        }, 1800);
+        return;
+      }
+
+      if (shareTargets[action]) {
+        window.open(shareTargets[action], "_blank", "noopener,noreferrer");
+      }
+    });
+  });
+};
+
+initArticlePage();
 
 const faqTabs = document.querySelectorAll("[data-faq-category]");
 const faqQuestions = document.querySelectorAll("[data-faq-question]");
@@ -264,24 +353,24 @@ const faqItems = document.querySelectorAll(".faq-item");
 const FAQ_CONTENT = {
   product: [
     {
-      question: "O que \u00e9 a Redscale e como ela ajuda empresas de TI e ag\u00eancias criativas?",
+      question: "O que \u00e9 o grupo Redscale e como voc\u00eas ajudam empresas e ag\u00eancias a crescer?",
       answer:
-        "Resposta placeholder sobre produto. Vamos substituir este texto pela resposta final depois.",
+        "O grupo Redscale nasceu de um objetivo simples: auxiliar no crescimento utilizando tecnologia de ponta. Oferecemos uma parceria por projeto ou de forma continuada. Atrav\u00e9s de um framework desenvolvido internamente, faremos diversas perguntas (estrat\u00e9gicas e operacionais) sobre o neg\u00f3cio, e os resultados v\u00e3o nos indicar quais as solu\u00e7\u00f5es s\u00e3o mais adequadas para atingirmos o objetivo. O simples funciona.",
     },
     {
       question: "Para quais tipos de empresa a Redscale \u00e9 mais indicada?",
       answer:
-        "Resposta placeholder sobre perfil de empresa. Vamos ajustar o conte\u00fado final depois.",
+        "No geral, o processo de ganho de produtividade acontece antes da an\u00e1lise de segmento, porque tem a ver com o direcionamento correto e objetivo das atividades da gest\u00e3o e da equipe. Produtividade \u00e9 uma m\u00e9trica de {qualidade do trabalho entregue vs tempo que ele foi feito}; se encurtarmos o tempo e aumentar a qualidade, o seu neg\u00f3cio sentir\u00e1 o impacto independente da \u00e1rea. Entretanto existem fatores de impacto, como quantidade de pessoas na equipe, e o n\u00edvel de imers\u00e3o digital do neg\u00f3cio.",
     },
     {
       question: "A Redscale pode ser personalizada para combinar com a nossa marca?",
       answer:
-        "Resposta placeholder sobre personaliza\u00e7\u00e3o. Este texto ser\u00e1 editado na etapa final.",
+        "Apenas personalizamos a entrega com o seu logo, seu branding, etc. se houver a ado\u00e7\u00e3o no plano de melhoria continuada.",
     },
     {
       question: "A Redscale suporta m\u00faltiplos servi\u00e7os e projetos?",
       answer:
-        "Resposta placeholder sobre servi\u00e7os e projetos. Vamos trocar pela vers\u00e3o correta depois.",
+        "Nos sentimos a vontade com desafios. Quanto mais, melhor. Dependendo do seu contexto, muitas vezes pode acontecer de uma solu\u00e7\u00e3o resolver diversos problemas menores. No geral, grandes complexidades s\u00e3o bolas de neve que come\u00e7aram com um gargalo simples de ser resolvido. O gargalo muitas vezes fica na opera\u00e7\u00e3o como legado e n\u00e3o chega a diretoria. A identifica\u00e7\u00e3o desse gargalo e a aplica\u00e7\u00e3o da nossa solu\u00e7\u00e3o pode, gradualmente, ir resolvendo muitos problemas ao longo do tempo.",
     },
   ],
   support: [
@@ -361,10 +450,6 @@ faqTabs.forEach((tab) => {
   });
 });
 
-if (faqTabs.length && faqQuestions.length) {
-  setActiveFaqCategory("product");
-}
-
 const setupFaqMotion = () => {
   const animatedFaqItems = document.querySelectorAll(".faq-item");
 
@@ -437,6 +522,53 @@ const setupFaqMotion = () => {
 
 setupFaqMotion();
 
+const getScrollTarget = (targetSelector) => {
+  if (!targetSelector) {
+    return null;
+  }
+
+  try {
+    return document.querySelector(targetSelector);
+  } catch (error) {
+    return null;
+  }
+};
+
+const scrollToTargetWithOffset = (target, behavior = "smooth") => {
+  if (!target) {
+    return;
+  }
+
+  const targetTop = window.scrollY + target.getBoundingClientRect().top;
+
+  window.scrollTo({
+    top: Math.max(0, targetTop - NAV_SECTION_SCROLL_OFFSET_PX),
+    behavior,
+  });
+};
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-scroll-offset-target]");
+
+  if (!trigger || isModifiedNavigationEvent(event)) {
+    return;
+  }
+
+  const targetSelector = trigger.dataset.scrollOffsetTarget;
+  const target = getScrollTarget(targetSelector);
+
+  if (!target) {
+    return;
+  }
+
+  event.preventDefault();
+  scrollToTargetWithOffset(target);
+
+  if (window.history?.replaceState) {
+    window.history.replaceState(null, "", targetSelector);
+  }
+});
+
 centeredScrollTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     const targetSelector = trigger.dataset.scrollCenterTarget;
@@ -466,6 +598,16 @@ centeredScrollTriggers.forEach((trigger) => {
   });
 });
 
+if (window.location.hash) {
+  const target = getScrollTarget(window.location.hash);
+
+  if (target) {
+    window.requestAnimationFrame(() => {
+      scrollToTargetWithOffset(target, "auto");
+    });
+  }
+}
+
 scrollTopTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
@@ -481,102 +623,105 @@ scrollTopTriggers.forEach((trigger) => {
   });
 });
 
-const initProjectsSummaryTracking = () => {
-  if (body?.dataset.page !== "home") {
+const initProjectGalleryLightbox = () => {
+  const galleryTriggers = document.querySelectorAll("[data-project-gallery-trigger]");
+  const lightbox = document.querySelector("[data-project-gallery-lightbox]");
+  const lightboxImage = document.querySelector("[data-project-gallery-lightbox-image]");
+  const closeButton = document.querySelector("[data-project-gallery-close]");
+  let activeTrigger = null;
+
+  if (!galleryTriggers.length || !lightbox || !lightboxImage || !closeButton) {
     return;
   }
 
-  const summary = document.querySelector('[data-placeholder-ref="element6"]');
-  const stopTarget = document.querySelector('[data-placeholder-ref="element37"]');
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.removeAttribute("src");
+    lightboxImage.alt = "";
+    body.classList.remove("project-gallery-lightbox-open");
 
-  if (!summary || !stopTarget) {
-    return;
-  }
-
-  let frameId = 0;
-  let layout = null;
-
-  const measure = () => {
-    const previousTransform = summary.style.transform;
-    summary.style.transform = "translateY(0px)";
-
-    const summaryRect = summary.getBoundingClientRect();
-    const stopRect = stopTarget.getBoundingClientRect();
-    const scrollTop = window.scrollY || window.pageYOffset;
-
-    layout = {
-      startCenter: scrollTop + summaryRect.top + summaryRect.height / 2,
-      stopCenter: scrollTop + stopRect.top + stopRect.height / 2,
-    };
-
-    summary.style.transform = previousTransform;
+    if (activeTrigger) {
+      activeTrigger.focus();
+      activeTrigger = null;
+    }
   };
 
-  const apply = () => {
-    frameId = 0;
+  const openLightbox = (trigger) => {
+    const imageSource = trigger.dataset.gallerySrc;
 
-    if (!layout) {
-      measure();
-    }
-
-    if (window.innerWidth <= 991) {
-      summary.style.transform = "translateY(0px)";
+    if (!imageSource) {
       return;
     }
 
-    const viewportCenter = window.scrollY + window.innerHeight / 2;
-    const boundedCenter = Math.min(
-      Math.max(viewportCenter, layout.startCenter),
-      layout.stopCenter
-    );
-    const offset = Math.max(0, boundedCenter - layout.startCenter);
-
-    summary.style.transform = `translateY(${offset.toFixed(2)}px)`;
+    activeTrigger = trigger;
+    lightboxImage.src = imageSource;
+    lightboxImage.alt = trigger.dataset.galleryAlt || "";
+    lightbox.hidden = false;
+    lightbox.setAttribute("aria-hidden", "false");
+    body.classList.add("project-gallery-lightbox-open");
+    closeButton.focus();
   };
 
-  const requestApply = () => {
-    if (!frameId) {
-      frameId = window.requestAnimationFrame(apply);
-    }
-  };
-
-  measure();
-  apply();
-
-  window.addEventListener("scroll", requestApply, { passive: true });
-  window.addEventListener("resize", () => {
-    measure();
-    requestApply();
+  galleryTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      openLightbox(trigger);
+    });
   });
-  window.addEventListener("load", () => {
-    measure();
-    requestApply();
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox || event.target.closest("[data-project-gallery-close]")) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
   });
 };
 
-initProjectsSummaryTracking();
+initProjectGalleryLightbox();
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
+const revealSections = () => {
+  if (!sectionRevealTargets.length) {
+    return;
+  }
+
+  const showSection = (section) => {
+    section.classList.add("is-section-visible");
+  };
+
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    sectionRevealTargets.forEach(showSection);
+    return;
+  }
+
+  const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           return;
         }
 
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
+        showSection(entry.target);
+        sectionObserver.unobserve(entry.target);
       });
     },
     {
-      threshold: 0.18,
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.12,
     }
   );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
+  sectionRevealTargets.forEach((section) => sectionObserver.observe(section));
+};
+
+revealSections();
 
 const getSavedInspectorPreference = () => {
   try {
@@ -594,8 +739,7 @@ const getSavedInspectorPreference = () => {
 
 const inspectParams = new URLSearchParams(window.location.search);
 const savedInspectorPreference = getSavedInspectorPreference();
-const shouldMountInspector =
-  inspectParams.has("inspect") || savedInspectorPreference !== null;
+const shouldMountInspector = true;
 
 const isInspectorEnabledByDefault = () => {
   if (inspectParams.get("inspect") === "1") {
@@ -937,7 +1081,10 @@ if (shouldMountInspector) {
   const inspectBadge = document.createElement("div");
   inspectBadge.className = "inspect-badge";
   inspectBadge.setAttribute("aria-hidden", "true");
-  inspectBadge.innerHTML = `<strong class="inspect-badge__title"></strong>`;
+  inspectBadge.innerHTML = `
+    <strong class="inspect-badge__title"></strong>
+    <span class="inspect-badge__meta"></span>
+  `;
 
   const inspectToggle = document.createElement("button");
   inspectToggle.className = "inspect-toggle";
@@ -948,6 +1095,7 @@ if (shouldMountInspector) {
   document.body.append(inspectBadge, inspectToggle);
 
   const inspectTitle = inspectBadge.querySelector(".inspect-badge__title");
+  const inspectMeta = inspectBadge.querySelector(".inspect-badge__meta");
   let inspectorEnabled = false;
   let activeInspectedElement = null;
 
@@ -964,6 +1112,7 @@ if (shouldMountInspector) {
     clearInspectedElement();
     inspectBadge.classList.remove("is-visible");
     inspectTitle.textContent = "";
+    inspectMeta.textContent = "";
   };
 
   const updateInspectorState = (enabled) => {
@@ -986,14 +1135,21 @@ if (shouldMountInspector) {
     }
   };
 
+  const getPointerPositionLabel = (pointX, pointY) =>
+    `posi\u00e7\u00e3o: (${Math.round(pointX)}, ${Math.round(pointY)})`;
+
   const showBadge = (target, pointX, pointY) => {
-    if (activeInspectedElement !== target) {
+    if (!target) {
+      clearInspectedElement();
+      inspectTitle.textContent = "Mouse";
+    } else if (activeInspectedElement !== target) {
       clearInspectedElement();
       activeInspectedElement = target;
       activeInspectedElement.setAttribute("data-inspected", "true");
       inspectTitle.textContent = getElementPlaceholder(target);
     }
 
+    inspectMeta.textContent = getPointerPositionLabel(pointX, pointY);
     moveBadge(inspectBadge, pointX, pointY);
     inspectBadge.classList.add("is-visible");
   };
@@ -1010,7 +1166,7 @@ if (shouldMountInspector) {
     );
 
     if (!target) {
-      hideBadge();
+      showBadge(null, event.clientX, event.clientY);
       return;
     }
 
@@ -1029,7 +1185,7 @@ if (shouldMountInspector) {
     );
 
     if (!target) {
-      hideBadge();
+      showBadge(null, event.clientX, event.clientY);
       return;
     }
 

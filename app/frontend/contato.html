@@ -3,24 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
     <title>Contato | Redscale</title>
     <meta
       name="description"
       content="P&aacute;gina de contato da Redscale com estrutura editorial e placeholders para conte&uacute;do."
     />
     <script>
-      document.documentElement.classList.add("has-page-transition");
+      document.documentElement.classList.add("has-page-transition", "has-section-reveal");
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Montserrat:wght@400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260430f" />
+    <link rel="preload" href="./fonts/PlayfairDisplay-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/AspektaVF.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/IBMPlexSans-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="./styles.css?v=20260505b" />
   </head>
   <body id="top" class="page--home page--contact" data-page="contact">
-    <header class="editorial-header" data-element-name="Cabe&ccedil;alho editorial contato" data-placeholder-ref="header2">
+    <header class="editorial-header" data-element-name="Cabe&ccedil;alho editorial Redscale" data-placeholder-ref="header1">
       <div class="editorial-header__inner">
         <a class="editorial-brand" href="./home.html" aria-label="Redscale in&iacute;cio" data-placeholder-ref="logo1">
           Redscale
@@ -28,9 +26,7 @@
 
         <div class="editorial-header__actions">
           <nav class="editorial-nav" aria-label="Navega&ccedil;&atilde;o principal">
-            <a class="editorial-nav__link" href="./home.html" data-placeholder-ref="nav10">HOME</a>
-            <a class="editorial-nav__link" href="#contact-form-section11" data-placeholder-ref="nav11">nav11</a>
-            <a class="editorial-nav__link" href="#faq-section11" data-placeholder-ref="nav12">nav12</a>
+            <a class="editorial-nav__link" href="./home.html" data-placeholder-ref="nav1">Home</a>
           </nav>
         </div>
       </div>
@@ -47,42 +43,39 @@
           <div class="contact-section__panel contact-section__panel--dark" data-placeholder-ref="element121">
             <p class="editorial-clients-band__label contact-section__eyebrow" data-placeholder-ref="text146">
               <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element122">_</span>
-              <span class="editorial-clients-band__label-text" data-placeholder-ref="text147">CONTATO</span>
+              <span class="editorial-clients-band__label-text" data-placeholder-ref="text147">PRIMEIROS PASSOS</span>
             </p>
-            <h2 class="contact-section__title" data-placeholder-ref="title17">Vamos conversar</h2>
+            <div class="contact-person" data-placeholder-ref="element117">
+              <img
+                class="contact-person__avatar"
+                src="./assets/images/pexels-minan1398-771319.jpg"
+                alt=""
+                loading="lazy"
+                data-placeholder-ref="element118"
+              />
+            </div>
+            <h2 class="contact-section__title" data-placeholder-ref="title17">Entre em Contato</h2>
             <p class="contact-section__lede" data-placeholder-ref="text152">
-              Conte sobre o seu projeto &mdash; seja um site, produto digital, solu&ccedil;&atilde;o de TI ou campanha criativa.
+              Um fluxo de trabalho colaborativo e claro, projetado para conduzir, sem atritos, projetos do conceito ao lan&ccedil;amento.
             </p>
 
             <div class="contact-section__features" data-placeholder-ref="element126">
               <div class="contact-feature" data-placeholder-ref="element127">
                 <span class="contact-feature__icon" aria-hidden="true" data-placeholder-ref="image31">
-                  <svg viewBox="0 0 24 24" focusable="false" data-placeholder-ref="image33"><path d="M8 8V6A4 4 0 0 1 16 6V8M7 8H17V17A5 5 0 0 1 12 22A5 5 0 0 1 7 17zM4 13H7M17 13H20" data-placeholder-ref="element138" /></svg>
+                  <svg viewBox="0 0 24 24" focusable="false" data-placeholder-ref="image33"><path d="M8 4H16V20H8zM11 6H13M11.5 17.5H12.5" data-placeholder-ref="element138" /></svg>
                 </span>
-                <strong data-placeholder-ref="text148">Resposta r&aacute;pida</strong>
-                <p data-placeholder-ref="text149">Nossa equipe analisa cada solicita&ccedil;&atilde;o e responde em at&eacute; 24 horas</p>
+                <strong data-placeholder-ref="text148">(11) 96836-8212</strong>
               </div>
               <div class="contact-feature" data-placeholder-ref="element128">
                 <span class="contact-feature__icon" aria-hidden="true" data-placeholder-ref="image32">
-                  <svg viewBox="0 0 24 24" focusable="false" data-placeholder-ref="image34"><path d="M4 10L20 4L14 20L11 13zM11 13L20 4" data-placeholder-ref="element139" /></svg>
+                  <svg viewBox="0 0 24 24" focusable="false" data-placeholder-ref="image34"><path d="M4 7H20V17H4zM4 8L12 13L20 8" data-placeholder-ref="element139" /></svg>
                 </span>
-                <strong data-placeholder-ref="text150">Pr&oacute;ximos passos claros</strong>
-                <p data-placeholder-ref="text151">Depois do seu contato, voc&ecirc; recebe um plano sob medida com cronograma, escopo e investimento</p>
+                <strong data-placeholder-ref="text150">fale.comigo@redscale.company</strong>
               </div>
-            </div>
-
-            <div class="contact-person" data-placeholder-ref="element117">
-              <span class="contact-person__surface" aria-hidden="true" data-placeholder-ref="element140"></span>
-              <div class="contact-person__avatar" aria-hidden="true" data-placeholder-ref="element118"></div>
-              <div class="contact-person__copy" data-placeholder-ref="element119">
-                <span data-placeholder-ref="text125">Founder da Redscale</span>
-                <strong data-placeholder-ref="text126">Raul Corr&ecirc;a Veiga</strong>
-              </div>
-              <a class="contact-person__button" href="./contato.html" data-placeholder-ref="cta7">Conversar</a>
             </div>
           </div>
 
-          <div class="contact-section__panel contact-section__panel--form" id="contact-form-section9" data-placeholder-ref="element129">
+          <div class="contact-section__panel contact-section__panel--form" id="contact-form-section9">
             <video
               class="contact-section__panel-video"
               src="./assets/videos/hero.mp4"
@@ -93,7 +86,7 @@
               aria-hidden="true"
               data-placeholder-ref="image30"
             ></video>
-            <form class="contact-form-card" action="#" method="post" data-placeholder-ref="element130">
+            <form class="contact-form-card" action="https://formspree.io/f/mreyyorn" method="post" data-placeholder-ref="element130" data-contact-form>
               <span class="contact-form-card__surface" aria-hidden="true" data-placeholder-ref="element132"></span>
               <div class="contact-form-card__brand-wrap" data-placeholder-ref="element133">
                 <a class="editorial-brand" href="./home.html" aria-label="Redscale in&iacute;cio" data-placeholder-ref="form1">
@@ -102,8 +95,8 @@
               </div>
               <h2 data-placeholder-ref="title16">Tem um projeto em mente?</h2>
               <label data-placeholder-ref="element134">
-                <span data-placeholder-ref="text127">[COMECE AGORA]</span>
-                <input type="text" name="first-name" autocomplete="given-name" placeholder="Nome" data-placeholder-ref="field1" />
+                <span data-placeholder-ref="text127">Nome</span>
+                <input type="text" name="first-name" autocomplete="given-name" placeholder=" " data-placeholder-ref="field1" />
               </label>
               <label data-placeholder-ref="element135">
                 <span data-placeholder-ref="text128">Email</span>
@@ -121,71 +114,80 @@
       </section>
 
       <section
-        class="blog-section"
-        data-element-name="Se&ccedil;&atilde;o de canais diretos"
+        class="contact-direct-section"
+        data-element-name="Se&ccedil;&atilde;o contato direto"
         data-placeholder-ref="section13"
       >
-        <div class="blog-section__inner">
-          <div class="blog-section__header">
-            <p class="editorial-clients-band__label blog-section__eyebrow" data-placeholder-ref="text186">
-              <span class="editorial-clients-band__label-mark" aria-hidden="true">_</span>
-              <span class="editorial-clients-band__label-text">text186</span>
+        <div class="contact-direct-section__inner">
+          <div class="contact-direct-section__header" data-placeholder-ref="element123">
+            <p class="editorial-clients-band__label contact-direct-section__eyebrow" data-placeholder-ref="text163">
+              <span class="editorial-clients-band__label-mark" aria-hidden="true">+</span>
+              <span class="editorial-clients-band__label-text">CONTATO</span>
             </p>
-            <h2 class="blog-section__title" data-placeholder-ref="title24">title24</h2>
-            <p class="blog-section__support" data-placeholder-ref="text187">text187</p>
+            <div class="contact-direct-section__copy" data-placeholder-ref="element124">
+              <h2 class="blog-section__title contact-direct-section__title" data-placeholder-ref="title14">Contate-nos diretamente</h2>
+              <p class="blog-section__support contact-direct-section__support" data-placeholder-ref="text164">
+                Queremos te ouvir! Preencha o formul&aacute;rio e responderemos em at&eacute; 24h
+              </p>
+            </div>
           </div>
-          <div class="blog-section__grid" aria-label="Canais de contato">
-            <article class="blog-card">
-              <div class="blog-card__top" data-placeholder-ref="element128">
-                <img
-                  class="blog-card__image"
-                  src="./assets/images/blog-raven.jpg"
-                  alt=""
-                  loading="lazy"
-                  data-placeholder-ref="image27"
-                />
-                <span class="blog-card__category" data-placeholder-ref="text188">text188</span>
+
+          <div class="contact-direct-section__grid" data-placeholder-ref="element125">
+            <figure class="contact-direct-section__image-wrap" data-placeholder-ref="element126">
+              <img
+                class="contact-direct-section__image"
+                src="./assets/images/pexels-cottonbro-6803517.jpg"
+                alt="Pessoa trabalhando em atendimento e planejamento"
+                loading="lazy"
+                data-placeholder-ref="image22"
+              />
+            </figure>
+
+            <article class="contact-direct-card" data-placeholder-ref="element127">
+              <div class="contact-direct-card__top">
+                <span class="contact-direct-card__icon" aria-hidden="true" data-placeholder-ref="image23">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M6 21V5.5L12 3L18 5.5V21M9 9H10M14 9H15M9 13H10M14 13H15M8 21V17H16V21" />
+                  </svg>
+                </span>
+                <span class="contact-direct-card__plus" aria-hidden="true">+</span>
               </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2026-04-30" data-placeholder-ref="text189">text189</time>
-                <h3 class="blog-card__title" data-placeholder-ref="title25">title25</h3>
-                <p class="blog-card__excerpt" data-placeholder-ref="text190">text190</p>
+              <span class="contact-direct-card__line" aria-hidden="true"></span>
+              <div class="contact-direct-card__body">
+                <h3 data-placeholder-ref="title18">Escrit&oacute;rio</h3>
+                <p data-placeholder-ref="text165">Atendimento remoto para empresas em todo o Brasil</p>
               </div>
             </article>
 
-            <article class="blog-card">
-              <div class="blog-card__top" data-placeholder-ref="element129">
-                <img
-                  class="blog-card__image"
-                  src="./assets/images/blog-fox.jpg"
-                  alt=""
-                  loading="lazy"
-                  data-placeholder-ref="image28"
-                />
-                <span class="blog-card__category" data-placeholder-ref="text191">text191</span>
+            <article class="contact-direct-card" data-placeholder-ref="element128">
+              <div class="contact-direct-card__top">
+                <span class="contact-direct-card__icon" aria-hidden="true" data-placeholder-ref="image24">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M8 4H16V20H8zM11 6H13M11.5 17.5H12.5" />
+                  </svg>
+                </span>
+                <span class="contact-direct-card__plus" aria-hidden="true">+</span>
               </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2026-04-30" data-placeholder-ref="text192">text192</time>
-                <h3 class="blog-card__title" data-placeholder-ref="title26">title26</h3>
-                <p class="blog-card__excerpt" data-placeholder-ref="text193">text193</p>
+              <span class="contact-direct-card__line" aria-hidden="true"></span>
+              <div class="contact-direct-card__body">
+                <h3 data-placeholder-ref="title19">Atendimento</h3>
+                <p data-placeholder-ref="text166">fale.comigo@redscale.company</p>
               </div>
             </article>
 
-            <article class="blog-card">
-              <div class="blog-card__top" data-placeholder-ref="element130">
-                <img
-                  class="blog-card__image"
-                  src="./assets/images/blog-lion.jpg"
-                  alt=""
-                  loading="lazy"
-                  data-placeholder-ref="image29"
-                />
-                <span class="blog-card__category" data-placeholder-ref="text194">text194</span>
+            <article class="contact-direct-card" data-placeholder-ref="element141">
+              <div class="contact-direct-card__top">
+                <span class="contact-direct-card__icon" aria-hidden="true" data-placeholder-ref="image25">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 6V12L16 14M21 12A9 9 0 1 1 3 12A9 9 0 0 1 21 12Z" />
+                  </svg>
+                </span>
+                <span class="contact-direct-card__plus" aria-hidden="true">+</span>
               </div>
-              <div class="blog-card__body">
-                <time class="blog-card__date" datetime="2026-04-30" data-placeholder-ref="text195">text195</time>
-                <h3 class="blog-card__title" data-placeholder-ref="title27">title27</h3>
-                <p class="blog-card__excerpt" data-placeholder-ref="text196">text196</p>
+              <span class="contact-direct-card__line" aria-hidden="true"></span>
+              <div class="contact-direct-card__body">
+                <h3 data-placeholder-ref="title20">Hor&aacute;rios</h3>
+                <p data-placeholder-ref="text167">Segunda a sexta, das 9h &agrave;s 18h</p>
               </div>
             </article>
           </div>
@@ -234,31 +236,31 @@
           <div class="faq-section__list">
             <details class="faq-item">
               <summary>
-                <span data-faq-question data-placeholder-ref="text136">O que &eacute; a Redscale e como ela ajuda empresas de TI e ag&ecirc;ncias criativas?</span>
+                <span data-faq-question data-placeholder-ref="text136">O que &eacute; o grupo Redscale e como voc&ecirc;s ajudam empresas e ag&ecirc;ncias a crescer?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text140">Resposta placeholder sobre produto. Vamos substituir este texto pela resposta final depois.</p>
+              <p data-faq-answer data-placeholder-ref="text140">O grupo Redscale nasceu de um objetivo simples: auxiliar no crescimento utilizando tecnologia de ponta. Oferecemos uma parceria por projeto ou de forma continuada. Atrav&eacute;s de um framework desenvolvido internamente, faremos diversas perguntas (estrat&eacute;gicas e operacionais) sobre o neg&oacute;cio, e os resultados v&atilde;o nos indicar quais as solu&ccedil;&otilde;es s&atilde;o mais adequadas para atingirmos o objetivo. O simples funciona.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text137">Para quais tipos de empresa a Redscale &eacute; mais indicada?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text141">Resposta placeholder sobre perfil de empresa. Vamos ajustar o conte&uacute;do final depois.</p>
+              <p data-faq-answer data-placeholder-ref="text141">No geral, o processo de ganho de produtividade acontece antes da an&aacute;lise de segmento, porque tem a ver com o direcionamento correto e objetivo das atividades da gest&atilde;o e da equipe. Produtividade &eacute; uma m&eacute;trica de {qualidade do trabalho entregue vs tempo que ele foi feito}; se encurtarmos o tempo e aumentar a qualidade, o seu neg&oacute;cio sentir&aacute; o impacto independente da &aacute;rea. Entretanto existem fatores de impacto, como quantidade de pessoas na equipe, e o n&iacute;vel de imers&atilde;o digital do neg&oacute;cio.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text138">A Redscale pode ser personalizada para combinar com a nossa marca?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text142">Resposta placeholder sobre personaliza&ccedil;&atilde;o. Este texto ser&aacute; editado na etapa final.</p>
+              <p data-faq-answer data-placeholder-ref="text142">Apenas personalizamos a entrega com o seu logo, seu branding, etc. se houver a ado&ccedil;&atilde;o no plano de melhoria continuada.</p>
             </details>
             <details class="faq-item">
               <summary>
                 <span data-faq-question data-placeholder-ref="text139">A Redscale suporta m&uacute;ltiplos servi&ccedil;os e projetos?</span>
                 <i aria-hidden="true"></i>
               </summary>
-              <p data-faq-answer data-placeholder-ref="text143">Resposta placeholder sobre servi&ccedil;os e projetos. Vamos trocar pela vers&atilde;o correta depois.</p>
+              <p data-faq-answer data-placeholder-ref="text143">Nos sentimos a vontade com desafios. Quanto mais, melhor. Dependendo do seu contexto, muitas vezes pode acontecer de uma solu&ccedil;&atilde;o resolver diversos problemas menores. No geral, grandes complexidades s&atilde;o bolas de neve que come&ccedil;aram com um gargalo simples de ser resolvido. O gargalo muitas vezes fica na opera&ccedil;&atilde;o como legado e n&atilde;o chega a diretoria. A identifica&ccedil;&atilde;o desse gargalo e a aplica&ccedil;&atilde;o da nossa solu&ccedil;&atilde;o pode, gradualmente, ir resolvendo muitos problemas ao longo do tempo.</p>
             </details>
           </div>
         </div>
@@ -292,6 +294,6 @@
       </div>
     </footer>
 
-    <script src="./main.js?v=20260430f"></script>
+    <script src="./main.js?v=20260505b"></script>
   </body>
 </html>

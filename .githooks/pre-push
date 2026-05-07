@@ -1,9 +1,13 @@
 #!/bin/sh
 set -eu
 
-blocked_paths='(^|/)assets/|^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+blocked_paths='^frontend/|(^|/)(backups|test-results)/|(^|/)\.codex-.*\.png$|(^|/)\.hero-update-shot.*\.png$|INFORITUWKS210|(^|/)\.env(\.|$)|\.(key|pem|p12|pfx|kdbx|sqlite3?|db|sql|dump|bak)$|secret|credential|token'
+allowed_frontend_assets='^app/frontend/assets/'
 
-tracked_hits="$(git ls-files | grep -Ei "$blocked_paths" || true)"
+tracked_files="$(git ls-files)"
+blocked_asset_hits="$(printf '%s\n' "$tracked_files" | grep -Ei '(^|/)assets/' | grep -Eiv "$allowed_frontend_assets" || true)"
+blocked_other_hits="$(printf '%s\n' "$tracked_files" | grep -Ei "$blocked_paths" || true)"
+tracked_hits="$(printf '%s\n%s\n' "$blocked_asset_hits" "$blocked_other_hits" | sed '/^$/d')"
 
 if [ -n "$tracked_hits" ]; then
   echo "Push bloqueado: ha arquivos proibidos rastreados pelo Git." >&2

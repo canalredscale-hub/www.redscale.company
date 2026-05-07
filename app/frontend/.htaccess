@@ -1,0 +1,16 @@
+Options -Indexes
+DirectoryIndex home.html index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^$ home.html [L]
+  RewriteRule ^home/?$ home.html [L]
+  RewriteRule ^greenscale/?$ greenscale.html [L]
+  RewriteRule ^numbear/?$ numbear.html [L]
+  RewriteRule ^stockhandle/?$ stockhandle.html [L]
+  RewriteRule ^solucoes/?$ solucoes.html [L]
+  RewriteRule ^contato/?$ contato.html [L]
+  RewriteRule ^redsights/?$ redsights.html [L]
+  RewriteRule ^redsights-radar1/?$ redsights-radar1.html [L]
+</IfModule>
