@@ -13,4 +13,12 @@ DirectoryIndex home.html index.html index.php
   RewriteRule ^contato/?$ contato.html [L]
   RewriteRule ^redsights/?$ redsights.html [L]
   RewriteRule ^redsights-radar1/?$ redsights-radar1.html [L]
+  RewriteRule ^planilhas-personalizadas/?$ planilhas-personalizadas.html [L]
+  RewriteRule ^dashboards/?$ dashboards.html [L]
+  RewriteRule ^automacoes/?$ automacoes.html [L]
+  RewriteRule ^controle-de-estoque/?$ controle-de-estoque.html [L]
+  RewriteRule ^financeiro-e-gestao/?$ financeiro-e-gestao.html [L]
+  RewriteRule ^mapeamento-inicial/?$ mapeamento-inicial.html [L]
+  RewriteRule ^recursos-prontos/?$ recursos-prontos.html [L]
+  RewriteRule ^em-construcao/?$ em-construcao.html [L]
 </IfModule>

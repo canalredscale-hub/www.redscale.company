@@ -17,7 +17,6 @@ uv.lock
 /frontend/
 /.local-archive/
 /archive/legacy-project/local-archive/
-/open-lp.cmd
 /open-lp.ps1
 
 # Redscale assets intentionally kept out of GitHub outside the deployable frontend

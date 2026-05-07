@@ -9172,3 +9172,104 @@ body.project-gallery-lightbox-open {
     gap: 12px;
   }
 }
+
+/* Conversion architecture updates */
+.pricing-panel__grid--conversion {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-form-card__intro {
+  position: relative;
+  z-index: 1;
+  margin: -8px 0 14px;
+  color: rgba(0, 0, 0, 0.62);
+  font-family: "Montserrat", "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.contact-form-card select {
+  width: 100%;
+  height: 48px;
+  padding: 0 42px 0 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.34);
+  color: #050505;
+  font-family: "Montserrat", "IBM Plex Sans", sans-serif;
+  outline: none;
+  appearance: none;
+}
+
+.contact-form-card__select-label::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid rgba(0, 0, 0, 0.48);
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.48);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.contact-form-card__select-label span {
+  display: none;
+}
+
+.contact-form-card select:focus {
+  border-color: rgba(246, 73, 52, 0.64);
+  box-shadow: 0 0 0 4px rgba(246, 73, 52, 0.12);
+}
+
+.contact-form-card [data-form-success]:not([hidden]) {
+  display: block;
+  margin-top: 12px;
+  color: #1d7f4f;
+  font-weight: 600;
+}
+
+.construction-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.construction-card {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.construction-card h2,
+.construction-card h3 {
+  margin: 0 0 10px;
+  font-size: clamp(21px, 2vw, 28px);
+}
+
+.construction-card p,
+.construction-card li {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.55;
+}
+
+.construction-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.construction-newsletter {
+  margin-top: 24px;
+}
+
+@media (max-width: 980px) {
+  .pricing-panel__grid--conversion,
+  .construction-cards {
+    grid-template-columns: 1fr;
+  }
+}
