@@ -2717,10 +2717,16 @@ body.page--home {
 }
 
 [data-placeholder-ref="text203"] {
-  color: #8C1F28 !important;
-  font-family: "Playfair Display", Georgia, serif !important;
+  /* Match visual weight of text202 but use Aspekta, with default brand color and light background */
+  font-family: "Aspekta", "IBM Plex Sans", sans-serif !important;
   font-weight: 600;
   letter-spacing: -0.03em;
+  color: #8C1F28 !important;
+  background: #f2f2f2;
+  transition: background-color 220ms ease, color 220ms ease;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
 }
 
 .editorial-projects-mosaic:hover img,
@@ -2745,8 +2751,9 @@ body.page--home {
 
 .editorial-projects-mosaic--stockhandle:hover .editorial-projects-mosaic__brand,
 .editorial-projects-mosaic--stockhandle:focus-visible .editorial-projects-mosaic__brand {
-  background: rgba(242, 242, 242, 0.72);
-  color: #8C1F28;
+  /* On hover swap background and text color (use brand color as background) */
+  background: #8C1F28;
+  color: #f2f2f2;
 }
 
 .editorial-projects-mosaic:focus-visible {
