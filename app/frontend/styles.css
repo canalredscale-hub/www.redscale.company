@@ -8691,7 +8691,7 @@ body.page--home {
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card__avatar--daniel {
-  background-image: url("./assets/images/raul-image-site.png");
+  background-image: url("./assets/images/raul-image-site.jpeg");
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card__avatar--emily {
