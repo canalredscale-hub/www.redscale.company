@@ -80,6 +80,7 @@
   --header-first-section-gap: 0.5cm;
   --nav-section-scroll-offset: 0.5cm;
   --support-card-lift-11mm-px: calc(1.1 * 37.7953px);
+  --results-card-lift-05cm: calc(0.5 * 37.7953px);
   --greenscale-shell-width: 1320px;
   --font-ibm-plex-requested: "IBM Plex Sans";
   --dark-editorial-panel-bg:
@@ -8687,11 +8688,13 @@ body.page--home {
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--profile-top {
   grid-column: 2;
   grid-row: 1;
+  transform: translateY(calc(-1 * var(--results-card-lift-05cm)));
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-center {
   grid-column: 2;
   grid-row: 2 / span 2;
+  transform: translateY(calc(-1 * var(--results-card-lift-05cm)));
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-right {
@@ -8953,6 +8956,39 @@ body.page--home {
     grid-column: auto;
     grid-row: auto;
     min-height: 118px;
+    transform: none;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-left {
+    order: 1;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--profile-left {
+    order: 2;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-center {
+    order: 3;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--profile-top {
+    order: 4;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-right {
+    order: 5;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--profile-right {
+    order: 6;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--rating {
+    order: 7;
+  }
+
+  :is(.page--projects, .page--home) .projects-testimonials-section .results-card--proof {
+    order: 8;
   }
 
   :is(.page--projects, .page--home) .projects-testimonials-section .results-card--reference-quote,
