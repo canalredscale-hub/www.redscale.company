@@ -1193,7 +1193,7 @@ body.page--home {
   border-radius: 999px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent),
-    url("./assets/images/raul-image-site.png") center / cover;
+    url("./assets/images/raul-image-site.jpeg") center / cover;
 }
 
 .article-cover {
@@ -5471,7 +5471,7 @@ body.page--home {
   border-radius: 16px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
-    url("./assets/images/raul-image-site.png") center top / cover;
+    url("./assets/images/raul-image-site.jpeg") center top / cover;
   filter: grayscale(0.08) contrast(1.04);
   object-fit: cover;
   object-position: center;
@@ -5750,7 +5750,7 @@ body.page--home {
   border-radius: 13px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent),
-    url("./assets/images/raul-image-site.png") center / cover;
+    url("./assets/images/raul-image-site.jpeg") center / cover;
   filter: grayscale(0.15) contrast(1.03);
 }
 
@@ -8707,7 +8707,7 @@ body.page--home {
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="image41"] {
-  background-image: url("./assets/images/foto-depoimento-2.jpg");
+  background-image: url("./assets/images/mr-belga-2145.png");
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="text173"],
@@ -8825,7 +8825,7 @@ body.page--home {
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card__review-avatar--three {
-  background-image: url("./assets/images/foto-depoimento-2.jpg");
+  background-image: url("./assets/images/mr-belga-2145.png");
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card__review-row strong {

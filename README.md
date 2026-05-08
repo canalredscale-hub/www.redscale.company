@@ -261,3 +261,12 @@ Select-String -Path 'app/frontend/greenscale.html' -Pattern 'data-placeholder-re
 ```
 
 Em PowerShell neste workspace, se `rg` falhar por permissão, use `Select-String`.
+
+
+## Sincronizar último commit com GitHub e diretório local
+
+No Windows, execute na raiz do projeto:
+
+```powershell
+.\sync-latest.cmd
+```
