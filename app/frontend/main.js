@@ -8,6 +8,7 @@ const centeredScrollTriggers = document.querySelectorAll("[data-scroll-center-ta
 const scrollTopTriggers = document.querySelectorAll("[data-scroll-top]");
 const PAGE_TRANSITION_DURATION_MS = 320;
 const NAV_SECTION_SCROLL_OFFSET_PX = 0.5 * (96 / 2.54);
+const SECTION_REVEAL_INITIAL_OFFSET_PX = 24;
 const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/mreyyorn";
 const NEWSLETTER_FORM_ENDPOINT = "https://formspree.io/f/xykopqqj";
 const INSPECTOR_STORAGE_KEY = "redscale-inspector";
@@ -545,15 +546,48 @@ const getScrollTarget = (targetSelector) => {
   }
 };
 
+const getCurrentTranslateYOffset = (element) => {
+  if (!element) {
+    return 0;
+  }
+
+  const transform = window.getComputedStyle(element).transform;
+  if (!transform || transform === "none") {
+    return 0;
+  }
+
+  if (transform.startsWith("matrix3d(")) {
+    const values = transform
+      .slice("matrix3d(".length, -1)
+      .split(",")
+      .map((value) => Number.parseFloat(value.trim()));
+    return Number.isFinite(values[13]) ? values[13] : 0;
+  }
+
+  if (transform.startsWith("matrix(")) {
+    const values = transform
+      .slice("matrix(".length, -1)
+      .split(",")
+      .map((value) => Number.parseFloat(value.trim()));
+    return Number.isFinite(values[5]) ? values[5] : 0;
+  }
+
+  return 0;
+};
+
 const scrollToTargetWithOffset = (target, behavior = "smooth") => {
   if (!target) {
     return;
   }
 
   const targetTop = window.scrollY + target.getBoundingClientRect().top;
+  const revealCompensation = Math.max(
+    0,
+    Math.min(SECTION_REVEAL_INITIAL_OFFSET_PX, getCurrentTranslateYOffset(target))
+  );
 
   window.scrollTo({
-    top: Math.max(0, targetTop - NAV_SECTION_SCROLL_OFFSET_PX),
+    top: Math.max(0, targetTop - (NAV_SECTION_SCROLL_OFFSET_PX + revealCompensation)),
     behavior,
   });
 };
