@@ -8707,6 +8707,7 @@ body.page--home {
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="image41"] {
+  background-color: #fff;
   background-image: url("./assets/images/mr-belga-2145.png");
 }
 
