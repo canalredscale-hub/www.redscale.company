@@ -7822,7 +7822,7 @@ body.page--home {
   }
 
   .pricing-card--support {
-    padding-bottom: 28px;
+    padding-bottom: 92px;
   }
 
   .pricing-card__button {
@@ -8082,6 +8082,23 @@ body.page--home {
 
   .editorial-clients-band__projects {
     margin-top: 72px;
+    text-align: left;
+  }
+
+  .editorial-projects-summary {
+    width: min(100%, 430px);
+    margin-right: auto;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .editorial-projects-summary [data-placeholder-ref="text3"],
+  .editorial-projects-summary [data-placeholder-ref="title2"],
+  .editorial-projects-summary [data-placeholder-ref="text4"] {
+    width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
   }
 
   .editorial-projects-mosaic-stack {
@@ -9416,5 +9433,50 @@ body.project-gallery-lightbox-open {
 @media (max-width: 720px) {
   .construction-mini-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .page--home [data-placeholder-ref="element6"] {
+    justify-self: start;
+    align-self: start;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  .page--home [data-placeholder-ref="element6"] > [data-placeholder-ref="text3"],
+  .page--home [data-placeholder-ref="element6"] > [data-placeholder-ref="title2"],
+  .page--home [data-placeholder-ref="element6"] > [data-placeholder-ref="text4"] {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    margin-right: auto;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .page--home [data-placeholder-ref="element6"] > [data-placeholder-ref="text3"] {
+    display: inline-flex;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .page--home [data-placeholder-ref="card5"],
+  .page--home [data-placeholder-ref="card6"],
+  .page--home [data-placeholder-ref="card7"] {
+    height: 220px;
+    min-height: 220px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .page--home [data-placeholder-ref="image2"],
+  .page--home [data-placeholder-ref="image49"],
+  .page--home [data-placeholder-ref="image50"] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
