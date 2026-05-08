@@ -106,6 +106,54 @@ currentYearTargets.forEach((target) => {
   target.textContent = new Date().getFullYear();
 });
 
+
+const pushRedscaleEvent = (eventName, detail = {}) => {
+  const payload = {
+    event: eventName,
+    page: window.location.pathname,
+    ...detail,
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
+  window.dispatchEvent(new CustomEvent("redscale:track", { detail: payload }));
+};
+
+const getTrackingDetail = (element) => ({
+  origem: element?.dataset.trackOrigin || element?.dataset.formOrigin || "",
+  interesse: element?.dataset.trackInterest || element?.dataset.formInterest || "",
+  texto: (element?.textContent || "").replace(/\s+/g, " ").trim(),
+  destino: element?.getAttribute?.("href") || "",
+});
+
+document.addEventListener("click", (event) => {
+  const target = event.target.closest("[data-track-event], a[href*='wa.me'], a[href*='whatsapp']");
+
+  if (!target) {
+    return;
+  }
+
+  const eventName = target.dataset.trackEvent || "whatsapp_click";
+  pushRedscaleEvent(eventName, getTrackingDetail(target));
+});
+
+const hydrateFormTrackingFields = (form) => {
+  const params = new URLSearchParams(window.location.search);
+  const origin = params.get("origem") || form.dataset.formOrigin || "contato";
+  const interest = params.get("interesse") || form.dataset.formInterest || "mapeamento";
+  const originField = form.querySelector("[data-form-origin-field]");
+  const interestField = form.querySelector("[data-form-interest-field]");
+  const pageField = form.querySelector("[data-form-page-field]");
+
+  if (originField) originField.value = origin;
+  if (interestField) interestField.value = interest;
+  if (pageField) pageField.value = window.location.pathname;
+
+  form.querySelectorAll("[data-utm-field]").forEach((field) => {
+    field.value = params.get(field.dataset.utmField) || "";
+  });
+};
+
 const initRedsightsFilters = () => {
   const filterButtons = document.querySelectorAll("[data-redsights-filter]");
   const redsightsCards = document.querySelectorAll(
@@ -225,6 +273,7 @@ const initRedsightsNewsletter = () => {
           throw new Error("Newsletter submit failed");
         }
 
+        pushRedscaleEvent("newsletter_signup", { origem: form.dataset.formOrigin || "newsletter", interesse: form.dataset.formInterest || "newsletter" });
         form.classList.add("redsights-newsletter--submitted");
         successMessage.hidden = false;
         successMessage.focus();
@@ -244,6 +293,14 @@ const initContactForms = () => {
 
   contactForms.forEach((form) => {
     form.action = CONTACT_FORM_ENDPOINT;
+    hydrateFormTrackingFields(form);
+
+    let hasStarted = false;
+    form.addEventListener("focusin", () => {
+      if (hasStarted) return;
+      hasStarted = true;
+      pushRedscaleEvent("form_start", { origem: form.dataset.formOrigin || "contato", interesse: form.dataset.formInterest || "mapeamento" });
+    });
 
     const submitButton = form.querySelector('[data-placeholder-ref="element137"]');
     const submitLabel = form.querySelector('[data-placeholder-ref="cta8"]');
@@ -276,7 +333,9 @@ const initContactForms = () => {
           throw new Error("Contact submit failed");
         }
 
+        pushRedscaleEvent("form_submit", { origem: form.dataset.formOrigin || "contato", interesse: form.dataset.formInterest || "mapeamento" });
         form.reset();
+        hydrateFormTrackingFields(form);
         submitLabel.textContent = "Obrigado! Em breve te responderemos!";
       } catch (error) {
         submitButton.disabled = false;
@@ -352,70 +411,22 @@ const faqItems = document.querySelectorAll(".faq-item");
 
 const FAQ_CONTENT = {
   product: [
-    {
-      question: "O que \u00e9 o grupo Redscale e como voc\u00eas ajudam empresas e ag\u00eancias a crescer?",
-      answer:
-        "O grupo Redscale nasceu de um objetivo simples: auxiliar no crescimento utilizando tecnologia de ponta. Oferecemos uma parceria por projeto ou de forma continuada. Atrav\u00e9s de um framework desenvolvido internamente, faremos diversas perguntas (estrat\u00e9gicas e operacionais) sobre o neg\u00f3cio, e os resultados v\u00e3o nos indicar quais as solu\u00e7\u00f5es s\u00e3o mais adequadas para atingirmos o objetivo. O simples funciona.",
-    },
-    {
-      question: "Para quais tipos de empresa a Redscale \u00e9 mais indicada?",
-      answer:
-        "No geral, o processo de ganho de produtividade acontece antes da an\u00e1lise de segmento, porque tem a ver com o direcionamento correto e objetivo das atividades da gest\u00e3o e da equipe. Produtividade \u00e9 uma m\u00e9trica de {qualidade do trabalho entregue vs tempo que ele foi feito}; se encurtarmos o tempo e aumentar a qualidade, o seu neg\u00f3cio sentir\u00e1 o impacto independente da \u00e1rea. Entretanto existem fatores de impacto, como quantidade de pessoas na equipe, e o n\u00edvel de imers\u00e3o digital do neg\u00f3cio.",
-    },
-    {
-      question: "A Redscale pode ser personalizada para combinar com a nossa marca?",
-      answer:
-        "Apenas personalizamos a entrega com o seu logo, seu branding, etc. se houver a ado\u00e7\u00e3o no plano de melhoria continuada.",
-    },
-    {
-      question: "A Redscale suporta m\u00faltiplos servi\u00e7os e projetos?",
-      answer:
-        "Nos sentimos a vontade com desafios. Quanto mais, melhor. Dependendo do seu contexto, muitas vezes pode acontecer de uma solu\u00e7\u00e3o resolver diversos problemas menores. No geral, grandes complexidades s\u00e3o bolas de neve que come\u00e7aram com um gargalo simples de ser resolvido. O gargalo muitas vezes fica na opera\u00e7\u00e3o como legado e n\u00e3o chega a diretoria. A identifica\u00e7\u00e3o desse gargalo e a aplica\u00e7\u00e3o da nossa solu\u00e7\u00e3o pode, gradualmente, ir resolvendo muitos problemas ao longo do tempo.",
-    },
+    { question: "Quanto custa começar com a Redscale?", answer: "Depende do formato. Produtos prontos começam em tickets menores, planilhas sob medida partem de R$ 497, dashboards e automações partem de R$ 1.500, e projetos maiores são definidos após mapeamento." },
+    { question: "Quanto tempo leva para entregar?", answer: "Demandas simples podem ser resolvidas em poucos dias. Sprints operacionais e projetos de gestão dependem do escopo, dados disponíveis, urgência e participação do time." },
+    { question: "Qual a diferença entre produto pronto e sob medida?", answer: "Produto pronto resolve uma necessidade comum com estrutura já definida. Sob medida parte dos seus controles, dados e rotina para criar uma ferramenta específica para sua operação." },
+    { question: "Vocês também dão manutenção depois da entrega?", answer: "Sim. A manutenção pode ser combinada por ajuste pontual, pacote de evolução ou parceria contínua, conforme criticidade da operação e frequência de melhoria necessária." },
   ],
   support: [
-    {
-      question: "Como funciona o suporte depois que o projeto \u00e9 entregue?",
-      answer:
-        "Resposta placeholder sobre suporte p\u00f3s-entrega. Vamos inserir a pol\u00edtica correta depois.",
-    },
-    {
-      question: "Existe acompanhamento durante a implanta\u00e7\u00e3o?",
-      answer:
-        "Resposta placeholder sobre acompanhamento. Este texto ser\u00e1 refinado com as condi\u00e7\u00f5es finais.",
-    },
-    {
-      question: "Quais canais de atendimento ficam dispon\u00edveis para o cliente?",
-      answer:
-        "Resposta placeholder sobre canais de suporte. Vamos editar com os canais oficiais depois.",
-    },
-    {
-      question: "A Redscale ajuda o time interno a usar a solu\u00e7\u00e3o?",
-      answer:
-        "Resposta placeholder sobre treinamento e ado\u00e7\u00e3o. Vamos trocar pela resposta definitiva depois.",
-    },
+    { question: "Como funciona o mapeamento inicial?", answer: "A primeira etapa organiza problema, dados disponíveis, urgência, impacto e caminho recomendado. Ela evita começar construindo ferramenta antes de entender o que precisa ser resolvido." },
+    { question: "Vocês implantam a ferramenta com o time?", answer: "Sim. A implantação pode incluir ajustes, orientação de uso, organização da rotina e acompanhamento para reduzir atrito na adoção." },
+    { question: "Quais canais ficam disponíveis?", answer: "O canal é definido conforme o projeto. Normalmente usamos WhatsApp e e-mail para triagem, alinhamentos e próximos passos objetivos." },
+    { question: "A Redscale trabalha com dados confidenciais?", answer: "Sim. O escopo pode ser conduzido com acesso limitado, bases anonimizadas ou regras específicas de confidencialidade, conforme necessidade do cliente." },
   ],
   payments: [
-    {
-      question: "Como funciona o pagamento dos projetos?",
-      answer:
-        "Resposta placeholder sobre pagamento. Vamos preencher os formatos aceitos depois.",
-    },
-    {
-      question: "Os planos podem ser pagos mensalmente?",
-      answer:
-        "Resposta placeholder sobre recorr\u00eancia. Este conte\u00fado ser\u00e1 ajustado ap\u00f3s a defini\u00e7\u00e3o comercial.",
-    },
-    {
-      question: "O or\u00e7amento muda conforme o escopo?",
-      answer:
-        "Resposta placeholder sobre varia\u00e7\u00e3o de escopo. Vamos inserir a regra correta depois.",
-    },
-    {
-      question: "Existe cobran\u00e7a de manuten\u00e7\u00e3o ou suporte cont\u00ednuo?",
-      answer:
-        "Resposta placeholder sobre manuten\u00e7\u00e3o. Vamos substituir pela resposta final depois.",
-    },
+    { question: "O orçamento muda conforme o escopo?", answer: "Sim. O investimento depende de complexidade, quantidade de dados, integrações, nível de automação, prazo e acompanhamento necessário." },
+    { question: "Existe pagamento mensal?", answer: "Projetos pontuais podem ser fechados por escopo. Parcerias contínuas, manutenção e evolução mensal são tratadas sob proposta." },
+    { question: "Posso começar pequeno?", answer: "Sim. Essa é a recomendação quando o problema ainda não está claro. É possível começar com produto pronto, planilha sob medida ou sprint operacional." },
+    { question: "O que recebo depois de enviar o formulário?", answer: "Você recebe um retorno com o melhor caminho: produto pronto, ferramenta sob medida, sprint operacional, projeto de gestão ou parceria contínua." },
   ],
 };
 

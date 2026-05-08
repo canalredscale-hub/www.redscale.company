@@ -7,7 +7,7 @@
     <title>Stockhandle | Redscale</title>
     <meta
       name="description"
-      content="Página Stockhandle da Redscale em construção com inscrição para novidades."
+      content="Página em construção da Redscale para controle de estoque, compras, vendas, giro e reposição."
     />
     <script>
       document.documentElement.classList.add("has-page-transition", "has-section-reveal");
@@ -17,7 +17,7 @@
     <link rel="preload" href="./assets/fonts/IBMPlexSans-400.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="./styles.css?v=20260505b" />
   </head>
-  <body id="top" class="page--home page--projects page--stockhandle" data-page="stockhandle">
+  <body id="top" class="page--home page--projects page--construction page--stockhandle" data-page="stockhandle">
     <header class="editorial-header" data-element-name="Cabeçalho editorial Redscale" data-placeholder-ref="header1">
       <div class="editorial-header__inner">
         <a class="editorial-brand" href="./home.html" aria-label="Redscale início" data-placeholder-ref="logo1">
@@ -32,7 +32,7 @@
       </div>
     </header>
 
-    <main class="editorial-home stockhandle-page">
+    <main class="editorial-home construction-page stockhandle-page">
       <section class="editorial-clients-band redsights-projects-hero greenscale-construction-hero" data-element-name="Destaque Stockhandle" data-placeholder-ref="section14">
         <div class="editorial-clients-band__projects" data-placeholder-ref="element145">
           <div class="editorial-projects-summary" data-placeholder-ref="element160">
@@ -40,16 +40,15 @@
               <span class="editorial-clients-band__label-mark" aria-hidden="true" data-placeholder-ref="element161">_</span>
               <span class="editorial-clients-band__label-text" data-placeholder-ref="text198">STOCKHANDLE</span>
             </p>
-            <h1 class="editorial-clients-band__project-title" data-placeholder-ref="title28">
-              Estamos construindo a seção
-            </h1>
-            <p class="editorial-clients-band__project-copy" data-placeholder-ref="text199">
-              Agradecemos por vir conferir. Estamos organizando o conteúdo para apresentar de forma decente. Avisaremos na news quando a página estiver pronta, fique a vontade para se inscrever.
-            </p>
+            <h1 class="editorial-clients-band__project-title" data-placeholder-ref="title28">Estamos construindo a seção Stockhandle</h1>
+            <p class="editorial-clients-band__project-copy" data-placeholder-ref="text199">Esta página reunirá soluções, exemplos, formatos de contratação e materiais para quem precisa organizar controle de estoque, compras, vendas, giro e reposição. Enquanto isso, você pode deixar seu e-mail para ser avisado ou falar com a Redscale sobre uma demanda atual.</p>
+            <div class="construction-actions"><a class="editorial-hero__action editorial-hero__action--primary" href="./contato.html?origem=stockhandle&interesse=estoque" data-track-event="cta_click" data-track-origin="stockhandle" data-track-interest="estoque">Falar sobre minha demanda</a><a class="editorial-hero__action editorial-hero__action--secondary" href="./home.html#formas-de-comecar">Voltar às formas de começar</a></div>
           </div>
           <div class="editorial-projects-mosaic-stack" data-placeholder-ref="element162">
-            <form class="redsights-newsletter" action="https://formspree.io/f/xykopqqj" method="post" data-redsights-newsletter-form>
-              <p class="redsights-newsletter__title">Assine nossa newsletter</p>
+            <form class="redsights-newsletter" action="https://formspree.io/f/xykopqqj" method="post" data-redsights-newsletter-form data-form-origin="stockhandle" data-form-interest="estoque">
+              <p class="redsights-newsletter__title">Quero ser avisado</p>
+              <input type="hidden" name="origem" value="stockhandle" />
+              <input type="hidden" name="interesse" value="estoque" />
               <div class="redsights-newsletter__controls">
                 <label class="visually-hidden" for="stockhandle-newsletter-email">E-mail</label>
                 <input
@@ -64,13 +63,14 @@
                   data-redsights-newsletter-email
                 />
                 <button class="redsights-newsletter__button" type="submit" data-redsights-newsletter-submit>
-                  Enviar
+                  Quero ser avisado
                 </button>
               </div>
               <p class="redsights-newsletter__success" tabindex="-1" hidden data-redsights-newsletter-success>
                 Obrigado por se inscrever!
               </p>
             </form>
+            <div class="construction-mini-grid"><span>O que virá</span><span>Para quem será útil</span><span>Tipos de entrega</span><span>Publicação em breve</span></div>
           </div>
         </div>
       </section>

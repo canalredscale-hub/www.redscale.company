@@ -54,9 +54,9 @@
                 data-placeholder-ref="element118"
               />
             </div>
-            <h2 class="contact-section__title" data-placeholder-ref="title17">Entre em Contato</h2>
+            <h2 class="contact-section__title" data-placeholder-ref="title17">Conte o que precisa organizar.</h2>
             <p class="contact-section__lede" data-placeholder-ref="text152">
-              Um fluxo de trabalho colaborativo e claro, projetado para conduzir, sem atritos, projetos do conceito ao lançamento.
+              Preencha o formulário com o contexto da sua demanda. A partir disso, indicamos o melhor caminho: produto pronto, ferramenta sob medida, sprint operacional ou parceria contínua.
             </p>
 
             <div class="contact-section__features" data-placeholder-ref="element126">
@@ -86,28 +86,27 @@
               aria-hidden="true"
               data-placeholder-ref="image30"
             ></video>
-            <form class="contact-form-card" action="https://formspree.io/f/mreyyorn" method="post" data-placeholder-ref="element130" data-contact-form>
+            <form class="contact-form-card" action="https://formspree.io/f/mreyyorn" method="post" data-placeholder-ref="element130" data-contact-form data-form-origin="contato" data-form-interest="mapeamento">
               <span class="contact-form-card__surface" aria-hidden="true" data-placeholder-ref="element132"></span>
-              <div class="contact-form-card__brand-wrap" data-placeholder-ref="element133">
-                <a class="editorial-brand" href="./home.html" aria-label="Redscale início" data-placeholder-ref="form1">
-                  Redscale
-                </a>
-              </div>
-              <h2 data-placeholder-ref="title16">Tem um projeto em mente?</h2>
-              <label data-placeholder-ref="element134">
-                <span data-placeholder-ref="text127">Nome</span>
-                <input type="text" name="first-name" autocomplete="given-name" placeholder=" " data-placeholder-ref="field1" />
-              </label>
-              <label data-placeholder-ref="element135">
-                <span data-placeholder-ref="text128">Email</span>
-                <input type="email" name="email" autocomplete="email" placeholder=" " data-placeholder-ref="field2" />
-              </label>
-              <label data-placeholder-ref="element136">
-                <span data-placeholder-ref="text129">Detalhes do projeto</span>
-                <textarea name="project-details" placeholder=" " data-placeholder-ref="field3"></textarea>
-              </label>
-              <button type="submit" data-placeholder-ref="element137"><span data-placeholder-ref="cta8">Enviar solicitação</span></button>
-              <p class="contact-form-card__legal" data-placeholder-ref="text153">Ao enviar este formulário, você concorda com nossos Termos e Política de Privacidade</p>
+              <div class="contact-form-card__brand-wrap" data-placeholder-ref="element133"><a class="editorial-brand" href="./home.html" aria-label="Redscale início" data-placeholder-ref="form1">Redscale</a></div>
+              <h2 data-placeholder-ref="title16">Conte o que precisa organizar.</h2>
+              <input type="hidden" name="origem" value="contato" data-form-origin-field />
+              <input type="hidden" name="interesse" value="mapeamento" data-form-interest-field />
+              <input type="hidden" name="pagina_atual" value="" data-form-page-field />
+              <input type="hidden" name="utm_source" value="" data-utm-field="utm_source" />
+              <input type="hidden" name="utm_medium" value="" data-utm-field="utm_medium" />
+              <input type="hidden" name="utm_campaign" value="" data-utm-field="utm_campaign" />
+              <input type="hidden" name="utm_content" value="" data-utm-field="utm_content" />
+              <label data-placeholder-ref="element134"><span data-placeholder-ref="text127">Nome</span><input type="text" name="nome" autocomplete="name" placeholder=" " required data-placeholder-ref="field1" /></label>
+              <label data-placeholder-ref="element135"><span data-placeholder-ref="text128">WhatsApp</span><input type="tel" name="whatsapp" autocomplete="tel" placeholder=" " required data-placeholder-ref="field2" /></label>
+              <label data-placeholder-ref="element136"><span data-placeholder-ref="text129">E-mail</span><input type="email" name="email" autocomplete="email" placeholder=" " required data-placeholder-ref="field3" /></label>
+              <label><span>Empresa</span><input type="text" name="empresa" autocomplete="organization" placeholder=" " data-placeholder-ref="field4" /></label>
+              <label><span>O que você precisa?</span><select name="tipo_demanda" required data-placeholder-ref="field5"><option value="" selected disabled>Selecione uma opção</option><option value="planilha-personalizada">Planilha personalizada</option><option value="dashboard">Dashboard</option><option value="automacao">Automação</option><option value="financeiro">Financeiro</option><option value="estoque">Estoque</option><option value="processos">Processos</option><option value="ainda-nao-sei">Ainda não sei</option></select></label>
+              <label><span>Urgência</span><select name="urgencia" required data-placeholder-ref="field6"><option value="" selected disabled>Selecione uma opção</option><option value="esta-semana">Esta semana</option><option value="este-mes">Este mês</option><option value="sem-urgencia">Sem urgência</option></select></label>
+              <label><span>Faixa de investimento</span><select name="faixa_investimento" data-placeholder-ref="field7"><option value="" selected>Prefiro conversar antes</option><option value="ate-500">Até R$ 500</option><option value="500-1500">R$ 500 - R$ 1.500</option><option value="1500-5000">R$ 1.500 - R$ 5.000</option><option value="acima-5000">Acima de R$ 5.000</option><option value="ainda-nao-sei">Ainda não sei</option></select></label>
+              <label data-placeholder-ref="element136"><span>Detalhes da demanda</span><textarea name="detalhes_demanda" placeholder=" " required data-placeholder-ref="field8"></textarea></label>
+              <button type="submit" data-placeholder-ref="element137"><span data-placeholder-ref="cta8">Enviar demanda para análise</span></button>
+              <p class="contact-form-card__legal" data-placeholder-ref="text153">Responderemos com o melhor caminho: produto pronto, ferramenta sob medida, sprint operacional ou parceria contínua.</p>
             </form>
           </div>
         </div>
@@ -125,9 +124,9 @@
               <span class="editorial-clients-band__label-text">CONTATO</span>
             </p>
             <div class="contact-direct-section__copy" data-placeholder-ref="element124">
-              <h2 class="blog-section__title contact-direct-section__title" data-placeholder-ref="title14">Contate-nos diretamente</h2>
+              <h2 class="blog-section__title contact-direct-section__title" data-placeholder-ref="title14">O que acontece depois do envio?</h2>
               <p class="blog-section__support contact-direct-section__support" data-placeholder-ref="text164">
-                Queremos te ouvir! Preencha o formulário e responderemos em até 24h
+                Analisamos sua demanda, retornamos com perguntas objetivas e indicamos o formato mais adequado para começar sem inflar escopo.
               </p>
             </div>
           </div>
