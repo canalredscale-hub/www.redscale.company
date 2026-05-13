@@ -4131,6 +4131,13 @@ body.page--home {
   min-height: 462px;
 }
 
+@media (min-width: 1101px) {
+  [data-placeholder-ref="card23"],
+  [data-placeholder-ref="card24"] {
+    min-height: 462px;
+  }
+}
+
 .pricing-card--support {
   background:
     radial-gradient(circle at 35% 20%, rgba(255, 255, 255, 0.08), transparent 42%),
@@ -4611,6 +4618,7 @@ body.page--home {
 .blog-section__title {
   display: block;
   width: min(100%, 760px);
+  box-sizing: border-box;
   margin: 0;
   color: #030303;
   font-family: "IBM Plex Sans", sans-serif;
@@ -4624,6 +4632,7 @@ body.page--home {
 .blog-section__support {
   display: block;
   width: min(100%, 760px);
+  box-sizing: border-box;
   margin: 0;
   color: #383838;
   font-size: 15px;
@@ -8954,7 +8963,7 @@ body.page--home {
   display: block;
   width: 100%;
   color: #f7f7f7;
-  font-size: clamp(21px, 1.9vw, 27px);
+  font-size: clamp(20px, 1.8vw, 26px);
   line-height: 1;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -9301,8 +9310,13 @@ body.page--home {
 }
 
 @media (max-width: 767px) {
+  .page--home .blog-section__title,
+  .page--home .blog-section__support {
+    width: min(100%, calc(100vw - 30px));
+  }
+
   .page--home .blog-section__title {
-    font-size: clamp(26px, 7vw, 34px);
+    font-size: clamp(25px, 6.7vw, 34px);
     white-space: nowrap;
   }
 
