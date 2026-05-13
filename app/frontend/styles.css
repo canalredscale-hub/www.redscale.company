@@ -3305,7 +3305,7 @@ body.page--home {
   grid-area: cluster;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: minmax(112px, auto) minmax(150px, auto) minmax(214px, auto);
+  grid-template-rows: minmax(112px, auto) minmax(150px, auto) minmax(272px, auto);
   gap: 8px;
   min-height: clamp(478px, 42vw, 544px);
 }
@@ -3448,8 +3448,8 @@ body.page--home {
   min-height: 48px;
   padding: 12px 16px;
   border-radius: 999px;
-  background: var(--metric-accent-red);
-  color: #f2f2f2;
+  background: #f2f2f2;
+  color: var(--metric-accent-red);
   text-decoration: none;
   transition:
     transform 180ms ease,
@@ -3460,6 +3460,10 @@ body.page--home {
 [data-placeholder-ref="link2"]:hover,
 [data-placeholder-ref="link2"]:focus-visible {
   transform: translateY(-1px);
+}
+
+[data-placeholder-ref="text64"] {
+  color: var(--metric-accent-red);
 }
 
 .metric-card--black {
@@ -5535,6 +5539,8 @@ body.page--home {
 
 .page--contact [data-placeholder-ref="element121"] .contact-section__eyebrow {
   align-self: start;
+  width: min(100%, 420px);
+  max-width: 100%;
   margin: 0;
   color: rgba(242, 242, 242, 0.92);
   font-family: "IBM Plex Sans", sans-serif;
@@ -5580,10 +5586,8 @@ body.page--home {
   width: 100%;
   height: clamp(112px, 13vw, 154px);
   border-radius: 16px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
-    url("./assets/images/raul-image-site.jpeg") center top / cover;
-  filter: grayscale(0.08) contrast(1.04);
+  background: none;
+  filter: none;
   object-fit: cover;
   object-position: center;
 }
@@ -5621,8 +5625,8 @@ body.page--home {
 
 .page--contact [data-placeholder-ref="element121"] .contact-section__title {
   align-self: end;
-  width: min(100%, 560px);
-  max-width: 560px;
+  width: min(100%, 480px);
+  max-width: 100%;
   margin: 0 0 12px;
   color: #f2f2f2;
   font-family: "IBM Plex Sans", sans-serif;
@@ -5630,17 +5634,19 @@ body.page--home {
   line-height: 0.98;
   font-weight: 500;
   letter-spacing: -0.04em;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .page--contact [data-placeholder-ref="element121"] .contact-section__lede {
-  width: min(100%, 560px);
-  max-width: 560px;
+  width: min(100%, 480px);
+  max-width: 100%;
   margin: 0;
   color: rgba(242, 242, 242, 0.92);
   font-size: 15px;
   line-height: 1.45;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 
 .page--contact [data-placeholder-ref="element121"] .contact-section__features {
@@ -9667,9 +9673,9 @@ body.project-gallery-lightbox-open {
   .page--home [data-placeholder-ref="card5"],
   .page--home [data-placeholder-ref="card6"],
   .page--home [data-placeholder-ref="card7"] {
-    height: 220px;
-    min-height: 220px;
-    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .page--home [data-placeholder-ref="image2"],
@@ -9694,4 +9700,18 @@ body.project-gallery-lightbox-open {
 .page--home [data-placeholder-ref="card7"]:hover [data-placeholder-ref="image50"],
 .page--home [data-placeholder-ref="card7"]:focus-visible [data-placeholder-ref="image50"] {
   transform: scale(1.42) translateZ(0);
+}
+
+@media (max-width: 767px) {
+  .page--home [data-placeholder-ref="image2"],
+  .page--home [data-placeholder-ref="image49"],
+  .page--home [data-placeholder-ref="image50"],
+  .page--home [data-placeholder-ref="card5"]:hover [data-placeholder-ref="image2"],
+  .page--home [data-placeholder-ref="card5"]:focus-visible [data-placeholder-ref="image2"],
+  .page--home [data-placeholder-ref="card6"]:hover [data-placeholder-ref="image49"],
+  .page--home [data-placeholder-ref="card6"]:focus-visible [data-placeholder-ref="image49"],
+  .page--home [data-placeholder-ref="card7"]:hover [data-placeholder-ref="image50"],
+  .page--home [data-placeholder-ref="card7"]:focus-visible [data-placeholder-ref="image50"] {
+    transform: none;
+  }
 }
