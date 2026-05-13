@@ -107,6 +107,51 @@ currentYearTargets.forEach((target) => {
   target.textContent = new Date().getFullYear();
 });
 
+const initLoopingVideos = () => {
+  const loopingVideos = document.querySelectorAll("video[autoplay][loop]");
+
+  loopingVideos.forEach((video) => {
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "auto";
+
+    const playVideo = () => {
+      const playPromise = video.play();
+
+      if (playPromise?.catch) {
+        playPromise.catch(() => {
+          // O navegador pode bloquear play em alguns estados; o próximo evento tenta de novo.
+        });
+      }
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo, { once: true });
+      video.load();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "visible") {
+      return;
+    }
+
+    loopingVideos.forEach((video) => {
+      if (video.paused) {
+        const playPromise = video.play();
+
+        if (playPromise?.catch) {
+          playPromise.catch(() => {});
+        }
+      }
+    });
+  });
+};
+
+initLoopingVideos();
+
 
 const pushRedscaleEvent = (eventName, detail = {}) => {
   const payload = {
@@ -784,7 +829,8 @@ const getSavedInspectorPreference = () => {
 
 const inspectParams = new URLSearchParams(window.location.search);
 const savedInspectorPreference = getSavedInspectorPreference();
-const shouldMountInspector = true;
+const isLocalInspectorHost = ["localhost", "127.0.0.1", ""].includes(window.location.hostname);
+const shouldMountInspector = isLocalInspectorHost && inspectParams.get("inspect") === "1";
 
 const isInspectorEnabledByDefault = () => {
   if (inspectParams.get("inspect") === "1") {

@@ -2717,16 +2717,23 @@ body.page--home {
 }
 
 [data-placeholder-ref="text203"] {
-  /* Match visual weight of text202 but use Aspekta, with default brand color and light background */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(176px, 18vw, 236px);
+  max-width: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(242, 242, 242, 0.52);
   font-family: "Aspekta", "IBM Plex Sans", sans-serif !important;
+  font-size: clamp(24px, 2.2vw, 30px);
+  line-height: 1.02;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: #8C1F28 !important;
-  background: #f2f2f2;
+  text-align: center;
+  white-space: nowrap;
   transition: background-color 220ms ease, color 220ms ease;
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 12px;
 }
 
 .editorial-projects-mosaic:hover img,
@@ -8712,13 +8719,13 @@ body.page--home {
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--profile-top {
   grid-column: 2;
   grid-row: 1;
-  transform: translateY(calc(-1 * var(--results-card-lift-05cm)));
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-center {
   grid-column: 2;
   grid-row: 2 / span 2;
-  transform: translateY(calc(-1 * var(--results-card-lift-05cm)));
+  justify-content: space-between;
+  gap: 12px;
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section .results-card--quote-right {
@@ -8829,6 +8836,11 @@ body.page--home {
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="text182"],
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="text183"] {
   font-weight: 400;
+}
+
+:is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="text182"] {
+  font-size: clamp(14px, 0.86vw, 16px);
+  line-height: 1.17;
 }
 
 :is(.page--projects, .page--home) .projects-testimonials-section [data-placeholder-ref="text183"] {
@@ -9143,16 +9155,17 @@ body.page--home {
 
 @media (min-width: 1101px) {
   .page--home .projects-testimonials-section {
-    width: min(100%, 1280px);
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: var(--editorial-edge-space);
-    padding-left: var(--editorial-edge-space);
-    grid-template-columns: minmax(238px, 296px) minmax(190px, 1fr) minmax(480px, 595px);
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(238px, 296px) minmax(190px, 291px) minmax(480px, 595px) minmax(0, 1fr);
     grid-template-areas:
-      "eyebrow title title"
-      ". support support"
-      "grid grid grid";
+      ". eyebrow title title ."
+      ". . support support ."
+      ". grid grid grid .";
     gap: 10px 9px;
   }
 
@@ -9164,6 +9177,14 @@ body.page--home {
     justify-self: center;
     width: min(100%, 1200px);
     margin-left: 0;
+  }
+
+  .page--home .services-showcase__heading {
+    width: min(100%, calc(58ch + 10.1cm));
+  }
+
+  .page--home .metrics-section__heading {
+    width: min(100%, calc(58ch + 7.5cm));
   }
 }
 
