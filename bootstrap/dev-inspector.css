@@ -1,0 +1,62 @@
+body.inspector-on [data-inspected="true"] {
+  outline: 2px dashed rgba(87, 214, 123, 0.95);
+  outline-offset: 8px;
+}
+
+.inspect-toggle,
+.inspect-badge {
+  position: fixed;
+  z-index: 80;
+}
+
+.inspect-toggle {
+  right: 20px;
+  bottom: 20px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: rgba(8, 23, 15, 0.92);
+  color: #eef3ee;
+  cursor: pointer;
+  box-shadow: 0 16px 34px rgba(8, 23, 15, 0.26);
+}
+
+.inspect-badge {
+  top: 0;
+  left: 0;
+  display: grid;
+  gap: 4px;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border: 1px solid rgba(87, 214, 123, 0.32);
+  border-radius: 16px;
+  background: rgba(8, 23, 15, 0.94);
+  color: #eef3ee;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  transition: opacity 120ms ease;
+}
+
+.inspect-badge.is-visible {
+  opacity: 1;
+}
+
+.inspect-badge__title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.inspect-badge__meta {
+  color: rgba(238, 243, 238, 0.7);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .inspect-toggle {
+    right: 14px;
+    bottom: 14px;
+  }
+}

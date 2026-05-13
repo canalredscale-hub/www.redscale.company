@@ -15,10 +15,10 @@ uv.lock
 
 # Local workspace helpers and source snapshot
 /frontend/
+/app-teste/
 /.local-archive/
 /archive/legacy-project/local-archive/
-/open-lp.cmd
-/open-lp.ps1
+/archive/frontend-unused/
 
 # Redscale assets intentionally kept out of GitHub outside the deployable frontend
 assets/
@@ -31,6 +31,7 @@ backups/
 **/backups/
 test-results/
 **/test-results/
+bootstrap/*.log
 .codex-*.png
 **/.codex-*.png
 .hero-update-shot*.png
@@ -64,4 +65,3 @@ test-results/
 
 # Playwright output (local checks)
 output/playwright/
-

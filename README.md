@@ -1,6 +1,6 @@
 # Redscale Company v2 - guia de manutenção
 
-Este projeto é um site estático localizado em `app/frontend`. As páginas usam HTML, CSS e JavaScript puros, com identificação de blocos por `data-placeholder-ref`. Para alterações pontuais, trate esses placeholders como a principal referência de localização.
+Este projeto é um site estático com dois diretórios oficiais: `app/frontend` para deploy aprovado e `app-teste/frontend` para teste e validação. As páginas usam HTML, CSS e JavaScript puros, com identificação de blocos por `data-placeholder-ref`. Para alterações pontuais, trate esses placeholders como a principal referência de localização.
 
 ## Regras gerais
 
@@ -13,7 +13,15 @@ Este projeto é um site estático localizado em `app/frontend`. As páginas usam
 - Imagens de referência devem ser seguidas com alta fidelidade: posição, proporção, formas e detalhes visuais devem se manter próximos ao original.
 - Não faça `git reset`, `git checkout --` ou limpeza destrutiva de alterações existentes.
 - Versionamento do projeto: use commits curtos que reflitam as alterações feitas e faça push a cada alteração quando a etapa de versionamento/publicação for solicitada.
-- Antes de finalizar, rode checagens simples: links locais, `node --check app/frontend/main.js` e HTTP 200 no HTML alterado quando o servidor local estiver ativo.
+- Antes de finalizar, rode checagens simples: links locais, `node --check app-teste/frontend/main.js` e HTTP 200 no HTML alterado quando o servidor local estiver ativo.
+
+## Fluxo oficial de teste e deploy
+
+- `app/frontend` é o diretório oficial de deploy. Ele deve receber arquivos somente depois de aprovação humana e validações feitas em `app-teste/frontend`.
+- `app-teste/frontend` é o diretório oficial de teste. Toda edição visual, textual ou estrutural deve começar nele.
+- `open-lp.cmd` abre sempre `app-teste/frontend`, com inspector local quando disponível.
+- Para iniciar um novo ciclo de trabalho, sincronize `app/frontend` com o último commit aprovado e copie o conteúdo para `app-teste/frontend`.
+- Depois da aprovação humana, copie `app-teste/frontend` para `app/frontend`, rode as validações novamente e só então prepare o deploy.
 
 ## Estrutura principal
 
@@ -26,16 +34,18 @@ Este projeto é um site estático localizado em `app/frontend`. As páginas usam
 - `app/frontend/redsights-radar1.html`: artigo Redsights Radar.
 - `app/frontend/contato.html`: página de contato.
 - `app/frontend/styles.css`: estilos globais e regras responsivas.
-- `app/frontend/main.js`: interações, transição de página, FAQ, newsletter, inspector e filtros Redsights.
+- `app/frontend/main.js`: interações, transição de página, FAQ, newsletter e filtros Redsights.
 - `app/frontend/assets/images`: imagens.
 - `app/frontend/assets/videos`: vídeos.
+
+A mesma estrutura deve existir em `app-teste/frontend` durante o ciclo de teste. Edite e valide primeiro em `app-teste/frontend`; promova para `app/frontend` somente depois da aprovação humana.
 
 ## Como rodar localmente
 
 Use o servidor estático do projeto:
 
 ```powershell
-python app/frontend/dev_server.py --host 127.0.0.1 --port 8000
+python bootstrap/dev_server.py --web-root app-teste/frontend --host 127.0.0.1 --port 8000
 ```
 
 URLs principais:
@@ -200,19 +210,15 @@ Regra:
 - O HTML inicial da categoria `product` deve carregar com o conteúdo final já escrito, sem depender de reescrita no carregamento.
 - O script aplica perguntas/respostas nos elementos `data-faq-question` e `data-faq-answer` apenas quando o usuário troca a categoria do FAQ.
 
-## Inspector
+## Inspector local
 
-O inspector é controlado em `main.js`.
+O inspector não faz parte do deploy oficial. Ele fica fora de `app/frontend`, em `bootstrap/dev-inspector.js` e `bootstrap/dev-inspector.css`, e só é injetado pelo servidor local quando a página é aberta pelo `open-lp.cmd`.
 
-- Chave atual: `redscale-inspector`.
-- Chave legada: `greenscale-inspector`.
-- Botão: `.inspect-toggle`.
-- Badge: `.inspect-badge`.
-- Coordenadas: `.inspect-badge__meta` deve mostrar `posição: (x, y)` enquanto o inspector estiver ligado.
-- O botão deve ser montado em todas as páginas.
+- Entrada local recomendada: `.\open-lp.cmd`.
+- Servidor local com inspector: `python bootstrap/dev_server.py --web-root app-teste/frontend --port 8123 --inject-inspector`.
+- O pacote oficial em `app/frontend` não deve conter `.inspect-toggle`, `.inspect-badge`, `body.inspector-on`, `redscale-inspector` ou `dev_server.py`.
+- Coordenadas: `.inspect-badge__meta` mostra `posição: (x, y)` enquanto o inspector local estiver ligado.
 - Atalho: tecla `i`, exceto quando o foco estiver em campos de texto.
-- Elementos inspecionáveis vêm de `INSPECTABLE_SELECTOR`.
-- O destaque visual usa `body.inspector-on [data-inspected="true"]`.
 
 ## Placeholders e edição segura
 
@@ -235,7 +241,8 @@ Quando um placeholder for removido de uma página, confirme com busca específic
 ## Deploy Hostinger / WordPress
 
 - O pacote publicável é o conteúdo completo de `app/frontend`.
-- Suba as páginas HTML, `styles.css`, `main.js`, `paint-animations.css`, `.htaccess`, `fonts` e `assets` para `public_html` ou para a pasta pública do domínio/subdomínio.
+- `app/frontend` deve conter apenas arquivos oficiais de deploy: páginas HTML ativas, `styles.css`, `main.js`, `.htaccess`, `fonts` e `assets` referenciados.
+- Não suba `bootstrap`, `archive`, `output`, `test-results`, `open-lp.*`, servidor local, inspector local ou arquivos `.tmp`.
 - `home.html` é a entrada principal configurada por `DirectoryIndex`; `index.html` existe como fallback de redirecionamento.
 - Se o WordPress já tiver um `.htaccess`, preserve o backup e coloque as regras estáticas do projeto acima do bloco padrão do WordPress.
 - Formulários de contato usam `https://formspree.io/f/mreyyorn`; newsletters usam `https://formspree.io/f/xykopqqj`. Ambos devem permanecer na página após envio.
@@ -245,7 +252,7 @@ Quando um placeholder for removido de uma página, confirme com busca específic
 Validar JavaScript:
 
 ```powershell
-node --check app/frontend/main.js
+node --check app-teste/frontend/main.js
 ```
 
 Validar se uma página responde no servidor local:
@@ -270,3 +277,5 @@ No Windows, execute na raiz do projeto:
 ```powershell
 .\sync-latest.cmd
 ```
+
+Esse comando remove conflitos locais de sincronização do OneDrive dentro do `.git`, baixa `origin/main`, restaura `app/frontend` a partir do último commit aprovado e recria `app-teste/frontend` como cópia idêntica.
