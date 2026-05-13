@@ -13,6 +13,7 @@ const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/mreyyorn";
 const NEWSLETTER_FORM_ENDPOINT = "https://formspree.io/f/xykopqqj";
 const INSPECTOR_STORAGE_KEY = "redscale-inspector";
 const LEGACY_INSPECTOR_STORAGE_KEY = "greenscale-inspector";
+const INSPECTOR_SESSION_STORAGE_KEY = "redscale-inspector-session";
 const INSPECTABLE_SELECTOR =
   "[data-placeholder-ref], [data-element-name], a, button, img, h1, h2, h3, h4, p, li, summary, label, input, textarea";
 
@@ -830,7 +831,42 @@ const getSavedInspectorPreference = () => {
 const inspectParams = new URLSearchParams(window.location.search);
 const savedInspectorPreference = getSavedInspectorPreference();
 const isLocalInspectorHost = ["localhost", "127.0.0.1", ""].includes(window.location.hostname);
-const shouldMountInspector = isLocalInspectorHost && inspectParams.get("inspect") === "1";
+
+const getSavedInspectorSession = () => {
+  try {
+    return window.localStorage.getItem(INSPECTOR_SESSION_STORAGE_KEY);
+  } catch (error) {
+    return null;
+  }
+};
+
+const setSavedInspectorSession = (value) => {
+  try {
+    if (value) {
+      window.localStorage.setItem(INSPECTOR_SESSION_STORAGE_KEY, "on");
+      return;
+    }
+
+    window.localStorage.removeItem(INSPECTOR_SESSION_STORAGE_KEY);
+  } catch (error) {
+    // Sem persistência local disponível.
+  }
+};
+
+if (isLocalInspectorHost && inspectParams.get("inspect") === "1") {
+  setSavedInspectorSession(true);
+}
+
+if (inspectParams.get("inspect") === "0") {
+  setSavedInspectorSession(false);
+}
+
+const hasActiveInspectorSession =
+  isLocalInspectorHost &&
+  inspectParams.get("inspect") !== "0" &&
+  (inspectParams.get("inspect") === "1" || getSavedInspectorSession() === "on");
+
+const shouldMountInspector = hasActiveInspectorSession;
 
 const isInspectorEnabledByDefault = () => {
   if (inspectParams.get("inspect") === "1") {
